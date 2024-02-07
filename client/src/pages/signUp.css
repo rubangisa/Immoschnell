@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(6, 68, 38);
+}
+.container {
+    background-color: rgb(6, 68, 38);
+    width: 90%;
+    margin: auto;
+}
+.sub-container1 {
+    display: flex;
+}
+.sub-container2 {
+    display: flex;
+    justify-content: space-around;
+    
+}
+.sub-containerP1 {
+    display: flex;
+}
+.sub-containerP2 {
+    display: flex;
+}
+
+h1 {
+    color: rgb(237, 227, 211);
+    margin-bottom: 20px;
+}
+.wrapper {
+    background-color: rgb(237, 227, 211);
+    padding: 20px;
+    border-radius: 10px;
+}
+.submitButton {
+    color: rgb(237, 227, 211);
+    background-color: rgb(6, 68, 38);
+}
+
+.left-column,
+.right-column {
+  flex: 1;
+  padding: 10px;
+}
+
+.left-column {
+  border-right: 1px solid #ccc; /* Optional: Add a border between columns */
+}
+
+/* Optional: Style input fields */
+input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+}
