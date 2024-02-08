@@ -1,3 +1,51 @@
+body {
+  background-color: #064426;
+}
 
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #064426;
+  color: #ede3d3;
+  height: 80px;
+}
+
+.logo {
+  height: 160px;
+  width: 160px;
+}
+
+#nav-links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -150px;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #ede3d3;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: background-color 0.5s;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.profile-icon {
+  height: 50px;
+  width: 50px;
+}
 
 /*# sourceMappingURL=navbar.css.map */
