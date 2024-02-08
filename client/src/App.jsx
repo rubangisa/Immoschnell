@@ -1,12 +1,12 @@
 import SignUp from './components/pages/signUp.jsx';
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from './components/navbar'
-
+import NavBar from './components/navbar';
+import './App.css';
 const App = () => {
-  return <div> <SignUp/> </div>;
+  return (
+    <div>
+      <NavBar />
+      <SignUp />
+    </div>
+  );
 }
-
 export default App;
