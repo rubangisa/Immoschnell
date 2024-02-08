@@ -3,7 +3,7 @@
 import React from "react";
 import { IoIosCheckbox } from "react-icons/io";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
-import "./signUp.css";
+import "../../../styling/signUp.css";
 
 //import { useState } from "react";
 
