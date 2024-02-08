@@ -1,8 +1,3 @@
-import React from React;
-import { ReactDOM } from "react";
-
-import '../styling/style.scss';
-
 const HomePage = () => {
     return (
         <div className="homepage">
@@ -29,3 +24,4 @@ const HomePage = () => {
         </div>
     )
 }
+export default HomePage 
