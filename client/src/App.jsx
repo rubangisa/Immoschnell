@@ -1,7 +1,6 @@
-import SignUp from './components/pages/signUp';
-import './App.css'
-import NavBar from './components/navbar'
-
+import SignUp from './components/pages/signUp.jsx';
+import NavBar from './components/navbar';
+import './App.css';
 const App = () => {
   return (
     <div>
@@ -10,11 +9,4 @@ const App = () => {
     </div>
   );
 }
-
-
-
-
-
-
-
 export default App;
