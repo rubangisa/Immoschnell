@@ -47,10 +47,9 @@ h1 {
 }
 
 .left-column {
-  border-right: 1px solid #ccc; /* Optional: Add a border between columns */
+  border-right: 1px solid #ccc;
 }
 
-/* Optional: Style input fields */
 input {
   width: 100%;
   margin-bottom: 10px;
