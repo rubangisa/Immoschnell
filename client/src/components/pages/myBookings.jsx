@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
+import './myBooking.css'
 
 
 const MyBooking = () => {
-  const [propertyData, setPropertyData] = useState([]);
+  const [propertyData, setPropertyData] = useState([{id:'test123', image:'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',name:'pop', location:'berlin', price:300}]);
 
   useEffect(() => {
     fetch('API')
@@ -12,19 +13,9 @@ const MyBooking = () => {
 
   return (
     <div className="container">
-      <nav className="navbar">
-      {/*LOGO ICON*/}
-      <ul>
-      <li>home</li>
-      <li>properties</li>
-      <li>about</li>
-      <li>contact us</li>
-      </ul>
-      {/*USER ICON*/}
-      </nav>
 
+    <h2>my bookings</h2>
       <div className="main-content">
-      <h2>my bookings</h2>
         {propertyData.map(property => (
           <div key={property.id} className="booking-box">
             <div className="left-content">

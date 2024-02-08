@@ -13,24 +13,26 @@
   padding: 16px; 
 }
 
-.main-content h2 {
-  color: pink
+h2 {
+  color:#ede3d3;
+  font-size: 60px;
 }
 
 .booking-box {
   display: flex;
   justify-content: space-between;
-  width: 80%;
-  height: 150px;
+  width: 103%;
+  height: 250px;
   background-color: #ede3d3;
   margin-bottom: 16px;
-  padding: 16px; 
-  border: 10px solid pink;
+  padding: 16px;
+  border-radius: 10px;
+  
 }
 
 img {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   margin-right: 16px;
 }
 
