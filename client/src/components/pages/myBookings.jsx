@@ -19,7 +19,7 @@ const MyBooking = () => {
         {propertyData.map(property => (
           <div key={property.id} className="booking-box">
             <div className="left-content">
-              <img src={property.image} alt="Property" />
+              <img src={property.image} alt={property.id} />
               <div className="property-details">
                 <h2>{property.name}, {property.location}</h2>
                 <h3>dates</h3>
