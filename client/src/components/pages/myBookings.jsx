@@ -5,11 +5,11 @@ import './myBooking.css'
 const MyBooking = () => {
   const [propertyData, setPropertyData] = useState([{id:'test123', image:'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg',name:'pop', location:'berlin', price:300}]);
 
-  useEffect(() => {
-    fetch('API')
-      .then(response => response.json())
-      .then(data => setPropertyData(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch('API')
+  //     .then(response => response.json())
+  //     .then(data => setPropertyData(data));
+  // }, []);
 
   return (
     <div className="container">
@@ -27,7 +27,7 @@ const MyBooking = () => {
               </div>
             </div>
             <div className="right-content">
-              <button>Booking Details</button>
+              <button><p>Booking Details</p></button>
               <button>Re-book Property</button>
               <button>Add to Favorites</button>
             </div>

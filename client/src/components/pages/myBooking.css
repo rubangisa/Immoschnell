@@ -21,8 +21,8 @@ h2 {
 .booking-box {
   display: flex;
   justify-content: space-between;
-  width: 103%;
-  height: 250px;
+  align-items: center;
+  width: 80%;
   background-color: #ede3d3;
   margin-bottom: 16px;
   padding: 16px;
@@ -30,24 +30,32 @@ h2 {
   
 }
 
+.left-content{
+  display: flex;
+  align-items: center;
+}
+
 img {
-  width: 50px;
-  height: 50px;
+  width: 250px;
+  height: 200px;
   margin-right: 16px;
 }
 
 .property-details {
+  display: flex; 
+  flex-direction: row; 
   color: #064426;
-  margin-right: 16px;
-  border: 10px solid pink;
+  margin-left: 200px;
+  
 }
 
 .property-details h2 {
-  margin-bottom: 8px; 
+  color: #064426;
+  margin:0; 
 }
 
 .property-details p {
-  margin: 0;
+  margin: 4px;
 }
 
 .right-content {
@@ -58,12 +66,8 @@ img {
 
 .right-content button {
   background-color: #064426;
+  color: #ede3d3;
   margin-bottom: 8px;
-}
-
-button {
-  background-color: #ede3d3;
-  color: #064426;
 }
 
 /* Font */
