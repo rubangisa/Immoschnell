@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import './myBooking.css';
 
 const MyBooking = () => {
   const [propertyData, setPropertyData] = useState([]);

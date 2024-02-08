@@ -3,10 +3,10 @@ import {NavLink} from "react-dom"
 export default function NavBar() {
   return (
     <div id="header-container">
-    <NavLink className="nav-btn" to="/"> Home </NavLink>
-    <NavLink className="nav-btn" to="/properties"> Properties </NavLink>
-    <NavLink className="nav-btn" to="/about"> About </NavLink>
-    <NavLink className="nav-btn" to="/contacts"> Contact us </NavLink>
+    <NavLink  to="/"> Home </NavLink>
+    <NavLink  to="/properties"> Properties </NavLink>
+    <NavLink  to="/about"> About </NavLink>
+    <NavLink  to="/contacts"> Contact us </NavLink>
     </div>
   )
 }
