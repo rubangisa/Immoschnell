@@ -24,7 +24,6 @@ body {
 }
 
 .nav-button {
-  padding: 10px 20px;
   border-radius: 5px;
   color: #ede3d3;
   text-decoration: none;
@@ -40,12 +39,29 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #ede3d3 !important;
 }
 
 .profile-icon {
   height: 50px;
   width: 50px;
+}
+
+#underline-hover {
+  height: 2px;
+  width: 0px;
+}
+
+.nav-parent {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-parent:hover #underline-hover {
+  width: 100%;
+  background-color: #ede3d3;
+  transition: 0.3s linear;
 }
 
 /*# sourceMappingURL=navbar.css.map */
