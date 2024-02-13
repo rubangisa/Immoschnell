@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .grid-container {
@@ -18,7 +18,7 @@ body {
   gap: 20px;
   padding: 20px;
   width: 90%;
-  margin-left:60px;
+  margin-left: 60px;
   height: 900px;
 }
 
@@ -30,33 +30,242 @@ body {
 .help-center,
 .bookings {
   background-color: #ede3d3;
-  border-radius: 5%;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #064426; 
+  color: #064426;
 }
 
-.user-data h2{
-    margin-top: 40px;
+/* PROFILE BOX */
+
+.profile-box {
+  position: relative; 
+  width: 70%;
+  height: 100%;
 }
 
-.user-data p{
-    font-size: 20px;
+.profile-pic {
+  margin-left: 100px;
+  margin-top: 60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid;
 }
+
+.user-data {
+  width: 800px;
+}
+.user-data h2 {
+  margin-top: 40px;
+  margin-left: 100px;
+  text-align: center;
+}
+
+.user-data p {
+  font-size: 20px;
+  margin-left: 90px;
+  text-align:center ;
+}
+
+.user-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; 
+  margin: 60px;
+}
+
 .user-data button {
   background-color: #064426;
-  color: #ede3d3; 
+  color: #ede3d3;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-left: 400px;
+  width: 200px;
+  margin-left: 90px;
+  margin-top: 40px;
 }
+
+/* FAVOURITES BOX */
+
+.favourites-box {
+  position: relative; 
+  width: 200%; 
+}
+
+.favourites-title {
+  position: absolute; 
+  top: 40px; 
+  left:70px;
+}
+
+.favourites-title h2{
+  font-weight: bold;
+}
+
+.favourites-box {
+  width: 1300px;
+  display: flex;
+  flex-direction: row;
+}
+
+.property-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+  flex-wrap: wrap;
+}
+
+.property-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 90px;
+  margin-left: 40px;
+  width: 300px;
+}
+
+.property-card p {
+  padding-top: 30px;
+}
+
+.property-card img{
+  height: 400px;
+  width: 400px;
+}
+
+.property-card button{
+  margin-top: 10px;
+  background-color:  #064426;;
+}
+
+.property-card p {
+  margin: 0;
+}
+
+.manage-favourites-button {
+  width: 200px;
+  position: absolute; 
+  top: 55px;
+  right: 100px;
+ background-color:  #064426;
+}
+
+/* MEMBERSHIP STATUS BOX */
+.member-status {
+  position: relative;
+  width: 70%;
+  height: 100%;
+}
+
+.member-title{
+  position: relative;
+  right: 30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.member-status p{
+  margin-bottom: 20px;
+}
+
+.mem-button{
+  margin-bottom: 20px;
+}
+
+.member-status {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-status button {
+  background-color:#064426 ;
+}
+
+
+/* YOUR LISTINGS BOX */
+.your-listings{
+  width: 200%;
+}
+
+.favourites-box {
+  position: relative; 
+  width: 200%; 
+}
+
+.listings-title {
+  position: absolute; 
+  top: 40px; 
+  left:70px;
+}
+
+.listings-title h2{
+  font-weight: bold;
+}
+
+.listings-box {
+  width: 1300px;
+  display: flex;
+  flex-direction: row;
+}
+
+.listing-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+  flex-wrap: wrap;
+}
+
+.listing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 90px;
+  margin-left: 40px;
+  width: 300px;
+}
+
+.listing-card p {
+  padding-top: 30px;
+}
+
+.listing-card img{
+  height: 400px;
+  width: 400px;
+}
+
+.listing-card button{
+  margin-top: 10px;
+  background-color:  #064426;;
+}
+
+.listing-card p {
+  margin: 0;
+}
+
+.manage-favourites-button {
+  width: 200px;
+  position: absolute; 
+  top: 55px;
+  right: 100px;
+ background-color:  #064426;
+}
+
+/* GRID BOXES */
 
 .profile-box,
 .favourites-box {
   grid-row: 1;
+}
+
+.profile-box{
+  width: 60%;
 }
 
 .member-status,
@@ -70,27 +279,11 @@ body {
   grid-row: 3;
 }
 
-.profile-box{
-    width: 80%;
-    height: 100%;
+
+
+.favourites-box {
+  width: 200%;
 }
 
-.profile-pic{
-    margin-top: 30px;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-}
 
-.favourites-box{
-    width: 200%;
-}
 
-.member-status{
-    width: 80%;
-    height: 100%;
-}
-
-.your-listings{
-    width: 200%;
-}

@@ -5,6 +5,24 @@ const UserDash = () => {
   const [propertyData, setPropertyData] = useState([
     {
       id: "test123",
+      image:
+        "https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y290dGFnZXxlbnwwfHwwfHx8MA%3D%3D",
+      name: "cottonflower lane",
+      location: "new jersey",
+      price: 300,
+    },
+    {
+      id: "test123",
+      image:
+        "https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y290dGFnZXxlbnwwfHwwfHx8MA%3D%3D",
+      name: "cottonflower lane",
+      location: "new jersey",
+      price: 300,
+    },
+    {
+      id: "test123",
+      image:
+        "https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y290dGFnZXxlbnwwfHwwfHx8MA%3D%3D",
       name: "cottonflower lane",
       location: "new jersey",
       price: 300,
@@ -29,28 +47,60 @@ const UserDash = () => {
               <div key={index}>
                 <img className="profile-pic" src={user.image} alt={user.name} />
                 <h2>welcome back, {user.name}</h2>
-                <p>last login: {user.updated_at}</p>
-                <button>manage profile</button>
+                <div className="user-info">
+                  <p>
+                    last login: {user.updated_at} <br /> number of visits: 6 <br /> host rating: 4.5
+                  </p>
+                  <button>manage profile</button>
+                </div>
               </div>
             ))}
           </div>
         </div>
-
         <div className="favourites-box">
-          <h2>your favourites</h2>
-          {propertyData.map((property, index) => (
-            <div key={index}>
-              <p>{property.name}</p>
-              <button>view property</button>
-            </div>
-          ))}
-          <button>manage favourites</button>
+          <h2 className="favourites-title">your favourites</h2>
+          <div className="property-cards">
+            {propertyData.map((property, index) => (
+              <div key={index} className="property-card">
+                <img src={property.image} alt={property.id} />
+                <p>
+                  {property.name}, {property.location}
+                </p>
+                <button>view property</button>
+              </div>
+            ))}
+          </div>
+          <button className="manage-favourites-button">
+            manage favourites
+          </button>
         </div>
         <div className="member-status">
-          <h2>member status</h2>
+          <h2 className="member-title">membership status</h2>
+          <img src="./images/membership_img.png"/>
+          <p>platinum maestro</p>
+          <button className="mem-button">use points</button>
+          <img src="./images/membpoints.png"/>
+          <p>points earned</p>
+          <button className="mem-button">more</button>
+          
         </div>
         <div className="your-listings">
           <h2>your listings</h2>
+          <h2 className="listings-title">your favourites</h2>
+          <div className="listing-cards">
+            {propertyData.map((property, index) => (
+              <div key={index} className="listing-card">
+                <img src={property.image} alt={property.id} />
+                <p>
+                  {property.name}, {property.location}
+                </p>
+                <button>manage listing</button>
+              </div>
+            ))}
+          </div>
+          <button className="manage-favourites-button">
+            add new listing
+          </button>
         </div>
         <div className="socials">
           <h2>socials</h2>

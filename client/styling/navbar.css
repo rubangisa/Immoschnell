@@ -1,3 +1,67 @@
+body {
+  background-color: #064426;
+}
 
+#header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #064426;
+  color: #ede3d3;
+  height: 80px;
+}
+
+.logo {
+  height: 160px;
+  width: 160px;
+}
+
+#nav-links-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -150px;
+}
+
+.nav-button {
+  border-radius: 5px;
+  color: #ede3d3;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: background-color 0.5s;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ede3d3 !important;
+}
+
+.profile-icon {
+  height: 50px;
+  width: 50px;
+}
+
+#underline-hover {
+  height: 2px;
+  width: 0px;
+}
+
+.nav-parent {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-parent:hover #underline-hover {
+  width: 100%;
+  background-color: #ede3d3;
+  transition: 0.3s linear;
+}
 
 /*# sourceMappingURL=navbar.css.map */
