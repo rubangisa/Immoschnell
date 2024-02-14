@@ -49,7 +49,8 @@ const UserDash = () => {
                 <h2>welcome back, {user.name}</h2>
                 <div className="user-info">
                   <p>
-                    last login: {user.updated_at} <br /> number of visits: 6 <br /> host rating: 4.5
+                    last login: {user.updated_at} <br /> number of visits: 6{" "}
+                    <br /> host rating: 4.5
                   </p>
                   <button>manage profile</button>
                 </div>
@@ -76,17 +77,15 @@ const UserDash = () => {
         </div>
         <div className="member-status">
           <h2 className="member-title">membership status</h2>
-          <img src="./images/membership_img.png"/>
+          <img src="./images/membership_img.png" />
           <p>platinum maestro</p>
           <button className="mem-button">use points</button>
-          <img src="./images/membpoints.png"/>
+          <img src="./images/membpoints.png" />
           <p>points earned</p>
           <button className="mem-button">more</button>
-          
         </div>
         <div className="your-listings">
-          <h2>your listings</h2>
-          <h2 className="listings-title">your favourites</h2>
+          <h2 className="listings-title">your listings</h2>
           <div className="listing-cards">
             {propertyData.map((property, index) => (
               <div key={index} className="listing-card">
@@ -98,20 +97,25 @@ const UserDash = () => {
               </div>
             ))}
           </div>
-          <button className="manage-favourites-button">
-            add new listing
-          </button>
+          <button className="add-new-listing-button">add new listing</button>
         </div>
         <div className="socials">
-          <h2>socials</h2>
+          <h2 className="socials-title">socials</h2>
+
+          <div className="socials-image">
+            <img src="" />
+          </div>
+          <p className="socials-article">
+            10 tips to make your home more eco-friendly
+          </p>
         </div>
         <div className="help-center">
-          <h2>help center</h2>
-        </div>
-        <div className="bookings">
-          <h2>your bookings</h2>
-          <h3>previous bookings</h3>
-          <h3>upcoming bookings</h3>
+          <h2 className="help-title">help center</h2>
+          <div className="help-buttons">
+            <button>faqs</button>
+            <button>guidelines</button>
+            <button>contact us</button>
+          </div>
         </div>
       </div>
     </div>
