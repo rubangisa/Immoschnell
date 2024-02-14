@@ -274,6 +274,7 @@ bottom:600px
 
 .socials-article{
   position: relative;
+  margin: 20px;
 }
 
 
@@ -314,7 +315,7 @@ margin: 20px;
 .socials,
 .help-center{
   grid-row: 3;
-  width:960px
+  width: 98%;
 }
 
 .socials{
