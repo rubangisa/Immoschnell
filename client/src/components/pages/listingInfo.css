@@ -9,53 +9,92 @@
 
 body {
   font-family: "Playfair Display", serif;
+  display: flex;
+  justify-content: center;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-  }
+.prop-listing-info {
+  margin-top: 900px;
+}
+
+.property-info h2 {
+  margin-left: 20px;
+  font-size: 51.2px;
+  width: 600px;
+}
+
+.property-info {
+  display: flex;
+  align-items: center;
+}
+
+.property-info p {
+  margin-left: 950px;
+  font-size: 30px;
+}
+
+.listing-grid-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto; 
+  gap: 30px;
+  padding: 10px;
+  width: 80%;
+}
+.listing-grid-container > div {
+  background-color: #ede3d3;
+  color: #064426;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.listing-info {
+  grid-column: 1;
+  height: 800px;
+  border-radius: 5px;
+  width: 500px;
+}
+
+.main-image {
+  grid-column: 2 ;
+  background-image: url(https://images.unsplash.com/photo-1472377723522-4768db9c41ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-position: center;
+  background-size: 180%;
+  background-repeat: no-repeat;
+}
+
+.prop-images {
+  grid-column: 3 / 4;
+  display: flex;
+  justify-content: center;
   
-  .wrapper {
+}
+.gallery {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-gap: 20px;
-    overflow: hidden;
-    height: 100vh; 
+    grid-template-columns: auto auto; 
+    gap: 20px; 
   }
 
-  .gallery {
-    overflow: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+.gallery .gallery-img{
+    width: 400px;
+    height: 350px;
+}
 
-  }
+.booking-dates {
+  grid-row: 2;
+}
 
-  .img-nav {
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
+.booking-location {
+  grid-row: 3;
+}
 
-  .gallery__img {
-    scroll-snap-align: start;
-    margin-bottom: 10px;
-    min-height: 40vh;
-  object-fit: cover;
-  }
+.property-details {
+  grid-column: 2;
+  grid-row: 2 /4;
+  margin: 0;
+}
 
-  .img-nav a {
-    height: 200px;
-    display: flex;
-    margin-bottom: 10px;
-  }
-  
-  .nav_img {
-    object-fit: cover;
-    filter: saturate(0);
-    transition: 0.3s ease all;
-  }
-
-  .nav_img:hover {
-    transform: scale(1.05);
-    filter: saturate(1);
-  }
+.property-amenities {
+  grid-column: 3;
+  grid-row: 2 / 4;
+}
