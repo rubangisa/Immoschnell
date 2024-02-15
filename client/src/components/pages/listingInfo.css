@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-gap: 20px;
+    overflow: hidden;
+    height: 100vh; 
+  }
+
+  .gallery {
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+  }
+
+  .img-nav {
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  .gallery__img {
+    scroll-snap-align: start;
+    margin-bottom: 10px;
+    min-height: 40vh;
+  object-fit: cover;
+  }
+
+  .img-nav a {
+    height: 200px;
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .nav_img {
+    object-fit: cover;
+    filter: saturate(0);
+    transition: 0.3s ease all;
+  }
+
+  .nav_img:hover {
+    transform: scale(1.05);
+    filter: saturate(1);
+  }

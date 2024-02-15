@@ -15,6 +15,13 @@ const MyBooking = () => {
     <div className="container">
 
     <h1>my bookings</h1>
+    <div className='booking-tabs'>
+    <ul>
+    <li>previous bookings</li>
+    <li>upcoming bookings</li>
+    <li>cancelled bookings</li>
+    </ul>
+    </div>
       <div className="main-content">
         {propertyData.map(property => (
           <div key={property.id} className="booking-box">
