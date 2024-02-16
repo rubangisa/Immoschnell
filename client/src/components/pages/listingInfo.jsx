@@ -30,6 +30,16 @@ const ListingInfo = () => {
     },
   ]);
 
+  const formHTML = `
+    <form action="/action_page.php">
+      <label for="check-in">check-in:</label>
+      <input type="date" id="check-in" name="check-in">
+      <label for="check-out">check-out:</label>
+      <input type="date" id="check-out" name="check-out">
+      <button type="submit">book now</button>
+    </form>
+  `;
+
   return (
     <div className="prop-listing-info">
       <div className="property-info">
@@ -44,7 +54,7 @@ const ListingInfo = () => {
           <p>{propertyData[0].bedrooms} bedrooms</p>
           <p>{propertyData[0].beds} beds</p>
           <p>{propertyData[0].bathrooms} bathrooms</p>
-          <p>hosted by:{propertyData[0].hosts}</p>
+          <p>hosted by: {propertyData[0].hosts}</p>
         </div>
         <div className="main-image"></div>
         <div className="prop-images">
@@ -75,10 +85,7 @@ const ListingInfo = () => {
             />
           </div>
         </div>
-        <div className="booking-dates">
-          <p>check in</p>
-          <p>check out</p>
-          <button>book now</button>
+        <div className="booking-dates" dangerouslySetInnerHTML={{ __html: formHTML }}>
         </div>
         <div className="booking-location">
           <iframe
@@ -97,4 +104,4 @@ const ListingInfo = () => {
   );
 };
 
-export default ListingInfo;
+export default ListingInfo
