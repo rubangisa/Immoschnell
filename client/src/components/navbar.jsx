@@ -19,13 +19,13 @@ export default function NavBar() {
 
   return (
     <div id="header-container">
-      <img src={logo} alt="Logo" className="logo" />
-
+      <div className="logo-div">
+        <img src={logo} alt="Logo" className="logo" />
+      </div>
       <GiHamburgerMenu
         className={`menu-toggle ${menuOpen ? "open" : ""}`}
         onClick={toggleMenu}
       />
-
       <nav className={`header-nav ${menuOpen ? "open" : ""}`}>
         <div id="nav-links-container">
           <div className="nav-parent">
@@ -56,20 +56,48 @@ export default function NavBar() {
       </nav>
 
       <div className="nav-parent">
-        <button id="profile-icon" onClick={toggleProfile} >
+        <button id="profile-icon" onClick={toggleProfile}>
           <CiUser className="profile-icon" />
         </button>
-
-        {profileMenuOpen && (
-          <div className="dropdown-menu">
-            <NavLink to="/manage-account">Manage Account</NavLink>
-            <NavLink to="/my-profile">My Profile</NavLink>
-            <NavLink to="/bookings-and-trips">Bookings and Trips</NavLink>
-            <NavLink to="/wallet-and-rewards">Wallet and Rewards</NavLink>
-            <NavLink to="/login-signup">Login/Sign Up</NavLink>
-          </div>
-        )}
       </div>
+      {profileMenuOpen && (
+        <div className="dropdown-menu">
+          <div className="nav-parent-profile">
+            <NavLink className="profile-button" to="/manage-account">
+              Manage Account
+              <div id="underline-hover"></div>
+            </NavLink>
+          </div>
+
+          <div className="nav-parent-profile">
+            <NavLink className="profile-button" to="/my-profile">
+              My Profile
+              <div id="underline-hover"></div>
+            </NavLink>
+          </div>
+
+          <div className="nav-parent-profile">
+            <NavLink className="profile-button" to="/bookings-and-trips">
+              Bookings and Trips
+              <div id="underline-hover"></div>
+            </NavLink>
+          </div>
+
+          <div className="nav-parent-profile">
+            <NavLink className="profile-button" to="/wallet-and-rewards">
+              Wallet and Rewards
+              <div id="underline-hover"></div>
+            </NavLink>
+          </div>
+
+          <div className="nav-parent-profile">
+            <NavLink className="profile-button" to="/login-signup">
+              Login/Sign Up
+              <div id="underline-hover"></div>
+            </NavLink>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

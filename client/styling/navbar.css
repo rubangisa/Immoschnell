@@ -9,6 +9,7 @@ body {
   background-color: #064426;
   color: #ede3d3;
   height: 80px;
+  gap: 50px;
 }
 
 .logo {
@@ -75,11 +76,12 @@ button:hover {
 
 .dropdown-menu {
   position: fixed;
+  height: 350px;
   top: 14%;
   right: 0;
-  background-color: #ede3d3;
+  background-color: #064426;
   border: 1px solid #ede3d3;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 10px 14px rgb(6, 26, 6);
   z-index: 1000;
   padding: 40px;
   margin-right: 10px;
@@ -87,15 +89,18 @@ button:hover {
   flex-direction: column;
 }
 
-.dropdown-menu a {
-  text-decoration: none;
-  color: #333;
-  padding: 8px 0;
-  transition: background-color 0.3s ease;
+.nav-parent-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0;
 }
 
-.dropdown-menu a:hover {
-  background-color: #064426;
+.nav-parent-profile a {
+  text-decoration: none;
+  color: #ede3d3;
+  padding: 8px 0;
+  transition: background-color 0.3s ease;
 }
 
 .menu-toggle {
@@ -119,10 +124,16 @@ button:hover {
     height: 40px;
     width: 30px;
     color: #ede3d3;
-    margin-right: -500px;
+    margin-right: -50px;
+  }
+  .logo-div {
+    flex: 1;
   }
   .nav-header {
     margin-left: 0;
+  }
+  .profile-icon {
+    min-width: auto;
   }
   .header-nav {
     display: none;
@@ -134,19 +145,18 @@ button:hover {
     z-index: 10;
   }
   .header-nav.open {
+    position: fixed;
+    height: 350px;
+    top: 15%;
+    right: 0;
+    background-color: #064426;
+    border: 1px solid #ede3d3;
+    box-shadow: -2px 10px 14px rgb(6, 26, 6);
+    z-index: 1000;
+    padding: 40px;
+    margin-right: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ede3d3;
-    width: 30%;
-    height: 30vh;
-    padding: 10px;
-    border-radius: 2px;
-    margin-right: 20px;
-  }
-  .header-nav.open .nav-button {
-    color: black;
-    padding: 10px;
+    flex-direction: column;
   }
   .header-nav.open #nav-links-container {
     display: flex;
@@ -154,12 +164,15 @@ button:hover {
     flex-direction: column;
     margin-left: 0px;
   }
+  .header-nav.open .nav-button {
+    padding-bottom: 40px;
+  }
   .header-nav.open a {
     text-decoration: none;
     transition: 0.3s;
   }
   .header-nav.open a:hover {
-    color: #064426 !important;
+    color: #ede3d3 !important;
   }
   .header-nav.open #underline-hover {
     height: 2px;
@@ -167,7 +180,7 @@ button:hover {
   }
   .header-nav.open .nav-parent:hover #underline-hover {
     width: 100%;
-    background-color: #064426;
+    background-color: #ede3d3;
     transition: 0.3s linear;
   }
   .header-nav ul {
@@ -176,6 +189,22 @@ button:hover {
   }
   .nav-span {
     margin: 5px 0;
+  }
+}
+@media (max-width: 500px) {
+  .header-nav.open {
+    position: fixed;
+    height: 350px;
+    top: 11%;
+    right: 0;
+    background-color: #064426;
+    border: 1px solid #ede3d3;
+    box-shadow: -2px 10px 14px rgb(6, 26, 6);
+    z-index: 1000;
+    padding: 40px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
