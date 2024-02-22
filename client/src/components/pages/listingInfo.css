@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+button:hover{
+  text-decoration: underline;
 }
 
 body {
@@ -36,8 +41,8 @@ body {
 .listing-grid-container {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 30px;
+  grid-template-columns: auto auto auto;
+  gap: 20px;
   padding: 10px;
   width: 80%;
 }
@@ -62,26 +67,30 @@ body {
 
 .main-image {
   grid-column: 2;
+  grid-row: 1;
   background-image: url(https://images.unsplash.com/photo-1472377723522-4768db9c41ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
   background-position: center;
-  background-size: 180%;
+  background-size: 100%;
   background-repeat: no-repeat;
+  border-radius: 5px;
 }
 
 .prop-images {
   grid-column: 3 / 4;
   display: flex;
   justify-content: center;
+  border-radius: 5px;
 }
 .gallery {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 20px;
+  gap: 30px;
+  padding-left: 20px;
 }
 
 .gallery .gallery-img {
   width: 400px;
-  height: 350px;
+  height: 400px;
 }
 
 .booking-dates {
@@ -92,9 +101,7 @@ body {
   border-radius: 5px;
 }
 
-.booking-dates form {
-  width: 700px;
-}
+
 
 .booking-dates label,
 .booking-dates input[type="date"],
@@ -125,15 +132,23 @@ body {
 
 .booking-location {
   grid-row: 3;
+  border-radius: 5px;
 }
 
 .property-details {
   grid-column: 2;
   grid-row: 2 /4;
   margin: 0;
+  border-radius: 5px;
 }
+
+.property-details p{
+  padding: 40px;
+}
+
 
 .property-amenities {
   grid-column: 3;
   grid-row: 2 / 4;
+  border-radius: 5px;
 }

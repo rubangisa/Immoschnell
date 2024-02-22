@@ -1,8 +1,14 @@
-import { useState, useEffect } from "react";
+import { useReducer } from "react";
 import "./userDash.css";
+import membpoints from '../images/mempoints_img.png';
+import membership_img from '../images/membership_img.png';
+import social from '../images/social-img.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-const UserDash = () => {
-  const [propertyData, setPropertyData] = useState([
+const initialState = {
+  propertyData: [
     {
       id: "test123",
       image:
@@ -27,16 +33,31 @@ const UserDash = () => {
       location: "new jersey",
       price: 300,
     },
-  ]);
-
-  const [userData, setUserData] = useState([
+  ],
+  userData: [
     {
       image:
         "https://images.unsplash.com/photo-1647888774545-96f662a65e15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       name: "bugmakesthree",
       updated_at: "14.02.2024",
     },
-  ]);
+  ],
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "UPDATE_PROPERTY_DATA":
+      return { ...state, propertyData: action.payload };
+    case "UPDATE_USER_DATA":
+      return { ...state, userData: action.payload };
+    default:
+      return state;
+  }
+};
+
+const UserDash = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { propertyData, userData } = state;
 
   return (
     <div className="container">
@@ -77,12 +98,16 @@ const UserDash = () => {
         </div>
         <div className="member-status">
           <h2 className="member-title">membership status</h2>
-          <img src="./images/membership_img.png" />
+          <div className="mem-logo">
+          <img src={membership_img} alt="membership badge" />
+          </div>
           <p>platinum maestro</p>
-          <button className="mem-button">use points</button>
-          <img src="./images/membpoints.png" />
-          <p>points earned</p>
           <button className="mem-button">more</button>
+          <div className="mem-points">
+          <img src={membpoints} alt="member points" />
+          </div>
+          <p>points earned</p>
+          <button className="mem-button">use points</button>
         </div>
         <div className="your-listings">
           <h2 className="listings-title">your listings</h2>
@@ -100,15 +125,19 @@ const UserDash = () => {
           <button className="add-new-listing-button">add new listing</button>
         </div>
         <div className="socials">
-          <h2 className="socials-title">socials</h2>
+  <h2 className="socials-title">socials</h2>
+  <div className="social-icons">
+    <FontAwesomeIcon icon={faArrowLeft} className="arrow-left" />
+    <div className="social-img">
+      <img src={social} alt="social media post" />
+    </div>
+    <FontAwesomeIcon icon={faArrowRight} className="arrow-right" />
+  </div>
+  <p className="socials-article">
+    10 tips to make your home more eco-friendly
+  </p>
+</div>
 
-          <div className="socials-image">
-            <img src="" />
-          </div>
-          <p className="socials-article">
-            10 tips to make your home more eco-friendly
-          </p>
-        </div>
         <div className="help-center">
           <h2 className="help-title">help center</h2>
           <div className="help-buttons">

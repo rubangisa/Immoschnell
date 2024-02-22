@@ -111,7 +111,13 @@ const ListingInfo = () => {
             loading="lazy"
           ></iframe>
         </div>
-        <div className="property-details"></div>
+        <div className="property-details">
+        <p className="listing-text">
+        escape to the idyllic countryside retreat of cottonflower lane in canterbury, kent, where luxury meets tranquility. this enchanting property boasts three bedrooms, five beds, and 1.5 bathrooms, accommodating up to six guests in style. hosted by the hospitable hannes and gertha, this haven offers a plethora of amenities including a private hot tub, high-speed wifi, a cozy fireplace, and a fully equipped kitchen. from serene lake views to secure parking, every detail has been carefully curated to ensure a seamless and unforgettable stay. immerse yourself in the beauty of the surrounding landscape, explore historic canterbury, and indulge in the local cuisine at nearby eateries. with a stellar 4.5-star rating from previous guests, cottonflower lane promises an unparalleled blend of comfort, elegance, and natural charm for your next getaway.
+        <br />
+        <br />
+        discover a sanctuary of serenity at cottonflower lane, where every corner is imbued with warmth and hospitality. unwind in the comfort of spacious bedrooms, gather around the crackling fireplace on chilly evenings, or soak your cares away in the indulgent hot tub under the starlit sky. with high-speed wifi and a fully equipped kitchen at your disposal, you can effortlessly blend relaxation with productivity. whether you're seeking adventure in the great outdoors or simply craving a peaceful retreat, cottonflower lane offers the perfect setting to create cherished memories with loved ones. come experience the magic of this hidden gem and let your worries melt away in its embrace.</p>
+        </div>
         <div className="property-amenities"></div>
       </div>
     </div>

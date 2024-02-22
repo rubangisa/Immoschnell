@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
 
 * {
   margin: 0;
@@ -29,6 +31,7 @@ body {
 .booking-tabs li:hover{
   text-decoration: underline;
   cursor: pointer;
+ 
 }
 
 .main-content {
@@ -42,6 +45,7 @@ h1 {
   font-size: 150px;
   margin-top: 200px;
   margin-left: 10px;
+  font-weight: 700;
 }
 
 h2 {
