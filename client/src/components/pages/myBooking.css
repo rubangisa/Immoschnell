@@ -41,11 +41,10 @@ body {
   padding: 40px; 
 }
 
-h1 {
-  font-size: 150px;
+ .booking-title h1 {
+  font-size: 100px;
   margin-top: 200px;
-  margin-left: 10px;
-  font-weight: 700;
+  color: #ede3d3;
 }
 
 h2 {

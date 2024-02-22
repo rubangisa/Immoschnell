@@ -13,6 +13,11 @@ body {
   font-family: "Playfair Display", serif;
 }
 
+.container h1{
+  margin-left: 380px;
+  margin-bottom: 50px;
+}
+
 .grid-container {
   display: grid;
   grid-template-rows: auto auto auto;
@@ -52,20 +57,23 @@ body {
   position: absolute;
   top: 150px;
   left: 180px;
-  width: 320px;
-  height: 320px;
+  width: 370px;
+  height: 370px;
   border-radius: 50%;
   border: 2px solid;
 }
 
 .user-data {
   width: 800px;
+  height: 800px;
 }
 .user-data h2 {
   position: absolute;
-  top: 495px;
+  top: 550px;
+  left: 230px;
   text-align: center;
 }
+
 
 .user-data p {
   position: absolute;
@@ -76,24 +84,23 @@ body {
   text-align: center;
 }
 
-.user-info {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 60px;
+.user-info p {
+ position: relative;
+top: 650px;
+right: 60px;
 }
 
 .user-data button {
   background-color: #064426;
   color: #ede3d3;
-  padding: 10px 20px;
+  padding: 12px 24;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   width: 250px;
   position: absolute;
   top: 50px;
-  right: 20px;
+  right: 50px;
   font-size: 20px;
 }
 
@@ -106,7 +113,7 @@ body {
 
 .favourites-title {
   position: absolute;
-  top: 40px;
+  top: 55px;
   left: 70px;
 }
 
@@ -135,7 +142,7 @@ body {
   padding: 10px;
   margin-top: 90px;
   margin-left: 40px;
-  width: 300px;
+  width: 500px;
 }
 
 .property-card p {
@@ -145,7 +152,7 @@ body {
 
 .property-card img {
   height: 400px;
-  width: 400px;
+  width: 500px;
 }
 
 .property-card button {
@@ -165,6 +172,7 @@ body {
   right: 50px;
   font-size: 20px;
   background-color: #064426;
+  color: #ede3d3;
 }
 
 /* MEMBERSHIP STATUS BOX */
@@ -246,7 +254,7 @@ body {
   padding: 10px;
   margin-top: 90px;
   margin-left: 40px;
-  width: 300px;
+  width: 500px;
 }
 
 .listing-card p {
@@ -255,7 +263,7 @@ body {
 
 .listing-card img {
   height: 400px;
-  width: 400px;
+  width: 500px;
 }
 
 .listing-card button {

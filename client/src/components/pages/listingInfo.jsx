@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import "./listingInfo.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const initialState = [
   {
@@ -29,7 +30,6 @@ const initialState = [
   },
 ];
 
-
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_PROPERTY_DATA":
@@ -54,14 +54,15 @@ const ListingInfo = () => {
 
   return (
     <div className="prop-listing-info">
-      <div className="property-info">
-        <h2>{propertyData[0].name}</h2>
-        <p>{propertyData[0].price} € per night</p>
-        <p>user rating: {propertyData[0].userRating}</p>
-      </div>
       <div className="listing-grid-container">
         <div className="listing-info">
+          <div className="property-info">
+            <h2>{propertyData[0].name}</h2>
+          </div>
           <p>{propertyData[0].location}</p>
+          <p>{propertyData[0].price} € per night</p>
+          <p>user rating: {propertyData[0].userRating}</p>
+         <br />
           <p>{propertyData[0].guests} guests</p>
           <p>{propertyData[0].bedrooms} bedrooms</p>
           <p>{propertyData[0].beds} beds</p>
@@ -112,13 +113,38 @@ const ListingInfo = () => {
           ></iframe>
         </div>
         <div className="property-details">
-        <p className="listing-text">
-        escape to the idyllic countryside retreat of cottonflower lane in canterbury, kent, where luxury meets tranquility. this enchanting property boasts three bedrooms, five beds, and 1.5 bathrooms, accommodating up to six guests in style. hosted by the hospitable hannes and gertha, this haven offers a plethora of amenities including a private hot tub, high-speed wifi, a cozy fireplace, and a fully equipped kitchen. from serene lake views to secure parking, every detail has been carefully curated to ensure a seamless and unforgettable stay. immerse yourself in the beauty of the surrounding landscape, explore historic canterbury, and indulge in the local cuisine at nearby eateries. with a stellar 4.5-star rating from previous guests, cottonflower lane promises an unparalleled blend of comfort, elegance, and natural charm for your next getaway.
-        <br />
-        <br />
-        discover a sanctuary of serenity at cottonflower lane, where every corner is imbued with warmth and hospitality. unwind in the comfort of spacious bedrooms, gather around the crackling fireplace on chilly evenings, or soak your cares away in the indulgent hot tub under the starlit sky. with high-speed wifi and a fully equipped kitchen at your disposal, you can effortlessly blend relaxation with productivity. whether you're seeking adventure in the great outdoors or simply craving a peaceful retreat, cottonflower lane offers the perfect setting to create cherished memories with loved ones. come experience the magic of this hidden gem and let your worries melt away in its embrace.</p>
+          <p className="listing-text">
+            escape to the idyllic countryside retreat of cottonflower lane in
+            canterbury, kent, where luxury meets tranquility. this enchanting
+            property boasts three bedrooms, five beds, and 1.5 bathrooms,
+            accommodating up to six guests in style. hosted by the hospitable
+            hannes and gertha, this haven offers a plethora of amenities
+            including a private hot tub, high-speed wifi, a cozy fireplace, and
+            a fully equipped kitchen. from serene lake views to secure parking,
+            every detail has been carefully curated to ensure a seamless and
+            unforgettable stay. immerse yourself in the beauty of the
+            surrounding landscape, explore historic canterbury, and indulge in
+            the local cuisine at nearby eateries. with a stellar 4.5-star rating
+            from previous guests, cottonflower lane promises an unparalleled
+            blend of comfort, elegance, and natural charm for your next getaway.
+            <br />
+            <br />
+            discover a sanctuary of serenity at cottonflower lane, where every
+            corner is imbued with warmth and hospitality. unwind in the comfort
+            of spacious bedrooms, gather around the crackling fireplace on
+            chilly evenings, or soak your cares away in the indulgent hot tub
+            under the starlit sky. with high-speed wifi and a fully equipped
+            kitchen at your disposal, you can effortlessly blend relaxation with
+            productivity. whether you're seeking adventure in the great outdoors
+            or simply craving a peaceful retreat, cottonflower lane offers the
+            perfect setting to create cherished memories with loved ones. come
+            experience the magic of this hidden gem and let your worries melt
+            away in its embrace.
+          </p>
         </div>
-        <div className="property-amenities"></div>
+        <div className="property-amenities">
+          <div className="amen-icons"></div>
+        </div>
       </div>
     </div>
   );

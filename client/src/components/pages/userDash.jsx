@@ -61,13 +61,15 @@ const UserDash = () => {
 
   return (
     <div className="container">
+    <h1> your dashboard</h1>
       <div className="grid-container">
         <div className="profile-box">
           <div className="user-data">
             {userData.map((user, index) => (
               <div key={index}>
-                <img className="profile-pic" src={user.image} alt={user.name} />
-                <h2>welcome back, {user.name}</h2>
+                <img className="profile-pic" src={user.image} alt={user.name} /><h2>welcome back,
+                <br />
+                {user.name}</h2>
                 <div className="user-info">
                   <p>
                     last login: {user.updated_at} <br /> number of visits: 6{" "}

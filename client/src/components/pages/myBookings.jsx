@@ -27,7 +27,8 @@ const MyBooking = () => {
 
   return (
     <div className="container">
-      <h1>my bookings</h1>
+    <div className='booking-title'>
+    <h1>my bookings</h1></div>
       <div className='booking-tabs'>
         <ul>
           <li>previous bookings</li>
