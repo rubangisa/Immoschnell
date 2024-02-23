@@ -9,7 +9,9 @@ body {
   background-color: #064426;
   color: #ede3d3;
   height: 80px;
-  gap: 50px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .logo {
