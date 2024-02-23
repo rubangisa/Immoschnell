@@ -6,7 +6,9 @@
   background-color: $primary-color;
   color: $secondary-color;
   height: 80px;
-  gap: 50px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .logo {
