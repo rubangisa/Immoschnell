@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
 /* 
 .navbar {
   background-color: #064426;
@@ -10,11 +10,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px; 
+  padding: 16px;
 }
 
-h2 {
-  color:#ede3d3;
+container h2 {
+  color: #ede3d3;
   font-size: 60px;
 }
 
@@ -27,7 +27,6 @@ h2 {
   margin-bottom: 16px;
   padding: 16px;
   border-radius: 10px;
-  
 }
 
 img {
@@ -43,7 +42,7 @@ img {
 }
 
 .property-details h2 {
-  margin-bottom: 8px; 
+  margin-bottom: 8px;
 }
 
 .property-details p {
@@ -68,5 +67,5 @@ button {
 
 /* Font */
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
