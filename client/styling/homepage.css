@@ -1,3 +1,29 @@
+body {
+  background-color: #064426;
+}
 
+:root {
+  margin: 0;
+}
+
+h2 {
+  font-family: Playfair;
+  padding: 190px;
+  font-size: 50px;
+  margin: auto;
+  text-align: center;
+}
+
+.homeIcons {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.homeIcons li {
+  font-size: 80px;
+  display: flex;
+  padding: 10px;
+  color: #ede3d3;
+}
 
 /*# sourceMappingURL=homepage.css.map */
