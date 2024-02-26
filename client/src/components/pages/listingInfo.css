@@ -8,7 +8,7 @@
   box-sizing: border-box;
 }
 
-button:hover{
+button:hover {
   text-decoration: underline;
 }
 
@@ -19,18 +19,19 @@ body {
 }
 
 .prop-listing-info {
-  margin-top: 100px;
+ margin: auto;
   display: flex;
   justify-self: center;
   align-items: center;
   flex-direction: column;
+  width: 80%;
 }
 
 .property-info h2 {
   margin-top: 10px;
   margin-bottom: 60px;
   margin-left: 20px;
-  font-size: 60px;
+  font-size: 100px;
   width: 600px;
 }
 
@@ -44,8 +45,7 @@ body {
 }
 
 .listing-grid-container {
-  
-  margin-top: 20px;
+  margin-top: 300px;
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 20px;
@@ -66,9 +66,9 @@ body {
   height: 1000px;
 }
 
-.listing-info p{
-    margin-top: 10px;
-    margin-left: 30px;
+.listing-info p {
+  margin-top: 10px;
+  margin-left: 30px;
 }
 
 .main-image {
@@ -89,6 +89,7 @@ body {
   border-radius: 5px;
 }
 .gallery {
+  padding-top: 40px;
   display: grid;
   grid-template-columns: auto auto;
   gap: 30px;
@@ -109,8 +110,6 @@ body {
   margin: auto;
 }
 
-
-
 .booking-dates label,
 .booking-dates input[type="date"],
 .booking-dates button {
@@ -127,15 +126,15 @@ body {
   font-weight: bold;
 }
 
-.booking-dates label {
+.booking-dates {
   font-size: 30px;
 }
 
-.booking-dates button{
-    margin-top: 40px;
-    font-size: 20px;
-    background-color: #064426;
-    color: #ede3d3;
+.booking-dates button {
+  margin-top: 40px;
+  font-size: 30px;
+  background-color: #064426;
+  color: #ede3d3;
 }
 
 .booking-location {
@@ -150,13 +149,26 @@ body {
   border-radius: 5px;
 }
 
-.property-details p{
-  padding: 40px;
+.property-details p {
+  padding: 60px;
+  font-size: 30px;
 }
-
 
 .property-amenities {
   grid-column: 3;
   grid-row: 2 / 4;
   border-radius: 5px;
+
+}
+
+.amen-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px; 
+
+}
+
+
+.icon{
+  height: 90px;
 }

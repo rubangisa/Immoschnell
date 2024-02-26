@@ -1,6 +1,15 @@
 import { useReducer } from "react";
 import "./listingInfo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+import { faBath} from "@fortawesome/free-solid-svg-icons";
+import { faHotTub } from "@fortawesome/free-solid-svg-icons";
+import { faWifi } from "@fortawesome/free-solid-svg-icons";
+import { faFire } from "@fortawesome/free-solid-svg-icons";
+import { faCar } from "@fortawesome/free-solid-svg-icons";
+import { faKitchenSet } from "@fortawesome/free-solid-svg-icons";
+import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
+import { faWheelchair} from "@fortawesome/free-solid-svg-icons";
 
 const initialState = [
   {
@@ -24,7 +33,7 @@ const initialState = [
     bathrooms: 1.5,
     hosts: "hannes and gertha",
     amenities:
-      "hottub, wifi, fireplace, full kitchen, washing facilites, lake side, secure parking",
+      "hottub, wifi, fireplace, full kitchen, washing facilites, secure parking",
     userRating: 4.5,
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4990.716715127345!2d1.1790615206835688!3d51.286129046748954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47deb450937d6a8d%3A0xd375b0159f3216b9!2sWickhambreaux%2C%20Canterbury%2C%20UK!5e0!3m2!1sen!2sde!4v1708012969083!5m2!1sen!2sde",
   },
@@ -143,7 +152,17 @@ const ListingInfo = () => {
           </p>
         </div>
         <div className="property-amenities">
-          <div className="amen-icons"></div>
+          <div className="amen-icons">
+          <FontAwesomeIcon icon={faDoorOpen} className="icon" /> 
+          <FontAwesomeIcon icon={faBath} className="icon" /> 
+          <FontAwesomeIcon icon={faHotTub} className="icon" />
+          <FontAwesomeIcon icon={faWifi} className="icon" />
+          <FontAwesomeIcon icon={faFire} className="icon" />
+          <FontAwesomeIcon icon={faCar} className="icon" />
+          <FontAwesomeIcon icon={faKitchenSet} className="icon" />
+          <FontAwesomeIcon icon={faDumbbell} className="icon" />
+          <FontAwesomeIcon icon={faWheelchair} className="icon" />
+          </div>
         </div>
       </div>
     </div>

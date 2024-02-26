@@ -15,7 +15,7 @@ body {
 }
 
 .booking-title{
-  margin-top: 150px;
+  margin-top: 300px;
   margin-bottom: 90px;
 }
 
@@ -67,7 +67,7 @@ h3 {
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  height: 600px;
+  height: 550px;
   background-color: #ede3d3;
   padding: 30px;
   margin-bottom: 30px;
@@ -111,7 +111,7 @@ img {
 .right-content button {
   background-color: #064426;
   color: #ede3d3;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   padding: 18px 36px;
   width: 370px;
   font-size: 30px;
