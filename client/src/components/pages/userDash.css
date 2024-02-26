@@ -13,9 +13,16 @@ body {
   font-family: "Playfair Display", serif;
 }
 
-.container h1{
-  margin-left: 380px;
-  margin-bottom: 50px;
+.dash-container{
+  height: 1100px;
+  width: 90%;
+  margin: auto;
+}
+.dash-container h1{
+  margin-top: 300px;
+  margin-left: 330px;
+  font-size: 100px;
+  color: #ede3d3;
 }
 
 .grid-container {
@@ -25,8 +32,6 @@ body {
   gap: 20px;
   padding: 20px;
   width: 90%;
-  margin-left: 60px;
-  height: 900px;
 }
 
 .profile-box,
@@ -56,11 +61,11 @@ body {
 .profile-pic {
   position: absolute;
   top: 150px;
-  left: 180px;
-  width: 370px;
-  height: 370px;
+  left: 270px;
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
-  border: 2px solid;
+  border: 10px solid #064426;
 }
 
 .user-data {
@@ -69,19 +74,22 @@ body {
 }
 .user-data h2 {
   position: absolute;
-  top: 550px;
-  left: 230px;
-  text-align: center;
+  top: 650px;
+  left: 90px;
+  text-align: left;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 
 .user-data p {
   position: absolute;
   top: 500px;
-  right: 30px;
-  font-size: 20px;
+  left: 30px;
+  font-size: 30px;
   margin-left: 90px;
-  text-align: center;
+  text-align: right;
 }
 
 .user-info p {
@@ -93,15 +101,15 @@ right: 60px;
 .user-data button {
   background-color: #064426;
   color: #ede3d3;
-  padding: 12px 24;
+  padding: 18px 36px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  width: 250px;
+  width: 320px;
   position: absolute;
   top: 50px;
   right: 50px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 /* FAVOURITES BOX */
@@ -115,6 +123,7 @@ right: 60px;
   position: absolute;
   top: 55px;
   left: 70px;
+  font-size: 40px;
 }
 
 .favourites-title h2 {
@@ -151,26 +160,31 @@ right: 60px;
 }
 
 .property-card img {
-  height: 400px;
-  width: 500px;
+  height: 500px;
+  width: 600px;
+  border-radius: 10px;
 }
 
 .property-card button {
   margin-top: 10px;
   background-color: #064426;
-  font-size: 20px;
+  font-size: 30px;
+  width: 320px;
+  padding: 18px 36px;
 }
 
 .property-card p {
   margin: 0;
+  font-size: 30px;
 }
 
 .manage-favourites-button {
-  width: 250px;
+  width: 370px;
+  padding: 18px 36px;
   position: absolute;
   top: 55px;
   right: 50px;
-  font-size: 20px;
+  font-size: 30px;
   background-color: #064426;
   color: #ede3d3;
 }
@@ -180,24 +194,27 @@ right: 60px;
   position: relative;
   left: 300px;
   width: 70%;
-  height: 100%;
+  height: 118%;
 }
 
 .member-title {
   position: relative;
-  right: 86px;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  bottom: 50px;
+  right: 200px;
+  font-size: 40px;
+  width: 500px;
 }
 
 .member-status p {
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .mem-button {
+  width: 320px;
+  padding: 18px 36px;
   margin-bottom: 20px;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .member-status {
@@ -209,17 +226,20 @@ right: 60px;
   background-color: #064426;
 }
  .mem-logo img{
-  width: 200px;
+  width: 400px;
+  height: 400px;
  }
 
  .mem-points img{
-  width: 200px;
+  width: 400px;
+  height: 400px;
  }
 
 /* YOUR LISTINGS BOX */
 .your-listings {
   position: relative;
   width: 200%;
+  height: 800px;
 }
 
 .listings-box {
@@ -231,6 +251,7 @@ right: 60px;
   position: absolute;
   left: 80px;
   top: 80px;
+  font-size: 40px;
 }
 
 .listings-box {
@@ -259,31 +280,32 @@ right: 60px;
 
 .listing-card p {
   padding-top: 30px;
+  font-size: 30px;
 }
 
 .listing-card img {
-  height: 400px;
-  width: 500px;
+  height: 500px;
+  width: 600px;
+  border-radius: 10px;
 }
 
 .listing-card button {
   margin-top: 10px;
   background-color: #064426;
-  font-size: 20px;
+  font-size: 30px;
+  width: 320px;
+  padding: 18px 36px;
 }
 
-.listing-card p {
-  margin: 0;
-  font-size: 20px;
-}
 
 .add-new-listing-button {
-  width: 250px;
+  width: 370px;
+  padding: 18px 36px;
   position: absolute;
   right: 50px;
   top: 70px;
   background-color: #064426;
-  font-size: 20px;
+  font-size: 30px;
 }
 
 /* SOCIALS BOX */
@@ -291,23 +313,30 @@ right: 60px;
   position: relative;
   display: flex;
   flex-direction: column;
+  height: 700px;
 }
 
 .socials-title {
   position: relative;
-  top: 20px;
-  right: 220px;
+  right: 300px;
+  font-size: 40px;
+}
+
+.socials p{
+  font-size: 30px;
 }
 
 .socials-article {
   position: relative;
   margin: 20px;
   font-size: 20px;
+  font-weight: 700;
 }
 
 .social-img img{
-  width: 450px;
-  height: 300px;
+  width: 800px;
+  height: 500px;
+  border-radius: 10px;
 }
 
 .socials-icons {
@@ -330,12 +359,12 @@ right: 60px;
 }
 .arrow-left {
   left: 180px;
-  top: 180px;
+  top: 300px;
 }
 
 .arrow-right {
   right: 200px;
-  top: 180px;
+  top: 300px;
 }
 /* HELP CENTER BOX */
 .help-center {
@@ -346,17 +375,24 @@ right: 60px;
 
 .help-title {
   position: absolute;
-  top: 20px;
+  top: 30px;
   left: 70px;
+}
+
+.help-buttons {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
 }
 
 .help-buttons button {
   position: relative;
-  top: 20px;
+  top: 50px;
   background-color: #064426;
-  width: 250px;
-  margin: 20px;
-  font-size: 20px;
+  width: 450px;
+  padding: 18px 36px;
+  font-size: 30px;
+  margin-bottom: 40px;
 }
 
 /* GRID BOXES */
@@ -388,6 +424,3 @@ right: 60px;
   width: 200%;
 }
 
-.container {
-  align-items: center;
-}

@@ -56,11 +56,11 @@ const reducer = (state, action) => {
 };
 
 const UserDash = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state] = useReducer(reducer, initialState);
   const { propertyData, userData } = state;
 
   return (
-    <div className="container">
+    <div className="dash-container">
     <h1> your dashboard</h1>
       <div className="grid-container">
         <div className="profile-box">

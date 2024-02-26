@@ -40,7 +40,7 @@ const reducer = (state, action) => {
 };
 
 const ListingInfo = () => {
-  const [propertyData, dispatch] = useReducer(reducer, initialState);
+  const [propertyData] = useReducer(reducer, initialState);
 
   const formHTML = `
     <form action="/action_page.php">

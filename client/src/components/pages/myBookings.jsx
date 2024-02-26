@@ -4,7 +4,7 @@ import './myBooking.css';
 
 const initialState = {
   propertyData: [
-    { id: 'test123', image: 'https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg', name: 'cottonflower lane', location: 'new jersey', price: 300 },
+    { id: 'test123', image: 'https://www.thespruce.com/thmb/Ix89S6tu9dOcaWddD08Woko7pnw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/badiuth-0rNiWRN8RtQ-unsplash-4f0652f47082414c9d89d72357c0b3ba.jpg', name: 'cottonflower lane', location: 'new jersey', price: 300 },
     { id: 'test567', image: 'https://3.bp.blogspot.com/-cuDVUdL2uGE/T9MbF4P98uI/AAAAAAAACoI/ev0R2e86nDc/s1600/Nice+house+design+Toronto+Canada+1.jpg', name: 'stonesmith point', location: 'toronto', price: 780 },
     { id: 'test8910', image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUOhBzBEXm74Pza7zLMpRdmFjFymcYV7WhFfVY8zaQnPvzF9eh-Sj7kS4N3-frLNKJx4mzYIE7UtvT-HaC7ZOCUiY8DlWBLcXRLcWrzt7IT_wzGBvuZFi7YajSgaYjhbcATXLe91XogRASz5McuRcEiJJhOhVs1lKL1DZOi783tfjT9cEk9vWUY1d2g6k/s750/MED445FC27DDAA8433B8055AF6336724710_20230602130501_w2200_q80.jpg', name: 'fika lagom cottage', location: 'djurgården', price: 420 }
   ]
@@ -23,12 +23,12 @@ const reducer = (state, action) => {
 };
 
 const MyBooking = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state] = useReducer(reducer, initialState);
 
   return (
     <div className="container">
     <div className='booking-title'>
-    <h1>my bookings</h1></div>
+    <h1>my booking</h1></div>
       <div className='booking-tabs'>
         <ul>
           <li>previous bookings</li>
