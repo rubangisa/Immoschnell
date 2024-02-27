@@ -19,18 +19,18 @@ body {
 }
 
 .prop-listing-info {
- margin: auto;
+  margin: auto;
   display: flex;
   justify-self: center;
   align-items: center;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
 }
 
 .property-info h2 {
   margin-top: 10px;
   margin-bottom: 60px;
-  margin-left: 20px;
+  margin-left: 60px;
   font-size: 100px;
   width: 600px;
 }
@@ -41,7 +41,12 @@ body {
 }
 
 .property-info p {
-  font-size: 30px;
+  font-size: 40px;
+  margin-left: 30px;
+}
+
+.listing-text p {
+  font-size: 40px;
 }
 
 .listing-grid-container {
@@ -56,19 +61,19 @@ body {
   background-color: #ede3d3;
   color: #064426;
   padding: 20px 0;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .listing-info {
   grid-column: 1;
   border-radius: 5px;
-  width: 600px;
+  width: 900px;
   height: 1000px;
 }
 
 .listing-info p {
   margin-top: 10px;
-  margin-left: 30px;
+  margin-left: 60px;
 }
 
 .main-image {
@@ -102,28 +107,33 @@ body {
 }
 
 .booking-dates {
-  grid-row: 2;
-  display: block;
-  width: 600px;
-  height: 400px;
-  border-radius: 5px;
-  margin: auto;
+  position: relative;
+  height: 600px;
 }
 
 .booking-dates label,
-.booking-dates input[type="date"],
-.booking-dates button {
+.booking-dates input[type="date"] {
   display: block;
+  margin-top: 20px;
   margin-bottom: 10px;
-  margin-left: 30px;
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.booking-dates button {
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
 }
 
 .booking-dates input[type="date"] {
-  width: 300px;
-  height: 50px;
+  width: 800px;
+  height: 100px;
   background-color: #064426;
   color: #ede3d3;
   font-weight: bold;
+  font-size: 30px;
 }
 
 .booking-dates {
@@ -135,6 +145,7 @@ body {
   font-size: 30px;
   background-color: #064426;
   color: #ede3d3;
+  margin-bottom: 20px;
 }
 
 .booking-location {
@@ -151,24 +162,29 @@ body {
 
 .property-details p {
   padding: 60px;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .property-amenities {
   grid-column: 3;
   grid-row: 2 / 4;
   border-radius: 5px;
-
 }
 
 .amen-icons {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 15px; 
-
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
 
+.icon {
+  height: 200px;
+  margin: 20px;
+  padding-bottom: 100px;
+  padding-top: 120px;
+  padding-left: 40px;
+}
 
-.icon{
-  height: 90px;
+.icon:hover {
+  cursor: pointer;
 }

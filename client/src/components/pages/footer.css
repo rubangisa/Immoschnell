@@ -9,11 +9,6 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Playfair Display", serif;
-  display: flex;
-  justify-content: center;
-}
 
 
 .footer {
@@ -21,7 +16,7 @@ body {
     color: #ede3d3;
     padding: 20px 0;
     text-align: center;
-    margin-top: 1000px;
+    background-color: #064426;
   }
   
   .footer-content {

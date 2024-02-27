@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
@@ -13,25 +12,22 @@ body {
   font-family: "Playfair Display", serif;
 }
 
-.dash-container{
-  height: 1100px;
+.dash-container {
   width: 90%;
   margin: auto;
 }
-.dash-container h1{
-  margin-top: 300px;
-  margin-left: 330px;
-  font-size: 100px;
+.dash-container h1 {
+  margin-top: 60px;
+  margin-left: 40px;
+  font-size: 50px;
   color: #ede3d3;
 }
 
 .grid-container {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  padding: 20px;
-  width: 90%;
+  width: 100%;
 }
 
 .profile-box,
@@ -39,90 +35,84 @@ body {
 .favourites-box,
 .your-listings,
 .socials,
-.help-center,
-.bookings {
+.help-center {
   background-color: #ede3d3;
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #064426;
+}
+.big-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  gap: 20px;
+  padding: 40px;
+}
+.box-1 {
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  gap: 20px;
+}
+.box-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.box-3 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 40px;
+  gap: 20px;
 }
 
 /* PROFILE BOX */
 
 .profile-box {
-  position: relative;
-  width: 70%;
-  height: 100%;
-  left: 300px;
+  height: 610px;
 }
 
 .profile-pic {
-  position: absolute;
-  top: 150px;
-  left: 270px;
-  width: 450px;
-  height: 450px;
+  width: 250px;
+  height: 250px;
+  margin-top: 40px;
+  margin-left: 60px;
   border-radius: 50%;
-  border: 10px solid #064426;
+  border: 5px solid #064426;
 }
 
-.user-data {
-  width: 800px;
-  height: 800px;
-}
 .user-data h2 {
-  position: absolute;
-  top: 650px;
-  left: 30px;
-  text-align: left;
-  font-size: 40px;
+  font-size: 20px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
+  margin-left: 120px;
+  margin-top: 10px;
 }
-
 
 .user-data p {
-  position: absolute;
-  top: 500px;
-  left: 30px;
-  font-size: 30px;
-  margin-left: 90px;
-  text-align: right;
-}
-
-.user-info p {
- position: relative;
-top: 650px;
-right: 60px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .user-data button {
   background-color: #064426;
   color: #ede3d3;
-  padding: 18px 36px;
+  margin-left: 30px;
+  margin-top: 50px;
+  padding: 8px 16px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   width: 320px;
-  position: absolute;
-  top: 50px;
-  right: 50px;
-  font-size: 30px;
+  font-size: 20px;
 }
 
 /* FAVOURITES BOX */
 
-.favourites-box {
-  position: relative;
-  width: 200%;
-}
-
 .favourites-title {
-  position: absolute;
-  top: 55px;
-  left: 70px;
   font-size: 40px;
 }
 
@@ -131,27 +121,25 @@ right: 60px;
 }
 
 .favourites-box {
-  width: 1300px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+.title-button {
+  display: flex;
+  justify-content: space-between;
 }
 
 .property-cards {
   display: flex;
-  justify-content: space-between;
-  gap: 90px;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .property-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 10px;
-  margin-top: 90px;
-  margin-left: 40px;
-  width: 500px;
 }
 
 .property-card p {
@@ -160,8 +148,8 @@ right: 60px;
 }
 
 .property-card img {
-  height: 500px;
-  width: 600px;
+  height: 350px;
+  width: 350px;
   border-radius: 10px;
 }
 
@@ -181,7 +169,7 @@ right: 60px;
 .manage-favourites-button {
   width: 370px;
   padding: 18px 36px;
-  position: absolute;
+
   top: 55px;
   right: 50px;
   font-size: 30px;
@@ -190,17 +178,15 @@ right: 60px;
 }
 
 /* MEMBERSHIP STATUS BOX */
+
 .member-status {
-  position: relative;
-  left: 300px;
-  width: 70%;
-  height: 118%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 610px;
 }
 
 .member-title {
-  position: relative;
-  bottom: 50px;
-  right: 200px;
   font-size: 40px;
   width: 500px;
 }
@@ -225,57 +211,43 @@ right: 60px;
 .member-status button {
   background-color: #064426;
 }
- .mem-logo img{
-  width: 400px;
-  height: 400px;
- }
+.mem-logo img {
+  width: 200px;
+  height: 200px;
+}
 
- .mem-points img{
-  width: 400px;
-  height: 400px;
- }
+.mem-points img {
+  width: 200px;
+  height: 200px;
+}
 
 /* YOUR LISTINGS BOX */
 .your-listings {
-  position: relative;
-  width: 200%;
-  height: 800px;
+  display: flex;
+  flex-direction: column;
 }
 
 .listings-box {
-  position: relative;
   width: 200%;
 }
 
 .listings-title {
-  position: absolute;
   left: 80px;
   top: 80px;
   font-size: 40px;
 }
 
-.listings-box {
-  width: 1300px;
-  display: flex;
-  flex-direction: row;
-}
-
 .listing-cards {
   display: flex;
-  justify-content: space-between;
-  gap: 90px;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .listing-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 10px;
-  margin-top: 90px;
-  margin-left: 40px;
-  width: 500px;
 }
 
 .listing-card p {
@@ -284,8 +256,8 @@ right: 60px;
 }
 
 .listing-card img {
-  height: 500px;
-  width: 600px;
+  height: 350px;
+  width: 350px;
   border-radius: 10px;
 }
 
@@ -297,11 +269,10 @@ right: 60px;
   padding: 18px 36px;
 }
 
-
 .add-new-listing-button {
   width: 370px;
   padding: 18px 36px;
-  position: absolute;
+
   right: 50px;
   top: 70px;
   background-color: #064426;
@@ -310,83 +281,74 @@ right: 60px;
 
 /* SOCIALS BOX */
 .socials {
-  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 700px;
+  width: 47%;
 }
 
 .socials-title {
-  position: relative;
-  right: 300px;
   font-size: 40px;
 }
 
-.socials p{
-  font-size: 30px;
-}
-
 .socials-article {
-  position: relative;
   margin: 20px;
-  font-size: 20px;
+  font-size: 10px;
   font-weight: 700;
 }
 
-.social-img img{
-  width: 800px;
-  height: 500px;
+.social-img {
+  margin: 0;
+  display: flex;
+  width: fit-content;
+}
+
+.social-img img {
+  width: 500px;
+  height: 400px;
   border-radius: 10px;
+  margin: 0;
 }
 
 .socials-icons {
-  position: relative;
   display: flex;
   align-items: center;
 }
 
-.arrow-left, .arrow-right{
-  position: absolute;
-  height: 40px;
-  padding: 10px;
-}
-
-.arrow-left:hover, .arrow-right:hover{
- background-color: #064426;
- color: #ede3d3;
- border-radius: 50px;
- cursor: pointer;
-}
-.arrow-left {
-  left: 180px;
-  top: 300px;
-}
-
+.arrow-left,
 .arrow-right {
-  right: 200px;
-  top: 300px;
+  height: 20px;
+  padding: 2px;
 }
+
+.arrow-left:hover,
+.arrow-right:hover {
+  background-color: #064426;
+  color: #ede3d3;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
 /* HELP CENTER BOX */
 .help-center {
-  position: relative;
   display: flex;
   flex-direction: column;
+  width: 47%;
 }
 
 .help-title {
-  position: absolute;
   top: 30px;
   left: 70px;
 }
 
 .help-buttons {
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
 }
 
 .help-buttons button {
-  position: relative;
   top: 50px;
   background-color: #064426;
   width: 450px;
@@ -395,32 +357,23 @@ right: 60px;
   margin-bottom: 40px;
 }
 
-/* GRID BOXES */
+@media only screen and (max-width: 1500px) {
+  .big-box {
+    flex-wrap: wrap;
+  }
 
-.profile-box,
-.favourites-box {
-  grid-row: 1;
+  .box-1 {
+    width: 100%;
+  }
+
+  .socials,
+  .help-center {
+    width: 100%;
+  }
 }
 
-.member-status,
-.your-listings {
-  grid-row: 2;
+@media only screen and (max-width: 375px) {
+  .social-img img {
+    width: 350px;
+  }
 }
-
-.socials,
-.help-center {
-  grid-row: 3;
-  width: 98%;
-}
-
-.socials {
-  grid-column: 2;
-}
-.help-center {
-  grid-column: 3;
-}
-
-.favourites-box {
-  width: 200%;
-}
-

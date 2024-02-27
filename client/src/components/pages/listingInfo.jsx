@@ -71,7 +71,6 @@ const ListingInfo = () => {
           <p>{propertyData[0].location}</p>
           <p>{propertyData[0].price} € per night</p>
           <p>user rating: {propertyData[0].userRating}</p>
-         <br />
           <p>{propertyData[0].guests} guests</p>
           <p>{propertyData[0].bedrooms} bedrooms</p>
           <p>{propertyData[0].beds} beds</p>
@@ -114,8 +113,8 @@ const ListingInfo = () => {
         <div className="booking-location">
           <iframe
             src={propertyData[0].map}
-            width="600"
-            height="450"
+            width="900"
+            height="900"
             style={{ border: 0 }}
             allowfullscreen=""
             loading="lazy"
@@ -123,45 +122,29 @@ const ListingInfo = () => {
         </div>
         <div className="property-details">
           <p className="listing-text">
-            escape to the idyllic countryside retreat of cottonflower lane in
-            canterbury, kent, where luxury meets tranquility. this enchanting
-            property boasts three bedrooms, five beds, and 1.5 bathrooms,
-            accommodating up to six guests in style. hosted by the hospitable
-            hannes and gertha, this haven offers a plethora of amenities
-            including a private hot tub, high-speed wifi, a cozy fireplace, and
-            a fully equipped kitchen. from serene lake views to secure parking,
-            every detail has been carefully curated to ensure a seamless and
-            unforgettable stay. immerse yourself in the beauty of the
-            surrounding landscape, explore historic canterbury, and indulge in
-            the local cuisine at nearby eateries. with a stellar 4.5-star rating
-            from previous guests, cottonflower lane promises an unparalleled
-            blend of comfort, elegance, and natural charm for your next getaway.
-            <br />
-            <br />
-            discover a sanctuary of serenity at cottonflower lane, where every
-            corner is imbued with warmth and hospitality. unwind in the comfort
-            of spacious bedrooms, gather around the crackling fireplace on
-            chilly evenings, or soak your cares away in the indulgent hot tub
-            under the starlit sky. with high-speed wifi and a fully equipped
-            kitchen at your disposal, you can effortlessly blend relaxation with
-            productivity. whether you're seeking adventure in the great outdoors
-            or simply craving a peaceful retreat, cottonflower lane offers the
-            perfect setting to create cherished memories with loved ones. come
-            experience the magic of this hidden gem and let your worries melt
-            away in its embrace.
+          escape to the idyllic countryside retreat of cottonflower lane in canterbury, kent, where luxury meets tranquility. this enchanting property boasts three bedrooms, five beds, and 1.5 bathrooms, accommodating up to six guests in style. hosted by the hospitable hannes and gertha, this haven offers a plethora of amenities including a private hot tub, high-speed wifi, a cozy fireplace, and a fully equipped kitchen. from serene lake views to secure parking, every detail has been carefully curated to ensure a seamless and unforgettable stay.
+        immerse yourself in the beauty of the surrounding landscape and explore the historic village of wickhambreux, nestled in the heart of the countryside. known for its picturesque charm and historic beauty, wickhambreux offers a peaceful retreat away from the hustle and bustle of city life. with its quaint cottages, winding lanes, and centuries-old buildings, the village invites visitors to step back in time and experience a slice of traditional english life.
+          <br />
+<br />
+          just a stone's throw away from wickhambreux lies the beautiful and charming medieval town of canterbury. famous for its stunning cathedral, cobbled streets, and rich history, canterbury is a must-visit destination for history enthusiasts and culture lovers alike. wander through the ancient streets, explore the bustling markets, and indulge in the local cuisine at quaint eateries dotted throughout the town.
+          <br />
+<br />
+          with a stellar 4.5-star rating from previous guests, cottonflower lane promises an unparalleled blend of comfort, elegance, and natural charm for your next getaway. discover a sanctuary of serenity at cottonflower lane, where every corner is imbued with warmth and hospitality. unwind in the comfort of spacious bedrooms, gather around the crackling fireplace on chilly evenings, or soak your cares away in the indulgent hot tub under the starlit sky.
+          
+          with high-speed wifi and a fully equipped kitchen at your disposal, you can effortlessly blend relaxation with productivity. whether you're seeking adventure in the great outdoors or simply craving a peaceful retreat, cottonflower lane offers the perfect setting to create cherished memories with loved ones. come experience the magic of this hidden gem and let your worries melt away in its embrace.
           </p>
         </div>
         <div className="property-amenities">
           <div className="amen-icons">
-          <FontAwesomeIcon icon={faDoorOpen} className="icon" /> 
-          <FontAwesomeIcon icon={faBath} className="icon" /> 
-          <FontAwesomeIcon icon={faHotTub} className="icon" />
-          <FontAwesomeIcon icon={faWifi} className="icon" />
-          <FontAwesomeIcon icon={faFire} className="icon" />
-          <FontAwesomeIcon icon={faCar} className="icon" />
-          <FontAwesomeIcon icon={faKitchenSet} className="icon" />
-          <FontAwesomeIcon icon={faDumbbell} className="icon" />
-          <FontAwesomeIcon icon={faWheelchair} className="icon" />
+          <FontAwesomeIcon icon={faDoorOpen} className="icon" title="self check-in" /> 
+          <FontAwesomeIcon icon={faBath} className="icon" title="bath tub" /> 
+          <FontAwesomeIcon icon={faHotTub} className="icon" title="private outdoor hot tub"/>
+          <FontAwesomeIcon icon={faWifi} className="icon" title="high speed wifi"/>
+          <FontAwesomeIcon icon={faFire} className="icon" title="log fireplace" />
+          <FontAwesomeIcon icon={faCar} className="icon" title="secure parking"/>
+          <FontAwesomeIcon icon={faKitchenSet} className="icon" title="full kitchen"/>
+          <FontAwesomeIcon icon={faDumbbell} className="icon" title="private gym"/>
+          <FontAwesomeIcon icon={faWheelchair} className="icon" title="wheelchair accessible" />
           </div>
         </div>
       </div>
