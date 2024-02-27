@@ -1,0 +1,229 @@
+/* ---------- addListing PAGE CSS ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    max-width: 100vw;
+}
+body {
+    background-color: rgb(6, 68, 38);
+}
+
+/*addListing CONTAINER*/
+
+.addListing-container {
+    background-color: rgb(6, 68, 38);
+    width: 90%;
+    max-width: 90%;
+    height: 95vh;
+    margin: auto;
+}
+/*addListing WRAPPER*/
+
+.addListing-wrapper {
+    background-color: rgb(237, 227, 211);
+    display: flex;
+    border-radius: 10px;
+    height: 90%;
+}
+/*addListing SUB-CONTAINER1*/
+
+.add-left-container1 {
+    color: rgb(6, 68, 38);
+    width: 40%;
+    padding: 5px;
+}
+/*addListing SUB-CONTAINER2*/
+
+  .add-right-container2 {
+    color: rgb(6, 68, 38);
+    height: 100%;
+    width: 60%;
+    padding: 5px;
+}
+/*addListing SUB-CONTAINER2*/
+
+.addListing-tittle {
+    color: rgb(237, 227, 211);
+    padding: 10px;
+    
+}
+
+/*addListing INPUT*/
+
+.addListing-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.add-col {
+    padding: 10px;
+}
+.add-leftRow1 {
+    display: flex;
+    flex: 1;
+}
+.add-leftRow2 {
+    padding: 10px;
+}
+.add-textarea {
+    color: rgb(6, 68, 38);
+    max-height: 20vh;
+    max-width: 100%;
+    min-height: 100px;
+    min-width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+.add-row3 {
+    margin-left: 10px;
+    border-radius: 8px;
+    height: 42%;
+    width: 97%;
+    background-color: white;
+    padding: 15px;
+}
+.add-leftP {
+    margin-left: 10px;
+}
+.add-rightRow1 {
+    display: flex;
+    flex: 1;
+}
+.add-rightRow2 {
+    margin-left: 10px;
+    height: 50%;
+    width: 98%;
+    border: solid rgba(6, 68, 38, 0.569);
+    border-style: dashed;
+    border-radius: 10px;
+    background-color: white;
+}
+.add-rightP {
+    margin-left: 10px;
+}
+.add-lastCol {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.add-lastColButton {
+    color: rgb(237, 227, 211);
+    background-color: rgb(6, 68, 38);
+    width: 150px;
+    height: 40px;
+}
+.add-lastColP {
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    text-align: center;
+}
+.add-rightRow2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.add-uploadPhotosPs {
+    text-align: center;
+    color: rgb(6, 68, 38);
+    overflow: hidden;
+    padding: 10px;
+}
+.add-uploadPhotoP2 {
+    color: rgba(6, 68, 38, 0.609);
+}
+.add-iconsRow {
+    height: 38%;
+    padding: 15px;
+    margin: auto;
+}
+.add-iconsRow1 {
+    display: flex;
+    justify-content: space-around;
+    font-size: xx-large;
+}
+.add-iconsRow2 {
+    display: flex;
+    justify-content: space-around;
+    font-size: xx-large;
+}
+.add-iconsRow3 {
+    display: flex;
+    justify-content: space-around;
+    font-size: xx-large;
+}
+.icon-name {
+    font-size: x-small;
+}
+.fileName {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 15px;
+    padding-top: 5px;
+}
+.addL-image2 {
+    height: 17vh;
+    width: 9vw;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.imagesBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow-x: auto;
+    text-align: center;
+
+}
+.PiHouseSimpleIcon {
+    font-size: x-large;
+}
+.upload-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.error {
+    color: red;
+}
+.addL1-image {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+.imageBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: rgba(6, 68, 38, 0.609);
+}
+.imageBtn:hover {
+    background-color: rgb(6, 68, 38);
+}
+.addL-image2:hover {
+    transform: scale(0.8);
+    opacity: 1;
+    background-color: rgba(0,0,0,0.05);
+}
+
+/* ---------- End ---------- */

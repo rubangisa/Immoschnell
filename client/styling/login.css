@@ -1,0 +1,109 @@
+/* ---------- LOGIN PAGE CSS ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(6, 68, 38);
+}
+
+/*LOGIN SUB-CONTAINER1*/
+
+.login-container {
+    background-color: rgb(6, 68, 38);
+    width: 90%;
+    height: 90vh;
+    margin: auto;
+}
+.login-wrapper {
+    display: flex;
+    border-radius: 10px;
+    height: 90%;
+}
+.log-sub-container1 {
+    width: 45%;
+    background-color: rgb(237, 227, 211);
+    border-radius: 10px;
+    margin: auto;
+    padding: 20px;
+}
+
+.login-tittle {
+    color: rgb(237, 227, 211);
+    margin-bottom: -40px;
+    padding: 10px;
+    margin-left: 30px;
+}
+.log-sub-containerButton {
+    display: flex;
+    justify-content: center;
+    place-content: center;
+    margin-top:2rem;
+}
+
+/*LOGIN INPUT*/
+
+.login-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+/*LOGIN BUTTON*/
+
+.log-submitButton {
+    color: rgb(237, 227, 211);
+    background-color: rgb(6, 68, 38);
+    width: 10vw;
+}
+
+/*HORIZONTAL-LINE*/
+
+.horizontal-line-container {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+  }
+  
+  .horizontal-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: rgb(6, 68, 38);
+  }
+  
+  .word {
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(237, 227, 211);
+    background-color: rgb(6, 68, 38);
+  }
+
+  /*LOGIN ICONS*/
+
+  .logIcon {
+    font-size: xx-large;
+  }
+  .links-container {
+    display: flex;
+    place-items: center;
+    justify-content: space-around;
+    padding: 60px;
+  }
+
+  /*LOGIN SUB-CONTAINER2*/
+
+  .log-sub-container2 {
+    height: 100%;
+    width: 50%;
+    background-image: url(../../client/src/assets/InteriorDesignerMinimalistBrownLogo1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+  /* ---------- End ---------- */
