@@ -6,7 +6,9 @@
   background-color: $primary-color;
   color: $secondary-color;
   height: 80px;
-  gap: 50px;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 .logo {
@@ -121,7 +123,6 @@ button:hover {
     height: 40px;
     width: 30px;
     color: $secondary-color;
-    margin-right: -50px;
   }
   .logo-div {
     flex: 1;

@@ -1,27 +1,43 @@
-const HomePage = () => {
-    return (
-        <div className="homepage">
-        <nav className="navbar" >   
-        <div className="logo"> LOGO </div>
-        <ul>
-        <li>home</li>
-        <li>properties</li>
-        <li>about</li>
-        <li>contact us</li>
-        </ul>  
-        </nav>  
-        
-        <div className="hero-text">
-        <h1>explore our selection of boutique rentals to find your perfect home away from home.</h1>
-        </div>
+import React from "react";
+import "../../../styling/homepage.css";
+import { HiOutlineHomeModern } from "react-icons/hi2";
+import { HiOutlineHome } from "react-icons/hi2";
+import { BsBuildings } from "react-icons/bs";
+import { TbCamper } from "react-icons/tb";
+import { PiCastleTurretLight } from "react-icons/pi";
+import { PiTent } from "react-icons/pi";
 
-        <div className="search-bar">
-        <input type="text" placeholder="where would you like to go?"/>
-        <button></button>
-        </div>
-        
-        
-        </div>
-    )
-}
-export default HomePage 
+const Home = () => {
+  return (
+    <div className="homeContainer">
+      <h2>
+        Explore our selection of boutique rentals to find your perfect home away
+        from home.
+      </h2>
+      <div>
+        <ul className="homeIcons">
+          <li>
+            <HiOutlineHome />
+          </li>
+          <li>
+            <BsBuildings />
+          </li>
+          <li>
+            <TbCamper />
+          </li>
+          <li>
+            <PiCastleTurretLight />
+          </li>
+          <li>
+            <PiTent />
+          </li>
+          <li>
+            <HiOutlineHomeModern />
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
