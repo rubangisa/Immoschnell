@@ -15,6 +15,8 @@ const App = () => {
         <Route path="/" exact element={<Home />} />
         <Route path="/bookings" element={<MyBooking />} exact />
         <Route path="/login" element={<SignUp />} />
+        <Route path="/payments" element={<Payments />} />
+
         {/* Add more routes as needed */}
         {/* 404 Page Not Found */}
         <Route render={() => <h2>Page not found</h2>} />
