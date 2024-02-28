@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/addProperty" element={<AddListing />} />
         {/* Add more routes as needed */}
         {/* 404 Page Not Found */}
-        <Route render={() => <h2>Page not found</h2>} />
+        <Route render={() => <h2>Page not found</h2>}/>
       </Routes>
     </div>
   );
