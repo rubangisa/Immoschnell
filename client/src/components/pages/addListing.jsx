@@ -68,7 +68,7 @@ const addListing = () => {
       <div className="addListing-wrapper">
         <div className="add-left-container1">
             <div className="add-leftRow1">
-            <div className="add-col">
+            <div className="add-col leftCol1">
 
             <label htmlFor="name">Property name*</label>
             <input className="addListing-input"
@@ -79,13 +79,13 @@ const addListing = () => {
             <label htmlFor="name">Room type*</label>
             <input className="addListing-input" type="name" name="name" placeholder="enter Room type..." required/>
           </div>
-          <div className="add-col">
+          <div className="add-col leftCol2">
             <label htmlFor="name">street name*</label>
             <input className="addListing-input" type="name" name="name" placeholder="enter street name..." required/>
             <label htmlFor="name">number of bedrooms*</label>
             <input className="addListing-input" type="name" name="name" placeholder="number of bedrooms..." required/>
           </div>
-          <div className="add-col">
+          <div className="add-col leftCol3">
             <label htmlFor="name">unit number*</label>
             <input className="addListing-input" type="name" name="name" placeholder="enter unit number..." required/>
             <label htmlFor="number">number of beds*</label>
@@ -204,7 +204,7 @@ const addListing = () => {
         </div>
         <div className="add-right-container2">
         <div className="add-rightRow1">
-            <div className="add-col">
+            <div className="add-col rightCol1">
             <label htmlFor="name">area code*</label>
             <input className="addListing-input"
               type="name"
@@ -217,7 +217,7 @@ const addListing = () => {
             <input className="addListing-input" type="name" name="name" placeholder="enter accessibility features..." required/>
 
           </div>
-          <div className="add-col">
+          <div className="add-col rightCol2">
             <label htmlFor="name">state*</label>
             <input className="addListing-input" type="name" name="name" placeholder="enter state..." required/>
             <label htmlFor="name">price per night*</label>
@@ -226,7 +226,7 @@ const addListing = () => {
             <input className="addListing-input" type="name" name="name" placeholder="select options" required/>
 
           </div>
-          <div className="add-col">
+          <div className="add-col rightCol3">
             <label htmlFor="name">city*</label>
             <input className="addListing-input" type="name" name="name" placeholder="enter city..." required/>
             <label htmlFor="name">self check in*</label>
@@ -235,7 +235,7 @@ const addListing = () => {
             <input className="addListing-input" type="name" name="name" placeholder="select option" required/>
 
           </div>
-          <div className="add-col">
+          <div className="add-col rightCol4">
             <label htmlFor="name">country*</label>
             <input className="addListing-input" type="name" name="name" placeholder="enter country..." required/>
             <label htmlFor="name">allow pets*</label>
@@ -266,8 +266,7 @@ const addListing = () => {
                               <img className="addL-image2" src={image} height="200" width="100" alt="upload" />
                               <button className="imageBtn" onClick={() =>
                                 setSelectedImages(selectedImages.filter((e) => e !== image))
-                              } >
-                                delete <TiDelete />
+                              } ><span className="spanDel">delete</span><TiDelete />
                               </button>
                             </div>
                           )
