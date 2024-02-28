@@ -104,6 +104,8 @@ textarea {
     grid-area: contact-right-column;
 }
 
+/*RESPONSIVENESS*/
+
 @media (width <= 800px){
     .contact-container1 {
       display: grid;

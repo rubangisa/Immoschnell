@@ -108,6 +108,8 @@ body {
     grid-area: log-sub-container2;
 }
 
+/*RESPONSIVENESS*/
+
 @media (width <= 800px){
   .login-wrapper {
     display: block;

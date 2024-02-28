@@ -73,6 +73,8 @@ body {
   padding: 15px;
 }
 
+/*RESPONSIVENESS*/
+
 @media (width <= 800px){
     .sub-container1 {
       display: grid;
