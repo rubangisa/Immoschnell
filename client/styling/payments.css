@@ -1,12 +1,21 @@
-.container {
+body {
+  background-color: #064426;
+}
+
+.payment {
+  margin-top: 150px;
+}
+
+.container1 {
   margin: auto;
   padding: 20px;
 }
 
-.wrapper {
+.paymentwrapper {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 20px;
+  background-color: #ede3d3;
 }
 
 form {
@@ -17,6 +26,7 @@ form {
 .container1 {
   display: flex;
   justify-content: space-between;
+  color: #064426;
 }
 
 label {
@@ -67,6 +77,38 @@ p {
 
 input[type=checkbox] {
   margin-right: 8px;
+}
+
+.container-bookingdetails {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  height: 650px;
+  width: 400px;
+  background-color: #ede3d3;
+  color: #064426;
+}
+
+.container-pricesummary {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-height: 400px;
+  background-color: #ede3d3;
+}
+
+.summary-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  margin-top: 20px;
+  grid-gap: 20px;
+  padding: 20px;
 }
 
 /*# sourceMappingURL=payments.css.map */
