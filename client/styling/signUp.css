@@ -12,6 +12,8 @@ body {
     background-color: rgb(6, 68, 38);
     width: 90%;
     margin: auto;
+    padding-top: 50px;
+    margin-top: 80px;
 }
 .sub-container1 {
     display: flex;

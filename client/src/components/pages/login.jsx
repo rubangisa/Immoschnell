@@ -11,7 +11,7 @@ const Login = () => {
     <div className="login-container">
       <h1 className="login-tittle">Log in</h1>
       <div className="login-wrapper">
-        <div className="log-sub-container1">
+        <div className="log-sub-container1 innerMedia">
         <form>
           <div className="log-left-column">
             
@@ -36,7 +36,7 @@ const Login = () => {
             <a href="https://appleid.apple.com/" target="_blank" ><LiaApple className="logIcon"color="rgb(6, 68, 38)"/></a>       
           </div>
         </div>
-        <div className="log-sub-container2"></div>
+        <div className="log-sub-container2 innerMedia"></div>
       </div>
     </div>
   );

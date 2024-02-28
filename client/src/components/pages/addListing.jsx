@@ -1,6 +1,7 @@
 // ---------- addListing Page ----------
 
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { MdOutlinePool } from "react-icons/md";
 import { LiaHotTubSolid } from "react-icons/lia";
 import { MdBalcony } from "react-icons/md";
@@ -33,7 +34,6 @@ import "../../../styling/addlisting.css";
 
 const addListing = () => {
   
-   const [image, setImage] = useState (null)
    const [selectedImages, setSelectedImages] = useState ([]);
    const [isDragging, setIsDragging] = useState (false);
    const onSelectFile = (event) => {
@@ -318,13 +318,13 @@ const addListing = () => {
                 </div>
             </div>
              <section className="fileName">
-                    <p>{selectedImages.length}  Empty <IoTrashBin color="rgb(6, 68, 38)" onClick={()=>{
+                    <p>{selectedImages.length}  Empty <IoTrashBin className="deleteIcon" color="rgb(6, 68, 38)" onClick={()=>{
                       setSelectedImages([])
                     } } /></p>
                   </section>
             <div className="add-lastCol">
               <div className="add-lastColP">
-                <p>fields marked with an *are required <br /> if you have any questions or need help, please <br /> <a href=""> contact us</a></p>
+                <p>fields marked with an *are required <br /> if you have any questions or need help, please <br /> <Link to="/contacts"> contact us</Link></p>
               </div>
               <button className="add-lastColButton">Submit</button>
             </div>
