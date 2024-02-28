@@ -41,6 +41,12 @@ export default function NavBar() {
             <div id="underline-hover"></div>
           </div>
           <div className="nav-parent">
+            <NavLink className="nav-button" to="/addProperty">
+              Add Property
+            </NavLink>{" "}
+            <div id="underline-hover"></div>
+          </div>
+          <div className="nav-parent">
             <NavLink className="nav-button" to="/about">
               About
             </NavLink>
