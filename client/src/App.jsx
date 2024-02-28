@@ -14,7 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/bookings" element={<MyBooking />} exact />
-        <Route path="/login-signup" element={<Login />} />
+        <Route path="/login-signup" element= {<div> <Login/> <SignUp/> </div>} exact />
         <Route path="/contacts" element={<ContactPage />} />
         <Route path="/properties" element={<AddListing />} />
         {/* Add more routes as needed */}
