@@ -97,17 +97,41 @@ textarea {
   flex: 1;
   padding: 30px;
 }
+.contact-left-column  {
+    grid-area: contact-left-column;
+}
+.contact-right-column {
+    grid-area: contact-right-column;
+}
 
 @media (width <= 800px){
-    .contact-wrapper {
-      display: block;
+    .contact-container1 {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
       grid-template-areas:
-      "log-sub-container2"
-      "log-sub-container1"
+      "contact-left-column"
+      "contact-right-column"
     }
+    .contact-container3 {
+        display: grid;
+        align-items: center;
+        place-items: center;
+        place-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "contact-containerP"
+        "contact-containerButton"
+      }
+    .contact-container {
+        height: fit-content;
+        width: fit-content;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        
+      }
 }
 
 /* ---------- END ---------- */
