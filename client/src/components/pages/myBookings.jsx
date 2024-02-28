@@ -26,7 +26,7 @@ const MyBooking = () => {
   const [state] = useReducer(reducer, initialState);
 
   return (
-    <div className="container">
+    <div className="booking-container">
     <div className='booking-title'>
     <h1>my booking</h1></div>
       <div className='booking-tabs'>

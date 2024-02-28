@@ -28,11 +28,6 @@
   .footer-logo {
     margin-bottom: 20px;
   }
-  
-  .footer-logo img {
-    width: 50px;
-    height: auto;
-  }
 
   .footer-links a:hover{
     text-decoration: underline;
@@ -42,7 +37,7 @@
   .footer-links,
   .footer-social {
     margin-bottom: 10px; 
-    font-size: 30px;
+    font-size: 20px;
   }
   
   .footer-links ul,
@@ -73,8 +68,8 @@
   }
 
   .footer-social svg {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
   }
 
   .footer-social svg:hover{
@@ -90,7 +85,7 @@
   .footer-logo img{
     position:relative;
     top: 110px;
-    height: 350px;
-    width: 350px;
+    height: 250px;
+    width: 250px;
     margin: 0px;
   }
