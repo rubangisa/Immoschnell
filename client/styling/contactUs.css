@@ -1,0 +1,113 @@
+/* ---------- CONTACT PAGE CSS ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+body {
+    background-color: rgb(6, 68, 38);
+}
+.contact-container {
+    background-color: rgb(6, 68, 38);
+    width: 90%;
+    margin: auto;
+    padding-top: 50px;
+    margin-top: 80px;
+
+    left: 50%;
+    top: 40%;
+
+}
+.contact-container1 {
+    display: flex;
+}
+.contact-container3 {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
+    
+}
+.contact-containerP1 {
+    display: flex;
+}
+.contact-containerP3 {
+    display: flex;
+}
+
+.contact-tittle {
+    color: rgb(237, 227, 211);
+    margin-bottom: 20px;
+}
+.contact-wrapper {
+    background-color: rgb(237, 227, 211);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-submitButton {
+    color: rgb(237, 227, 211);
+    background-color: rgb(6, 68, 38);
+}
+.contact-textarea {
+    color: rgb(6, 68, 38);
+    width: 100%;
+    height: 20%;
+    max-width: 100%;
+    max-height: 300px;
+    min-height: 100px;
+    min-width: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+
+}
+.contact-sub-container2 {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.contact-input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  padding: 15px;
+}
+.contact-lastColButton {
+    color: rgb(237, 227, 211);
+    background-color: rgb(6, 68, 38);
+    width: 150px;
+    height: 40px;
+}
+textarea {
+    resize: none;
+}
+.contact-left-column,
+.contact-right-column {
+  flex: 1;
+  padding: 30px;
+}
+
+@media (width <= 800px){
+    .contact-wrapper {
+      display: block;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas:
+      "log-sub-container2"
+      "log-sub-container1"
+    }
+}
+
+/* ---------- END ---------- */
