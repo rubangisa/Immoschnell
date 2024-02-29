@@ -46,11 +46,11 @@ const signUp = () => {
           <div className="sub-container2">
             <div className="sub-containerP">
               <div>
-              <input type="checkBox" className=" accent-color"/> <span>agree to the myhome's terms and conditions and myhome's privacy
+              <input type="checkBox" className=" accent-color" required/> <span>agree to the myhome's terms and conditions and myhome's privacy
                 policy</span>
               </div>
               <div>
-                <input type="checkBox" className=" accent-color" required/> <span>Sign up to receive myhome newsletters, offer and promotional
+                <input type="checkBox" className=" accent-color"/> <span>Sign up to receive myhome newsletters, offer and promotional
                 material</span>
               </div>
             </div>
