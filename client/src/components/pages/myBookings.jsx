@@ -42,9 +42,12 @@ const MyBooking = () => {
             <div className="left-content">
               <img src={property.image} alt={property.id} />
               <div className="property-details">
-                <h2>{property.name}, {property.location}</h2>
+                <h2>{property.name}, 
+                <br />
+                {property.location}</h2>
                 <h3>dates</h3>
-                <h3>{property.price}€ per night</h3>
+                <h3>{property.price}€
+                per night</h3>
               </div>
             </div>
             <div className="right-content">

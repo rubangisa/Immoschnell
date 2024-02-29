@@ -13,14 +13,14 @@ body {
 
 .logo {
   height: 160px;
-  width: 160px;
+  /* width: 160px; */
 }
 
 #nav-links-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: -150px;
+  /* margin-left: -150px; */
 }
 
 .nav-button {
@@ -44,7 +44,7 @@ a:hover {
 
 .profile-icon {
   height: 50px;
-  width: 50px;
+  /* width: 50px; */
 }
 
 #underline-hover {

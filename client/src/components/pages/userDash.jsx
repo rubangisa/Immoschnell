@@ -149,12 +149,12 @@ const UserDash = () => {
         <div className="box-3">
           <div className="socials">
             <h2 className="socials-title">socials</h2>
-            <div className="social-icons">
-              <FontAwesomeIcon icon={faArrowLeft} className="arrow-left" />
-              <div className="social-img">
-                <img src={social} alt="social media post" />
-              </div>
-              <FontAwesomeIcon icon={faArrowRight} className="arrow-right" />
+            <div className="icon-image">
+              <FontAwesomeIcon icon={faArrowLeft} className="arrows" />
+
+              <img src={social} alt="social media post" />
+
+              <FontAwesomeIcon icon={faArrowRight} className="arrows" />
             </div>
             <p className="socials-article">
               10 tips to make your home more eco-friendly
