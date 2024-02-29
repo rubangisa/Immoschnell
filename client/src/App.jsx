@@ -14,12 +14,12 @@ const App = () => {
       <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/bookings" element={<MyBooking />} exact />
-        <Route path="/login-signup" element={<Login />} />
+        <Route path="/login-signup" element= {<div> <Login/> <SignUp/> </div>} exact />
         <Route path="/contacts" element={<ContactPage />} />
-        <Route path="/properties" element={<AddListing />} />
+        <Route path="/addProperty" element={<AddListing />} />
         {/* Add more routes as needed */}
         {/* 404 Page Not Found */}
-        <Route render={() => <h2>Page not found</h2>} />
+        <Route render={() => <h2>Page not found</h2>}/>
       </Routes>
     </div>
   );
