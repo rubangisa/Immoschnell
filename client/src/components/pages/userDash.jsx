@@ -103,7 +103,7 @@ const UserDash = () => {
               <p>points earned</p>
               <button className="mem-button">use points</button>
             </div>
-          </div>
+                </div>
           <div className="box-2">
             <div className="favourites-box">
               <div className="title-button">
@@ -123,7 +123,7 @@ const UserDash = () => {
                   </div>
                 ))}
               </div>
-            </div>
+                </div>
 
             <div className="your-listings">
               <div className="title-button">
@@ -145,10 +145,12 @@ const UserDash = () => {
               </div>
             </div>
           </div>
-        </div>
+                </div>
         <div className="box-3">
           <div className="socials">
-            <h2 className="socials-title">socials</h2>
+          <div className="socials-title">
+            <h2 >socials</h2>
+            </div>
             <div className="icon-image">
               <FontAwesomeIcon icon={faArrowLeft} className="arrows" />
 

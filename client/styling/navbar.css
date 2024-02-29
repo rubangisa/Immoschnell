@@ -1,12 +1,8 @@
-body {
-  background-color: #064426;
-}
-
 #header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #064426;
+  background-color:  #064426;
   color: #ede3d3;
   height: 150px;
   position: absolute;
@@ -14,16 +10,18 @@ body {
   width: 100%;
 }
 
+
+
 .logo {
   height: 160px;
-  /* width: 160px; */
+  width: 160px;
 }
 
 #nav-links-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-left: -150px; */
+  margin-left: -150px;
 }
 
 .nav-button {
@@ -35,19 +33,17 @@ body {
   margin: 0 10px;
   transition: 0.3s;
 }
-
 a {
   text-decoration: none;
   transition: 0.3s;
 }
-
 a:hover {
   color: #ede3d3 !important;
 }
 
 .profile-icon {
   height: 50px;
-  /* width: 50px; */
+  width: 50px;
 }
 
 #underline-hover {
@@ -61,10 +57,12 @@ a:hover {
   align-items: center;
 }
 
-.nav-parent:hover #underline-hover {
-  width: 100%;
-  background-color: #ede3d3;
-  transition: 0.3s linear;
+.nav-parent:hover {
+  #underline-hover {
+    width: 100%;
+    background-color: #ede3d3;
+    transition: 0.3s linear;
+  }
 }
 
 #profile-icon {
@@ -81,7 +79,7 @@ button:hover {
   height: 350px;
   top: 14%;
   right: 0;
-  background-color: #064426;
+  background-color:  #064426;
   border: 1px solid #ede3d3;
   box-shadow: -2px 10px 14px rgb(6, 26, 6);
   z-index: 1000;
@@ -104,7 +102,6 @@ button:hover {
   padding: 8px 0;
   transition: background-color 0.3s ease;
 }
-
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -120,6 +117,7 @@ button:hover {
     margin-right: 2rem;
   }
 }
+
 @media (max-width: 900px) {
   .menu-toggle {
     display: flex;
@@ -136,6 +134,7 @@ button:hover {
   .profile-icon {
     min-width: auto;
   }
+
   .header-nav {
     display: none;
     flex-direction: column;
@@ -145,12 +144,13 @@ button:hover {
     right: 0;
     z-index: 10;
   }
+
   .header-nav.open {
     position: fixed;
     height: 350px;
     top: 15%;
     right: 0;
-    background-color: #064426;
+    background-color:  #064426;
     border: 1px solid #ede3d3;
     box-shadow: -2px 10px 14px rgb(6, 26, 6);
     z-index: 1000;
@@ -158,47 +158,54 @@ button:hover {
     margin-right: 10px;
     display: flex;
     flex-direction: column;
+
+    #nav-links-container {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-left: 0px;
+    }
+    .nav-button {
+      padding-bottom: 40px;
+    }
+
+    a {
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    a:hover {
+      color: #ede3d3 !important;
+    }
+    #underline-hover {
+      height: 2px;
+      width: 0px;
+    }
+    .nav-parent:hover {
+      #underline-hover {
+        width: 100%;
+        background-color: #ede3d3;
+        transition: 0.3s linear;
+      }
+    }
   }
-  .header-nav.open #nav-links-container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 0px;
-  }
-  .header-nav.open .nav-button {
-    padding-bottom: 40px;
-  }
-  .header-nav.open a {
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  .header-nav.open a:hover {
-    color: #ede3d3 !important;
-  }
-  .header-nav.open #underline-hover {
-    height: 2px;
-    width: 0px;
-  }
-  .header-nav.open .nav-parent:hover #underline-hover {
-    width: 100%;
-    background-color: #ede3d3;
-    transition: 0.3s linear;
-  }
+
   .header-nav ul {
     flex-direction: column;
     align-items: center;
   }
+
   .nav-span {
     margin: 5px 0;
   }
 }
+
 @media (max-width: 500px) {
   .header-nav.open {
     position: fixed;
     height: 350px;
     top: 11%;
     right: 0;
-    background-color: #064426;
+    background-color:  #064426;
     border: 1px solid #ede3d3;
     box-shadow: -2px 10px 14px rgb(6, 26, 6);
     z-index: 1000;
@@ -208,5 +215,3 @@ button:hover {
     flex-direction: column;
   }
 }
-
-/*# sourceMappingURL=navbar.css.map */
