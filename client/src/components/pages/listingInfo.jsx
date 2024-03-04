@@ -5,11 +5,14 @@ import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import { faBath } from "@fortawesome/free-solid-svg-icons";
 import { faHotTub } from "@fortawesome/free-solid-svg-icons";
 import { faWifi } from "@fortawesome/free-solid-svg-icons";
-import { faFire } from "@fortawesome/free-solid-svg-icons";
+import { faHouseFire } from "@fortawesome/free-solid-svg-icons";
 import { faCar } from "@fortawesome/free-solid-svg-icons";
 import { faKitchenSet } from "@fortawesome/free-solid-svg-icons";
 import { faDumbbell } from "@fortawesome/free-solid-svg-icons";
 import { faWheelchair } from "@fortawesome/free-solid-svg-icons";
+import { faShieldHalved } from "@fortawesome/free-solid-svg-icons";
+import { faSeedling } from "@fortawesome/free-solid-svg-icons";
+import { faTv } from "@fortawesome/free-solid-svg-icons";
 
 const initialState = [
   {
@@ -96,8 +99,9 @@ const ListingInfo = () => {
         </div>
         </div>
         <div className="box-5">
-        <div className="main-image"></div>
-        <div className="prop-images">
+        <div className="main-image">
+        <img src="https://images.unsplash.com/photo-1472377723522-4768db9c41ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="main-image" /></div>
+        
           <div className="gallery">
             <img
               className="gallery-img"
@@ -124,12 +128,12 @@ const ListingInfo = () => {
               alt="prop5"
             />
           </div>
-        </div>
-        </div>
+          </div>
+       
 
         <div className="box-6">
         <div className="property-details">
-          <p className="listing-text">
+          <p>
             escape to the idyllic countryside retreat of cottonflower lane in
             canterbury, kent, where luxury meets tranquility. this enchanting
             property boasts three bedrooms, five beds, and 1.5 bathrooms,
@@ -148,15 +152,7 @@ const ListingInfo = () => {
             of traditional english life.
             <br />
             <br />
-            just a stone's throw away from wickhambreux lies the beautiful and
-            charming medieval town of canterbury. famous for its stunning
-            cathedral, cobbled streets, and rich history, canterbury is a
-            must-visit destination for history enthusiasts and culture lovers
-            alike. wander through the ancient streets, explore the bustling
-            markets, and indulge in the local cuisine at quaint eateries dotted
-            throughout the town.
-            <br />
-            <br />
+            
             with a stellar 4.5-star rating from previous guests, cottonflower
             lane promises an unparalleled blend of comfort, elegance, and
             natural charm for your next getaway. discover a sanctuary of
@@ -172,26 +168,33 @@ const ListingInfo = () => {
             this hidden gem and let your worries melt away in its embrace.
           </p>
         </div>
-        <div className="property-amenities">
           <div className="amen-icons">
+          <FontAwesomeIcon icon={faShieldHalved}
+          className="icon"
+          title="verified host"
+          />
+
             <FontAwesomeIcon
               icon={faDoorOpen}
               className="icon"
               title="self check-in"
             />
+
+            <FontAwesomeIcon
+            icon={faWifi}
+            className="icon"
+            title="high speed wifi"
+          />
             <FontAwesomeIcon icon={faBath} className="icon" title="bath tub" />
             <FontAwesomeIcon
               icon={faHotTub}
               className="icon"
               title="private outdoor hot tub"
             />
+           
+
             <FontAwesomeIcon
-              icon={faWifi}
-              className="icon"
-              title="high speed wifi"
-            />
-            <FontAwesomeIcon
-              icon={faFire}
+              icon={faHouseFire}
               className="icon"
               title="log fireplace"
             />
@@ -215,8 +218,18 @@ const ListingInfo = () => {
               className="icon"
               title="wheelchair accessible"
             />
+
+            <FontAwesomeIcon icon={faSeedling}
+            className="icon"
+            title="eco friendly"
+            />
+
+            <FontAwesomeIcon icon={faTv}
+            className="icon"
+            title="smart tv"
+            />
           </div>
-        </div>
+        
         </div>
       </div>
     </div>

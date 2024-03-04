@@ -41,6 +41,7 @@ const MyBooking = () => {
           <div key={property.id} className="booking-box">
             <div className="left-content">
              <img src={property.image} alt={property.id} />
+             </div>
               <div className="property-details">
               <h2>{property.name}, 
                 <br />
@@ -49,7 +50,7 @@ const MyBooking = () => {
                 <h3>{property.price}€
                 per night</h3>
               </div>
-            </div>
+            
             <div className="right-content">
               <button><p>booking details</p></button>
               <button>re-book property</button>

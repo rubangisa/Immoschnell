@@ -30,7 +30,7 @@ import "./App.css";
 function App() {
   return (
     <>
-
+      <NavBar />
       <Routes>
         <Route path="/my-booking" element={<MyBookings />} />
         <Route path="/" element={<UserDash />} />
