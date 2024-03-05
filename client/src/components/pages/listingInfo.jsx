@@ -81,7 +81,9 @@ const ListingInfo = () => {
             <p>{propertyData[0].bathrooms} bathrooms</p>
             <p>hosted by: {propertyData[0].hosts}</p>
             <hr />
+           
           </div>
+          <div className="vl"></div>
           <div
           className="booking-dates"
           dangerouslySetInnerHTML={{ __html: formHTML }}
@@ -90,8 +92,6 @@ const ListingInfo = () => {
         <div className="booking-location">
           <iframe
             src={propertyData[0].map}
-            width="300"
-            height="300"
             style={{ border: 0 }}
             allowfullscreen=""
             loading="lazy"
