@@ -66,8 +66,7 @@ body {
 
 .booking-box {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   background-color: #ede3d3;
   padding: 30px;
@@ -92,7 +91,6 @@ img {
   flex-direction: row;
   justify-content: space-between;
   color: #064426;
-  width: 400px;
 }
 
 .property-details h3 {
@@ -170,17 +168,13 @@ img {
   }
 }
 
-@media only screen and (max-width: 970px) {
-  .left-content img {
-    width: 200px;
-    height: 200px;
-  }
-  .booking-tabs li {
-    margin-right: 10px;
-  }
+@media only screen and (max-width: 990px) {
+ .booking-box{
+  margin-left: 120px;
+ }
 }
 
-@media only screen and (max-width: 920px) {
+@media only screen and (max-width: 940px) {
   .booking-title h1 {
     font-size: 30px;
   }
@@ -188,15 +182,13 @@ img {
   .booking-tabs li {
     margin-right: 10px;
   }
-  .left-content {
-    width: 200px;
-    height: 200px;
+
+  .booking-box{
+    flex-wrap: wrap;
+    width: 80%;
   }
 
-  .left-content img {
-    width: 150px;
-    height: 150px;
-  }
+
 }
 
 .property-details h2 {
@@ -214,9 +206,10 @@ img {
 @media only screen and (max-width: 650px) {
   .booking-box {
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 500px;
-    margin-right: 60px;
+   margin: 20px 0px 0px 60px;
   }
 
   .booking-tabs li {
@@ -240,6 +233,7 @@ img {
 
   .booking-box {
     width: 400px;
+    margin-left: 10px;
   }
 
   .property-details h2 {
@@ -250,6 +244,7 @@ img {
 @media only screen and (max-width: 460px) {
   .booking-box {
     width: 350px;
+    margin-left: 50px;
   }
 
   .booking-title {
@@ -265,6 +260,11 @@ img {
 @media only screen and (max-width: 400px) {
   .booking-box {
     width: 300px;
+
+  }
+  
+  .main-content{
+    margin-left: 20px;
   }
 
   .booking-tabs li {
