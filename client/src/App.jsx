@@ -7,6 +7,8 @@ import Login from './components/pages/login.jsx';
 import About from './components/pages/about.jsx';
 import AddListing from './components/pages/addListing.jsx';
 import ContactPage from './components/pages/contactUs.jsx';
+// import NotFound from './components/pages/notFound.jsx';
+
 import './App.css';
 const App = () => {
   return (
@@ -19,6 +21,7 @@ const App = () => {
         <Route path="/about" element= {<About/>} exact />
         <Route path="/contacts" element={<ContactPage />} />
         <Route path="/addProperty" element={<AddListing />} />
+        
         {/* Add more routes as needed */}
         {/* 404 Page Not Found */}
         <Route render={() => <h2>Page not found</h2>}/>
