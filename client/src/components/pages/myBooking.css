@@ -1,52 +1,105 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
-/* 
-.navbar {
-  background-color: #064426;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+}
+
+.booking-container {
+  width: 90%;
+  margin-top: 150px;
+}
+
+.booking-title h1 {
+  margin-left: 60px;
+}
+
+.booking-tabs ul {
+  display: flex;
+  list-style: none;
   color: #ede3d3;
-  padding: 16px; 
-} */
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+
+.booking-tabs li {
+  font-size: 20px;
+  border-right: 3px solid #ede3d3;
+  padding-right: 30px;
+  margin-right: 50px;
+}
+
+.booking-tabs li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16px;
 }
 
-container h2 {
+.booking-title h1 {
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-size: 40px;
   color: #ede3d3;
-  font-size: 60px;
+}
+
+.property-details h2 {
+  display: block;
+  font-size: 30px;
+  margin-right: 50px;
+  margin-left: 40px;
+  font-style: italic;
+}
+
+.property-details h3 {
+  font-size: 40px;
+  padding-top: 10px;
+  padding-right: 80px;
 }
 
 .booking-box {
   display: flex;
   justify-content: space-between;
-  width: 103%;
-  height: 250px;
+  align-items: center;
   background-color: #ede3d3;
-  margin-bottom: 16px;
-  padding: 16px;
+  padding: 30px;
+  margin: 20px 20px;
   border-radius: 10px;
 }
 
+.left-content {
+  display: flex;
+  align-items: center;
+}
+
 img {
-  width: 50px;
-  height: 50px;
+  width: 350px;
+  height: 250px;
   margin-right: 16px;
+  border-radius: 10px;
 }
 
 .property-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   color: #064426;
-  margin-right: 16px;
-  border: 10px solid pink;
+}
+
+.property-details h3 {
+  font-weight: 400;
+  font-size: 20px;
 }
 
 .property-details h2 {
-  margin-bottom: 8px;
-}
-
-.property-details p {
-  margin: 0;
+  font-weight: 700;
 }
 
 .right-content {
@@ -57,15 +110,172 @@ img {
 
 .right-content button {
   background-color: #064426;
-  margin-bottom: 8px;
+  color: #ede3d3;
+  margin-top: 30px;
+  padding: 8px 16px;
+  width: 320px;
+  font-size: 20px;
 }
 
-button {
-  background-color: #ede3d3;
-  color: #064426;
+@media only screen and (max-width: 1650px) {
+  .main-content {
+    width: 100%;
+    margin-left: 40px;
+  }
 }
 
-/* Font */
-body {
-  font-family: "Playfair Display", serif;
+@media only screen and (max-width: 1400px) {
+  .booking-box {
+    width: 100%;
+    margin-left: 40px;
+  }
+
+  .right-content button {
+    width: 250px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .right-content button {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .left-content img {
+    width: 250px;
+  }
+  .right-content button {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .left-content img {
+    width: 250px;
+  }
+
+  .property-details h2 {
+    font-size: 20px;
+  }
+
+  .property-details h3 {
+    font-size: 15px;
+  }
+  .right-content button {
+    width: 200px;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+ .booking-box{
+  margin-left: 120px;
+ }
+}
+
+@media only screen and (max-width: 940px) {
+  .booking-title h1 {
+    font-size: 30px;
+  }
+
+  .booking-tabs li {
+    margin-right: 10px;
+  }
+
+  .booking-box{
+    flex-wrap: wrap;
+    width: 80%;
+  }
+
+
+}
+
+.property-details h2 {
+  font-size: 20px;
+}
+
+.property-details h3 {
+  display: none;
+}
+
+.main-content {
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 650px) {
+  .booking-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+   margin: 20px 0px 0px 60px;
+  }
+
+  .booking-tabs li {
+    font-size: 20px;
+    padding-left: 30px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .booking-tabs li {
+    padding-left: 30px;
+    margin-right: 10px;
+    font-size: 15px;
+    width: 115px;
+  }
+
+  .booking-title h1 {
+    padding-left: 30px;
+  }
+
+  .booking-box {
+    width: 400px;
+    margin-left: 10px;
+  }
+
+  .property-details h2 {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .booking-box {
+    width: 350px;
+    margin-left: 50px;
+  }
+
+  .booking-title {
+    font-size: 20px;
+  }
+  .booking-tabs li {
+    font-size: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 115px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .booking-box {
+    width: 300px;
+
+  }
+  
+  .main-content{
+    margin-left: 20px;
+  }
+
+  .booking-tabs li {
+    font-size: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100px;
+  }
+
+  .right-content button {
+    width: 200px;
+    font-size: 10px;
+  }
 }
