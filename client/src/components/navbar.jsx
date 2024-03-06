@@ -4,10 +4,12 @@ import logo from "./images/logo.png";
 import { CiUser } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useContext, useState } from "react";
+import { LoginContext } from "../contexts/AppContext";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
+  const {login, dispatchLogin} = useContext(LoginContext);
 
   const toggleProfile = () => {
     setProfileMenuOpen(!profileMenuOpen);
@@ -16,6 +18,9 @@ export default function NavBar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  const handleSignOut = () => {
+    dispatchLogin ({type : "loggedOut"})
+  }
 
   return (
     <div id="header-container">
@@ -60,12 +65,16 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-
+      <div className="user-name-container">
+      <span>{login.loggedIn && login.user.firstName}</span>
       <div className="nav-parent">
+        
         <button id="profile-icon" onClick={toggleProfile}>
           <CiUser className="profile-icon" />
         </button>
       </div>
+      </div>
+      
       {profileMenuOpen && (
         <div className="dropdown-menu">
           <div className="nav-parent-profile">
@@ -97,10 +106,15 @@ export default function NavBar() {
           </div>
 
           <div className="nav-parent-profile">
+          {login.loggedIn ? <NavLink className="profile-button" onClick={handleSignOut}>
+              Logout
+              <div id="underline-hover"></div>
+            </NavLink> :
             <NavLink className="profile-button" to="/login-signup">
               Login/Sign Up
               <div id="underline-hover"></div>
-            </NavLink>
+            </NavLink> }
+           
           </div>
         </div>
       )}
