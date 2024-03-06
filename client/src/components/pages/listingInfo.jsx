@@ -161,7 +161,7 @@ const ListingInfo = () => {
             gather around the crackling fireplace on chilly evenings, or soak
             your cares away in the indulgent hot tub under the starlit sky. with
             high-speed wifi and a fully equipped kitchen at your disposal, you
-            can effortlessly blend relaxation with productivity. whether you're
+            can effortlessly blend relaxation with productivity. whether you are
             seeking adventure in the great outdoors or simply craving a peaceful
             retreat, cottonflower lane offers the perfect setting to create
             cherished memories with loved ones. come experience the magic of
