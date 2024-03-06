@@ -1,4 +1,3 @@
-
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/navbar.jsx";
 import MyBooking from "./components/pages/myBookings";
