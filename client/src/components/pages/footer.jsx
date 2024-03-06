@@ -1,12 +1,11 @@
 import "./footer.css";
 import myhome from "../images/my home-logo.png";
-
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faThreads } from "@fortawesome/free-brands-svg-icons";
 import { faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
-
 const Footer = () => {
   return (
     <footer className="footer">
@@ -41,10 +40,10 @@ const Footer = () => {
         <div className="footer-links">
           <ul>
             <li>
-              <a href="#">about us</a>
+             <Link to="/about"> about us</Link>
             </li>
             <li>
-              <a href="#">contact us</a>
+             <Link to="/contacts"> contact us</Link>
             </li>
             <li>
               <a href="#">privacy policy</a>
@@ -61,5 +60,4 @@ const Footer = () => {
     </footer>
   );
 };
-
 export default Footer;
