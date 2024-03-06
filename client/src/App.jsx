@@ -1,12 +1,9 @@
-
-
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/navbar.jsx";
 import UserDash from "./components/pages/userDash.jsx";
 import ListingInfo from "./components/pages/listingInfo.jsx";
 import Footer from "./components/pages/footer.jsx";
 import SignUp from './components/pages/signUp.jsx';
-import NavBar from './components/navbar.jsx';
 import MyBooking from './components/pages/myBookings.jsx';
 import Home from "./components/pages/homePage.jsx";
 import Login from './components/pages/login.jsx';

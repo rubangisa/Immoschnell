@@ -28,7 +28,7 @@ import { MdBeachAccess } from "react-icons/md";
 import { CgGym } from "react-icons/cg";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { TiDelete } from "react-icons/ti";
-import { IoTrashBin } from "react-icons/io5";
+// import { IoTrashBin } from "react-icons/io5";
 import didier from '../../assets/giftrash.gif'
 import { PiHouseSimple } from "react-icons/pi";
 import "../../../styling/addlisting.css";

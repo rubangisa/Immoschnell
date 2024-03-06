@@ -20,6 +20,9 @@ body {
 .accent-color {
     accent-color: rgb(6, 68, 38);
 }
+.accent-color2 {
+    margin-left: -70px;
+}
 .sub-container1 {
     display: flex;
 }
