@@ -1,7 +1,6 @@
 
 
 import { Routes, Route } from "react-router-dom";
-import NavBar from "./components/navbar.jsx";
 import UserDash from "./components/pages/userDash.jsx";
 import ListingInfo from "./components/pages/listingInfo.jsx";
 import Footer from "./components/pages/footer.jsx";
