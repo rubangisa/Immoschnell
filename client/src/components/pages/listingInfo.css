@@ -12,11 +12,11 @@ button:hover {
   text-decoration: underline;
 }
 
-body {
+/* body {
   font-family: "Playfair Display", serif;
   display: flex;
   justify-content: center;
-}
+} */
 
 .listing-grid-container {
   display: flex;
