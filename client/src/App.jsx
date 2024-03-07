@@ -9,6 +9,7 @@ import Home from "./components/pages/homePage.jsx";
 import Login from './components/pages/login.jsx';
 import About from './components/pages/about.jsx';
 import AddListing from './components/pages/addListing.jsx';
+import NotFound from "./components/pages/notFound.jsx";
 import ContactPage from './components/pages/contactUs.jsx';
 import Payments from './components/pages/payments.jsx';
 import AllProperties from './components/pages/properties.jsx';
@@ -30,6 +31,8 @@ const App = () => {
         <Route path="/allproperties" element={<AllProperties />} />
         <Route path="/addProperty" element={<AddListing />} />
         <Route path="/userDash" element={<UserDash />} />
+
+        <Route path="*" element={<NotFound />} />
         
         {/* Add more routes as needed */}
         {/* 404 Page Not Found */}
