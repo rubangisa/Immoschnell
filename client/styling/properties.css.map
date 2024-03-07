@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"properties.css"}
+{"version":3,"sourceRoot":"","sources":["main.scss","properties.scss"],"names":[],"mappings":"AAKA;EACI,kBALY;;;ACChB;EACE;;;AAEF;EACE;EACA;EACA,ODNgB;;;ACSlB;EACE;EACA;EACA;EACA;EACA;;;AAGF;EASE;EACA;EACA;EACA,kBD7BgB;EC8BhB;EACA;EACA;;AAdA;EACE;EACA;EACA;;AAEF;EACE;;AASF;EACE","file":"properties.css"}

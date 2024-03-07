@@ -12,7 +12,7 @@ let propertyData = {
   numberOfBedrooms: 2,
   numberOfBeds: 3,
   numberOfBathrooms: 2,
-  pricePerNight: 150.9                                                     ,
+  pricePerNight: 150.9,
   selfCheckIn: true,
   allowPets: false,
   accessibilityFeatures: true,
@@ -24,7 +24,7 @@ let propertyData = {
   images: [
     {
       name: "Living Room",
-      url: "https://example.com/images/living_room.jpg",
+      url: "https://www.neubaukompass.com/bilder/objekt/24162/10036764-gross.jpg",
     },
     {
       name: "Bedroom",
@@ -85,6 +85,8 @@ const getPropertyDetails = async (dispatchProperty) => {
     });
   }
 };
+
+
 
 const getLocationName = async (dispatchProperty) => {
   try {
