@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap");
 body {
   background-color: #064426;
 }
@@ -6,9 +7,11 @@ body {
   margin-top: 150px;
 }
 
-.container1 {
-  margin: auto;
-  padding: 20px;
+.bookingdetailsh1 {
+  color: #ede3d3;
+  font-style: normal;
+  font-weight: 800;
+  margin-left: 25px;
 }
 
 .paymentwrapper {
@@ -16,6 +19,7 @@ body {
   border-radius: 8px;
   padding: 20px;
   background-color: #ede3d3;
+  color: #064426;
 }
 
 form {
@@ -25,8 +29,10 @@ form {
 
 .container1 {
   display: flex;
-  justify-content: space-between;
   color: #064426;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  gap: 80px;
 }
 
 label {
@@ -35,11 +41,13 @@ label {
 }
 
 input {
+  background-color: white;
   width: 100%;
   padding: 8px;
   margin-bottom: 16px;
-  border: 1px solid #ccc;
+  border: 2px solid #064426;
   border-radius: 4px;
+  width: 150px;
 }
 
 .container2 {
@@ -57,16 +65,19 @@ p {
 }
 
 .containerButton {
-  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
 }
 
 .submitButton {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
+  background-color: #064426;
+  color: #ede3d3;
+  padding: 15px 70px;
+  border-radius: 9.08px;
   cursor: pointer;
+  margin-top: 20px;
+  margin-left: auto;
 }
 
 .IoIosCheckbox,
@@ -80,13 +91,44 @@ input[type=checkbox] {
 }
 
 .container-bookingdetails {
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 8px;
   padding: 20px;
   height: 650px;
   width: 400px;
   background-color: #ede3d3;
   color: #064426;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bookingdetailsh4 {
+  margin-top: 20px;
+  margin-bottom: -40px;
+  font-weight: 800;
+  font-size: 30px;
+  font-style: bold;
+}
+
+.bookingdetails {
+  margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.booking-btn {
+  background-color: #064426;
+  color: #ede3d3;
+  padding: 10px;
+  min-width: 70%;
+  border: none;
+  border-radius: 9.08px;
+  cursor: pointer;
 }
 
 .container-pricesummary {
@@ -109,6 +151,232 @@ input[type=checkbox] {
   margin-top: 20px;
   grid-gap: 20px;
   padding: 20px;
+}
+
+.property-location {
+  margin-top: -20px;
+  margin-bottom: 50px;
+}
+
+.payment-table {
+  padding-top: 4%;
+  padding-bottom: 1%;
+  background-color: #ede3d3;
+  color: #064426;
+  width: 100%;
+}
+
+.payment-header th {
+  font-weight: 800;
+  font-size: 14px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.table-separator {
+  width: 100%;
+  background-color: #064426;
+  height: 2px;
+}
+
+.payment-info td {
+  text-align: center;
+}
+.payment-info input {
+  width: 20%;
+  background-color: #fff;
+  color: #064426;
+}
+
+.payment-table {
+  border-collapse: collapse;
+}
+.payment-table td,
+.payment-table th {
+  border-bottom: 1px solid #064426;
+  padding: 5px;
+}
+.payment-table th {
+  border-bottom: 2px solid #064426;
+  padding: 20px;
+}
+
+.payment-methods-btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.add-payment-method-btn {
+  background-color: #064426;
+  color: #ede3d3;
+  padding: 15px 70px;
+  border-radius: 9.08px;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+.payment-options-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.payment-option-button {
+  background-color: #064426;
+  color: #ede3d3;
+  width: 250px;
+  padding: 15px;
+  border-radius: 9.08px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.payment-option-button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 250px;
+}
+.payment-option-button .space {
+  width: 20px;
+}
+.payment-option-button .icon-payments {
+  width: 20px;
+  height: 20px;
+}
+
+.card-type-select {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 20px;
+  color: #064426;
+  font-size: 14px;
+  font-weight: 800;
+  border: 2px solid #064426;
+}
+.card-type-select option {
+  color: #064426;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.left-column .card-number-input {
+  background-color: white;
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 2px solid #064426;
+  border-radius: 4px;
+}
+
+.right-column .expiry-date-input {
+  background-color: white;
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 2px solid #064426;
+  border-radius: 4px;
+  color: #064426;
+}
+
+.container-terms {
+  margin-top: 80px;
+  font-size: 12px;
+}
+
+.li-header {
+  font-weight: 800;
+}
+
+.termslist {
+  list-style-type: none;
+}
+.termslist li {
+  margin-bottom: 10px;
+}
+
+.pricesummaryh4 {
+  margin: 20px;
+  margin-bottom: -40px;
+  font-weight: 800;
+  font-size: 25px;
+  font-style: bold;
+  color: #064426;
+}
+
+.pricesummary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px 2px;
+  font-weight: 800;
+  font-size: 30px;
+  font-style: italic;
+  color: #ede3d3;
+  background-color: #064426;
+  height: 100px;
+}
+.pricesummary-total .ps-text {
+  margin-left: 20px;
+}
+.pricesummary-total .ps-value {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 30px;
+  font-style: normal;
+}
+
+.taxesandcharges {
+  font-size: 10px;
+  margin-top: 10px;
+  padding-right: 10px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.addedtax {
+  margin: 0px 10px;
+  margin-top: -70px;
+  color: black;
+}
+.addedtax h5 {
+  font-size: 15px;
+  font-weight: 800;
+  font-style: bold;
+}
+
+.ps-text {
+  margin-left: 20px;
+}
+
+.ps-value {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 30px;
+  font-style: normal;
+}
+
+.vat-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=payments.css.map */

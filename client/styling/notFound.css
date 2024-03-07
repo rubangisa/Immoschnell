@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+.notFoundContainer {
+  margin-top: 150px;
+  padding-top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  position: relative;
+}
+.content h2 {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-size: 15em;
+}
+.content h2:nth-child(1) {
+  color: transparent;
+  -webkit-text-stroke: 3px #333;
+  filter: blur(3px);
+}
+.content h2:nth-child(3) {
+  color: #fff6;
+  filter: drop-shadow(0 15px 15px #fff);
+  z-index: 1;
+  text-shadow: -15px 15px 15px rgba(0, 0, 0, 0.2),
+    15px -15px 15px rgba(255, 255, 255, 0.2);
+}
+.content h2:nth-child(2) {
+  color: rgba(6, 68, 38, 0.83);
+  z-index: 2;
+  animation: animate 4s ease-in-out infinite;
+}
+.notfoundIcon {
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+}
+.section1 {
+    width: 100vw;
+    height: 50vh;
+}
+.section2 {
+    width: 100vw;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imageHolder {
+    height: 5vh;
+    width: 600px;
+    background: white;
+    border-bottom: 3px solid red;
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    clip-path: polygon(69% 64%, 47% 56%, 45% 100%, 27% 100%, 25% 56%, 2% 62%, 36% 19%);
+      }
+      50%
+  {
+    clip-path: polygon(100% 63%, 73% 57%, 72% 100%, 56% 100%, 55% 57%, 30% 63%, 63% 19%);
+  } 
+}

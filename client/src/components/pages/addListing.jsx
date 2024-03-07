@@ -28,7 +28,8 @@ import { MdBeachAccess } from "react-icons/md";
 import { CgGym } from "react-icons/cg";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { TiDelete } from "react-icons/ti";
-import { IoTrashBin } from "react-icons/io5";
+// import { IoTrashBin } from "react-icons/io5";
+import didier from '../../assets/giftrash.gif'
 import { PiHouseSimple } from "react-icons/pi";
 import "../../../styling/addListing.css";
 import { uploadImages } from "../../api/cloudImageApi";
@@ -516,11 +517,7 @@ const AddListing = () => {
             </section>
             <div className="add-lastCol">
               <div className="add-lastColP">
-                <p>
-                  fields marked with an *are required <br /> if you have any
-                  questions or need help, please <br />{" "}
-                  <Link to="/contacts"> contact us</Link>
-                </p>
+                <p>fields marked with an *are required <br /> if you have any questions or need help, please <br /> <Link to="/contacts" className="contactUsLink"> contact us</Link></p>
               </div>
               <button className="add-lastColButton">Submit</button>
             </div>

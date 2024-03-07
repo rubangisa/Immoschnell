@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+/* body {
+  font-family: "Playfair Display", serif;
+  display: flex;
+  justify-content: center;
+} */
+
+.listing-grid-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 200px;
+  gap: 20px;
+  padding: 10px;
+  width: 90%;
+}
+.prop-listing-info {
+  margin: auto;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+
+.property-info h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  font-size: 30px;
+  width: 600px;
+}
+
+.listing-grid-container > div {
+  background-color: #ede3d3;
+  color: #064426;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.listing-info {
+  border-radius: 5px;
+}
+
+.listing-info p {
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.main-image{
+  width: 100%;
+  margin: 0 10px;
+}
+
+.main-image img{
+ width:100%;
+ height: 600px;
+ margin-top: 10px;
+ margin-bottom: 130px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-radius: 5px;
+  width: 100%;
+}
+
+
+.gallery .gallery-img {
+  width: 320px;
+  height: 300px;
+  border-radius: 5px;
+}
+
+.booking-dates label,
+.booking-dates input[type="date"] {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+.booking-dates input[type="date"] {
+  width: 270px;
+  height: 30px;
+  background-color: #064426;
+  color: #ede3d3;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.booking-dates {
+  font-size: 20px;
+}
+
+.booking-dates button {
+  margin-top: 10px;
+  margin-left: 150px;
+  padding: 8px 16px;
+  font-size: 20px;
+  background-color: #064426;
+  color: #ede3d3;
+}
+
+.booking-location iframe{
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+  padding-left: 20px;
+}
+
+.property-details {
+  margin: 0;
+  border-radius: 5px;
+  width: 70%;
+  padding-left: 60px;
+}
+
+.property-details p {
+  padding: 30px;
+  font-size: 20px;
+ 
+}
+
+.amen-icons {
+display: flex;
+flex-wrap: wrap;
+width: 35%;
+margin-left: 30px;
+margin-top: 80px;
+}
+
+.icon {
+  height: 60px;
+  margin: 0px 30px;
+
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.box-4{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  gap: 20px;
+  border-radius: 5px;
+}
+
+.booking-dates, .booking-location{
+ margin-left: 20px;
+}
+
+.box-5{
+  flex-wrap: wrap;
+  border-radius: 5px;
+  display: flex;
+  width: 70%
+}
+
+.box-6{
+  display: flex;
+  width: 96%;
+  border-radius: 5px;
+}
+
+hr{
+  margin-top: 20px;
+  margin-left: 30px;
+  height:4px;
+  width: 300px;
+  border-width:0;
+  color:#064426;
+  background-color:#064426
+}
+
+@media only screen and (max-width: 1550px){
+  .booking-location iframe{
+    width: 250px;
+  }
+
+  .property-info h2{
+    margin-left: 20px;
+  }
+
+  .listing-info p{
+    margin-left: 20px;
+  }
+
+  .gallery .gallery-img{
+    width: 350px;
+    padding: 10px;
+    
+  }
+
+  .gallery-img{
+    border-radius: 5px;
+  }
+
+  .amen-icons{
+    width: 30%;
+  }
+
+  .booking-dates{
+    margin-left: 10px;
+  }
+
+  hr{
+    width: 270px;
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (max-width:1460px){
+
+  .main-image{
+    height: 400px;
+  }
+  .main-image img{
+    width: 80%;
+    height: 500px;
+    margin-left: 80px;
+    margin-right: 60px;
+  }
+  .booking-location iframe{
+    width: 230px;
+  }
+
+  .booking-dates input[type="date"] {
+    width: 220px;
+  }
+
+  .booking-dates button{
+    width: 200px;
+    margin-left: 5px;
+  }
+
+  .gallery .gallery-img {
+    width: 300px;
+    height: 200px;
+    border-radius: 5px;
+  }
+
+  hr{
+    width: 250px;
+    margin-left: 10px;
+  }
+  .vl {
+    border-left: 6px solid green;
+    height: 500px;
+    display: none;
+  }
+
+  .property-info h2{
+    font-size: 30px;
+  }
+
+  .box-6{
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 97%;
+  }
+
+  .property-details p{
+    width: 100%;
+    text-align: center;
+  }
+
+  .amen-icons{
+    margin: 10px;
+    width: 80%;
+  }
+
+  .amen-icons .icon{
+    padding: 10px;
+
+  }
+}
+
+@media only screen and (max-width:1350px){
+  .property-info h2{
+    font-size: 20px;
+  }
+
+  .listing-info p{
+    font-size: 15px;
+  }
+
+  .booking-dates{
+    font-size: 15px;
+  }
+
+  .booking-dates input[type="date"] {
+    font-size: 15px;
+    width: 200px;
+  }
+
+  .booking-dates button{
+    font-size: 15px;
+  }
+
+  .booking-location iframe{
+    width: 150px;
+    height: 200px;
+  }
+
+  .property-details p{
+    font-size: 15px;
+  }
+
+  .amen-icons{
+    width: 600px;
+    padding-left: 70px;
+  }
+
+  .amen-icons .icon{
+    height: 40px;
+  }
+
+  .main-image img{
+    height: 400px;
+  }
+
+
+  .gallery{
+    margin-left: 20px;
+  }
+  .gallery .gallery-img{
+    width: 250px;
+  }
+  }
+
+  @media only screen and (max-width:1330px) {
+    hr{
+      width: 150px;
+      margin-left: 40px;
+    }
+  }
+
+  @media only screen and (max-width:1120px) {
+.listing-info p{
+  margin-left: 5px;
+}
+
+.property-info h2{
+  margin-left: 5px;
+}
+.booking-dates input[type="date"] {
+  font-size: 15px;
+  width: 170px;
+}
+
+.booking-dates button{
+  width: 170px;
+}
+    
+    
+  }
+
+  @media only screen and (max-width:1000px){
+
+    .gallery{
+      margin-top: 50px;
+    }
+   .prop-listing-info{
+    display: flex;
+   }
+
+   .listing-grid-container{
+    flex-wrap: wrap;
+    flex-direction: column;
+   }
+
+   .box-4, .box-5, .box-6{
+    width: 100%;
+   }
+
+   .box-4{
+    flex-wrap: wrap;
+    flex-direction: row;
+   }
+
+   hr{
+    display: none;
+   }
+
+   .listing-info{
+    width: 300px;
+    margin-right: 70px;
+   }
+
+   .property-info h2, .listing-info p{
+    padding-left: 30px;
+    margin-right: 50px;
+   }
+
+   .booking-dates{
+    padding-left: 80px;
+   }
+
+   .booking-location iframe{
+width: 500px;
+height: 300px;
+margin-left: 100px;
+display: none;
+   }
+
+   .vl {
+    border-left: 4px solid #064426;
+    height: 300px;
+    display: block;
+  }
+
+  }
+
+  @media only screen and (max-width:900px){
+    .box-4 .listing-info{
+      width: 100%;
+      padding-left: 150px;
+    }
+
+    .vl{
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width:900px)

@@ -120,14 +120,14 @@ const SignUp = () => {
             <div className="sub-containerP">
               <div>
                 <input type="checkBox" className=" accent-color" required />{" "}
-                <span>
+                <span className="accent-color2">
                   agree to the myhome's terms and conditions and myhome's
                   privacy policy
                 </span>
               </div>
               <div>
                 <input type="checkBox" className=" accent-color" />{" "}
-                <span>
+                <span className="accent-color2">
                   Sign up to receive myhome newsletters, offer and promotional
                   material
                 </span>
