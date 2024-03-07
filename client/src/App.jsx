@@ -6,9 +6,18 @@ import Footer from "./components/pages/footer.jsx";
 import SignUp from "./components/pages/signUp.jsx";
 import MyBooking from "./components/pages/myBookings.jsx";
 import Home from "./components/pages/homePage.jsx";
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/navbar.jsx";
+import UserDash from "./components/pages/userDash.jsx";
+import ListingInfo from "./components/pages/listingInfo.jsx";
+import Footer from "./components/pages/footer.jsx";
+import SignUp from "./components/pages/signUp.jsx";
+import MyBooking from "./components/pages/myBookings.jsx";
+import Home from "./components/pages/homePage.jsx";
 import Login from "./components/pages/login.jsx";
 import About from "./components/pages/about.jsx";
 import AddListing from "./components/pages/addListing.jsx";
+import NotFound from "./components/pages/notFound.jsx";
 import ContactPage from "./components/pages/contactUs.jsx";
 import Payments from "./components/pages/payments.jsx";
 import AllProperties from "./components/pages/properties.jsx";
@@ -47,6 +56,8 @@ const App = () => {
           <Route path="/allproperties" element={<AllProperties />} />
           <Route path="/addProperty" element={<AddListing />} />
           <Route path="/userDash" element={<UserDash />} />
+
+          <Route path="*" element={<NotFound />} />
 
           {/* Add more routes as needed */}
           {/* 404 Page Not Found */}
