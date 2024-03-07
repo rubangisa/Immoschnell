@@ -1,23 +1,23 @@
 @import "./main.scss";
 
-:root {
-  margin: 0;
-}
-.homeContainer h2 {
-  font-family: Playfair;
-  padding: 190px;
-  font-size: 50px;
-  margin: auto;
-  text-align: center;
-}
-.homeIcons {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  li {
-    font-size: 80px;
-    display: flex;
-    padding: 10px;
-    color: $secondary-color;
-  }
-}
+ :root {
+   margin: 0;
+ }
+ .homeContainer h2 {
+   font-family: Playfair;
+   padding: 190px;
+   font-size: 50px;
+   margin: auto;
+   text-align: center;
+ }
+ .homeIcons {
+   display: flex;
+   justify-content: center;
+   list-style-type: none;
+   li {
+     font-size: 80px;
+     display: flex;
+     padding: 10px;
+     color: $secondary-color;
+   }
+ }

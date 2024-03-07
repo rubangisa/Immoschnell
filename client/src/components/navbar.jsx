@@ -42,22 +42,12 @@ export default function NavBar() {
           </div>
           <div className="nav-parent">
             <NavLink className="nav-button" to="/addProperty">
-              Add Property
+              Sign Up
             </NavLink>{" "}
             <div id="underline-hover"></div>
           </div>
-          <div className="nav-parent">
-            <NavLink className="nav-button" to="/about">
-              About
-            </NavLink>
-            <div id="underline-hover"></div>
-          </div>
-          <div className="nav-parent">
-            <NavLink className="nav-button" to="/contacts">
-              Contact us
-            </NavLink>
-            <div id="underline-hover"></div>
-          </div>
+          
+          
         </div>
       </nav>
 
@@ -68,40 +58,30 @@ export default function NavBar() {
       </div>
       {profileMenuOpen && (
         <div className="dropdown-menu">
-          <div className="nav-parent-profile">
-            <NavLink className="profile-button" to="/manage-account">
-              Manage Account
-              <div id="underline-hover"></div>
-            </NavLink>
-          </div>
+        <div className="nav-parent-profile">
+        <NavLink className="profile-button" to="/login-signup">
+          Login
+          <div id="underline-hover"></div>
+        </NavLink>
+      </div>
 
           <div className="nav-parent-profile">
             <NavLink className="profile-button" to="/my-profile">
-              My Profile
+              My profile
               <div id="underline-hover"></div>
             </NavLink>
           </div>
 
           <div className="nav-parent-profile">
             <NavLink className="profile-button" to="/bookings-and-trips">
-              Bookings and Trips
+              Book a property
               <div id="underline-hover"></div>
             </NavLink>
           </div>
 
-          <div className="nav-parent-profile">
-            <NavLink className="profile-button" to="/wallet-and-rewards">
-              Wallet and Rewards
-              <div id="underline-hover"></div>
-            </NavLink>
-          </div>
+         
 
-          <div className="nav-parent-profile">
-            <NavLink className="profile-button" to="/login-signup">
-              Login/Sign Up
-              <div id="underline-hover"></div>
-            </NavLink>
-          </div>
+          
         </div>
       )}
     </div>

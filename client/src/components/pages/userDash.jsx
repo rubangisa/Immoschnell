@@ -13,24 +13,24 @@ const initialState = {
       id: "test123",
       image:
         "https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y290dGFnZXxlbnwwfHwwfHx8MA%3D%3D",
-      name: "cottonflower lane",
-      location: "new jersey",
+      name: "Cottonflower Lane",
+      location: "New Jersey",
       price: 300,
     },
     {
       id: "test123",
       image:
         "https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y290dGFnZXxlbnwwfHwwfHx8MA%3D%3D",
-      name: "cottonflower lane",
-      location: "new jersey",
+      name: "Cottonflower Lane",
+      location: "New Jersey",
       price: 300,
     },
     {
       id: "test123",
       image:
         "https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y290dGFnZXxlbnwwfHwwfHx8MA%3D%3D",
-      name: "cottonflower lane",
-      location: "new jersey",
+      name: "Cottonflower Lane",
+      location: "New Jersey",
       price: 300,
     },
   ],
@@ -38,7 +38,7 @@ const initialState = {
     {
       image:
         "https://images.unsplash.com/photo-1647888774545-96f662a65e15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "bugmakesthree",
+      name: "Bugmakesthree",
       updated_at: "14.02.2024",
     },
   ],
@@ -61,7 +61,7 @@ const UserDash = () => {
 
   return (
     <div className="dash-container">
-      <h1> your dashboard</h1>
+      <h1> Your dashboard</h1>
       <div className="grid-container">
         <div className="big-box">
           <div className="box-1">
@@ -75,41 +75,41 @@ const UserDash = () => {
                       alt={user.name}
                     />
                     <h2>
-                      welcome back
+                      Welcome back:
                       <br />
                       {user.name}
                     </h2>
                     <div className="user-info">
                       <p>
-                        last login: {user.updated_at} <br /> number of visits: 6{" "}
-                        <br /> host rating: 4.5
+                        Last login: {user.updated_at} <br /> Number of visits: 6{" "}
+                        <br /> Host rating: 4.5
                       </p>
-                      <button>manage profile</button>
+                      <button>Manage profile</button>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
             <div className="member-status">
-              <h2 className="member-title">membership status</h2>
+              <h2 className="member-title">Membership status</h2>
               <div className="mem-logo">
                 <img src={membership_img} alt="membership badge" />
               </div>
-              <p>platinum maestro</p>
-              <button className="mem-button">more</button>
+              <p>Platinum maestro</p>
+              <button className="mem-button">More</button>
               <div className="mem-points">
                 <img src={membpoints} alt="member points" />
               </div>
-              <p>points earned</p>
-              <button className="mem-button">use points</button>
+              <p>Points earned</p>
+              <button className="mem-button">Use points</button>
             </div>
                 </div>
           <div className="box-2">
             <div className="favourites-box">
               <div className="title-button">
-                <h2 className="favourites-title">your favourites</h2>
+                <h2 className="favourites-title">Your favourites</h2>
                 <button className="manage-favourites-button">
-                  manage favourites
+                  Manage favourites
                 </button>
               </div>
               <div className="property-cards">
@@ -119,7 +119,7 @@ const UserDash = () => {
                     <p>
                       {property.name}, {property.location}
                     </p>
-                    <button>view property</button>
+                    <button>View property</button>
                   </div>
                 ))}
               </div>
@@ -127,9 +127,9 @@ const UserDash = () => {
 
             <div className="your-listings">
               <div className="title-button">
-                <h2 className="listings-title">your listings</h2>
+                <h2 className="listings-title">Your listings</h2>
                 <button className="add-new-listing-button">
-                  add new listing
+                  Add new listing
                 </button>
               </div>
               <div className="listing-cards">
@@ -139,7 +139,7 @@ const UserDash = () => {
                     <p>
                       {property.name}, {property.location}
                     </p>
-                    <button>manage listing</button>
+                    <button>Manage listing</button>
                   </div>
                 ))}
               </div>
@@ -149,7 +149,7 @@ const UserDash = () => {
         <div className="box-3">
           <div className="socials">
           <div className="socials-title">
-            <h2 >socials</h2>
+            <h2 >Socials</h2>
             </div>
             <div className="icon-image">
               <FontAwesomeIcon icon={faArrowLeft} className="arrows" />
@@ -164,11 +164,11 @@ const UserDash = () => {
           </div>
 
           <div className="help-center">
-            <h2 className="help-title">help center</h2>
+            <h2 className="help-title">Help center</h2>
             <div className="help-buttons">
-              <button>faqs</button>
-              <button>guidelines</button>
-              <button>contact us</button>
+              <button>FAQS</button>
+              <button>Guidelines</button>
+              <button>Contact us</button>
             </div>
           </div>
         </div>

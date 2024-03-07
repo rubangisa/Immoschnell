@@ -1,5 +1,3 @@
-
-
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/navbar.jsx";
 import UserDash from "./components/pages/userDash.jsx";
@@ -21,7 +19,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/my-booking" element={<MyBooking/>} />
-        <Route path="/" element={<UserDash />} />
+        <Route path="/" element={<Home />} />
         <Route path="/listing-info" element={<ListingInfo />} />
         <Route path="/" exact element={<Home />} />
         <Route path="/login-signup" element= {<div> <Login/> <SignUp/> </div>} exact />
@@ -31,7 +29,7 @@ const App = () => {
         <Route path="/payments" element={<Payments />} />
         <Route path="/allproperties" element={<AllProperties />} />
         <Route path="/addProperty" element={<AddListing />} />
-        
+        <Route path="/userDash" element={<UserDash />} />
         {/* Add more routes as needed */}
         {/* 404 Page Not Found */}
         <Route render={() => <h2>Page not found</h2>}/>
@@ -41,22 +39,3 @@ const App = () => {
   );
 };
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

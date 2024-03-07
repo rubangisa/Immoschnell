@@ -1,4 +1,4 @@
-/* body {
+body {
   background-color: #064426;
 }
 
@@ -8,7 +8,7 @@
 
 .homeContainer h2 {
   font-family: Playfair;
-  padding: 190px;
+  padding: 190px 190px 70px;
   font-size: 50px;
   margin: auto;
   text-align: center;
@@ -26,4 +26,4 @@
   color: #ede3d3;
 }
 
-# sourceMappingURL=homepage.css.map */
+# sourceMappingURL=homepage.css.map

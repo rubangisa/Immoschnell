@@ -40,22 +40,22 @@ const Footer = () => {
         <div className="footer-links">
           <ul>
             <li>
-             <Link to="/about"> about us</Link>
+             <Link to="/about"> About us</Link>
             </li>
             <li>
-             <Link to="/contacts"> contact us</Link>
+             <Link to="/contacts">Contact us</Link>
             </li>
             <li>
-              <a href="#">privacy policy</a>
+              <a href="#">Privacy policy</a>
             </li>
             <li>
-              <a href="#">imprint</a>
+              <a href="#">Imprint</a>
             </li>
           </ul>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 myhome lettings ltd. all rights reserved.</p>
+        <p>&copy; 2024 myhome lettings ltd. All rights reserved.</p>
       </div>
     </footer>
   );
