@@ -22,7 +22,7 @@ body {
   color: #064426;
 }
 
-form {
+.payment-form {
   display: flex;
   flex-direction: column;
 }
@@ -38,16 +38,6 @@ form {
 label {
   margin-bottom: 8px;
   font-weight: bold;
-}
-
-input {
-  background-color: white;
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 2px solid #064426;
-  border-radius: 4px;
-  width: 150px;
 }
 
 .container2 {
@@ -277,6 +267,7 @@ input[type=checkbox] {
   margin-bottom: 16px;
   border: 2px solid #064426;
   border-radius: 4px;
+  color: #064426;
 }
 
 .right-column .expiry-date-input {

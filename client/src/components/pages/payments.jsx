@@ -137,11 +137,11 @@ export default function Payments() {
             </button>
           </div>
           {showPaymentForm && (
-            <form onSubmit={handlePaymentMethodSubmit}>
+            <form  className= "payment-form" onSubmit={handlePaymentMethodSubmit}>
               <div className="container1">
                 <div className="left-column">
                   <label htmlFor="cardNumber">card number *</label>
-                  <input
+                  <input 
                     type="text"
                     id="cardNumber"
                     name="cardNumber"
