@@ -28,13 +28,12 @@ import { MdBeachAccess } from "react-icons/md";
 import { CgGym } from "react-icons/cg";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import { TiDelete } from "react-icons/ti";
-// import { IoTrashBin } from "react-icons/io5";
 import didier from '../../assets/giftrash.gif'
 import { PiHouseSimple } from "react-icons/pi";
 import "../../../styling/addListing.css";
-import { uploadImages } from "../../api/cloudImageApi";
+import { uploadImages } from "../../apiCalls/cloudImageApi";
 import { LoginContext } from "../../contexts/AppContext";
-import { createListing } from "../../api/listingApi";
+import { createListing } from "../../apiCalls/listingApi";
 
 const AddListing = () => {
   const [allValues, setAllValues] = useState({
@@ -504,17 +503,10 @@ const AddListing = () => {
               </div>
             </div>
             <section className="fileName">
-              <p>
-                {selectedImages.length} Empty{" "}
-                <IoTrashBin
-                  className="deleteIcon"
-                  color="rgb(6, 68, 38)"
-                  onClick={() => {
-                    setSelectedImages([]);
-                  }}
-                />
-              </p>
-            </section>
+                    <p>{selectedImages.length}  Empty<img src={didier} alt="" className="deleteIcon" onClick={()=>{
+                      setSelectedImages([])
+                    } } /> </p>
+                  </section>
             <div className="add-lastCol">
               <div className="add-lastColP">
                 <p>fields marked with an *are required <br /> if you have any questions or need help, please <br /> <Link to="/contacts" className="contactUsLink"> contact us</Link></p>

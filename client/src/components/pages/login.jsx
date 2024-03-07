@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { FaGooglePlusG } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { LiaApple } from "react-icons/lia";
-import { userLogin } from "../../api/userApi";
+import { userLogin } from "../../apiCalls/userApi";
 import "../../../styling/login.css";
 import { LoginContext } from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {login, dispatchLogin} = useContext(LoginContext)
+  const { dispatchLogin } = useContext(LoginContext);
   const navigate = useNavigate();
   const [showWarning, setShowWarning] = useState(false);
 
@@ -25,22 +25,18 @@ const Login = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const data = {
-    
       password: password,
       email: email,
-    
-    }
+    };
 
-   
     const success = await userLogin(data, dispatchLogin);
-    if(success) {
-      navigate(-1)
+    if (success) {
+      navigate(-1);
     } else {
       setShowWarning(true);
     }
-    
   };
   return (
     <div className="login-container">
@@ -60,7 +56,7 @@ const Login = () => {
               />
               <label htmlFor="password">Password</label>
               <input
-              onChange={handlePasswordChange}
+                onChange={handlePasswordChange}
                 className="login-input"
                 type="password"
                 name="password"
@@ -68,7 +64,9 @@ const Login = () => {
                 required
               />
             </div>
-            <p className="warning" hidden={!showWarning} >Username or Password Incorrect!!</p>
+            <p className="warning" hidden={!showWarning}>
+              Username or Password Incorrect!!
+            </p>
             <div className="log-sub-containerButton">
               <button type="submit" className="log-submitButton">
                 login
@@ -88,10 +86,18 @@ const Login = () => {
             >
               <FaGooglePlusG className="logIcon" color="rgb(6, 68, 38)" />
             </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <CiFacebook className="logIcon" color="rgb(6, 68, 38)" />
             </a>
-            <a href="https://appleid.apple.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://appleid.apple.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <LiaApple className="logIcon" color="rgb(6, 68, 38)" />
             </a>
           </div>

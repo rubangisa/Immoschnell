@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "../../styling/navbar.css";
-import logo from "./images/logo.png";
+import logo from  '../assets/logo.png';
 import { CiUser } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useContext, useState } from "react";
