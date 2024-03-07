@@ -5,7 +5,7 @@ import { useReducer, useEffect, useState } from "react";
 import { getPropertyDetails } from "../../apicalls/propertyApicalls.js";
 import { bookingReducer } from "../../context/Bookingreducer.js";
 
-export default function AllProperties() {
+export default function Properties() {
   const [bookingState, bookingDispatch] = useReducer(bookingReducer);
   const { currentBooking, loading } = bookingState || {};
 
