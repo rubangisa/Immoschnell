@@ -11,6 +11,7 @@ const initialState = {
 const UPDATE_PROPERTY = "UPDATE_PROPERTY";
 const CHECKIN = "CHECKIN";
 const FETCH_PROPERTIES_SUCCESS = "FETCH_PROPERTIES_SUCCESS";
+const FETCH_ALL_PROPERTIES_SUCCESS = "FETCH_ALL_PROPERTIES_SUCCESS";
 
 export const bookingReducer = (state, action) => {
   if (!state) {
@@ -21,6 +22,9 @@ export const bookingReducer = (state, action) => {
   switch (action.type) {
     case FETCH_PROPERTIES_SUCCESS:
       return { ...state, currentBooking: action.payload, loading: false };
+
+    case FETCH_ALL_PROPERTIES_SUCCESS:
+      return { ...state, propertyList: action.payload, loading: false };
     case LOCATION:
       return { ...state, location: action.payload };
     case CHECKIN:
@@ -31,7 +35,7 @@ export const bookingReducer = (state, action) => {
   }
 };
 
-const BookingContext = createContext();
+//const BookingContext = createContext();
 
 // const handlePropertyChange = (newPropertyValue) => {
 //     dispatch({ type: PROPERTY, payload: newPropertyValue });

@@ -29,7 +29,7 @@ const App = () => {
         <Routes>
           <Route path="/my-booking" element={<MyBooking />} />
           <Route path="/" element={<Home />} />
-          <Route path="/listing-info" element={<ListingInfo />} />
+          <Route path="/listing-info/:listingId" element={<ListingInfo />} />
           <Route path="/" exact element={<Home />} />
           <Route
             path="/login-signup"
@@ -45,7 +45,7 @@ const App = () => {
           <Route path="/contacts" element={<ContactPage />} />
           {/* <Route path="/properties" element={<Properties />} />\ */}
           <Route path="/payments" element={<Payments />} />
-          <Route path="/allproperties" element={<AllProperties />} />
+          <Route path="/properties" element={<AllProperties />} />
           <Route path="/addProperty" element={<AddListing />} />
           <Route path="/userDash" element={<UserDash />} />
 
