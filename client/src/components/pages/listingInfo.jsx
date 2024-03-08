@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import "./listingInfo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
@@ -52,17 +52,23 @@ const reducer = (state, action) => {
 };
 
 const ListingInfo = () => {
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
   const [propertyData] = useReducer(reducer, initialState);
 
-  const formHTML = `
-    <form action="/action_page.php">
-      <label for="check-in">check-in:</label>
-      <input type="date" id="check-in" name="check-in">
-      <label for="check-out">check-out:</label>
-      <input type="date" id="check-out" name="check-out">
-      <button type="submit">book now</button>
-    </form>
-  `;
+
+  const handleCheckInChange = (e) => {
+    setCheckIn (e.target.value)
+  };
+
+  const handleCheckOutChange = (e) => {
+    setCheckOut(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  }
+
 
   return (
     <div className="prop-listing-info">
@@ -81,27 +87,35 @@ const ListingInfo = () => {
             <p>{propertyData[0].bathrooms} bathrooms</p>
             <p>hosted by: {propertyData[0].hosts}</p>
             <hr />
-           
           </div>
           <div className="vl"></div>
-          <div
-          className="booking-dates"
-          dangerouslySetInnerHTML={{ __html: formHTML }}
-        ></div>
-        <hr />
-        <div className="booking-location">
-          <iframe
-            src={propertyData[0].map}
-            style={{ border: 0 }}
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
+          <div className="booking-dates">
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="check-in">check-in:</label>
+              <input onChange={handleCheckInChange} type="date" id="check-in" name="check-in"/>
+              <label htmlFor="check-out">check-out:</label>
+              <input onChange={handleCheckOutChange} type="date" id="check-out" name="check-out"/>
+              <button type="submit">book now</button>
+            </form>
+          </div>
+          <hr />
+          <div className="booking-location">
+            <iframe
+              src={propertyData[0].map}
+              style={{ border: 0 }}
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
         <div className="box-5">
-        <div className="main-image">
-        <img src="https://images.unsplash.com/photo-1472377723522-4768db9c41ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="main-image" /></div>
-        
+          <div className="main-image">
+            <img
+              src="https://images.unsplash.com/photo-1472377723522-4768db9c41ce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="main-image"
+            />
+          </div>
+
           <div className="gallery">
             <img
               className="gallery-img"
@@ -128,51 +142,51 @@ const ListingInfo = () => {
               alt="prop5"
             />
           </div>
-          </div>
-       
+        </div>
 
         <div className="box-6">
-        <div className="property-details">
-          <p>
-            escape to the idyllic countryside retreat of cottonflower lane in
-            canterbury, kent, where luxury meets tranquility. this enchanting
-            property boasts three bedrooms, five beds, and 1.5 bathrooms,
-            accommodating up to six guests in style. hosted by the hospitable
-            hannes and gertha, this haven offers a plethora of amenities
-            including a private hot tub, high-speed wifi, a cozy fireplace, and
-            a fully equipped kitchen. from serene lake views to secure parking,
-            every detail has been carefully curated to ensure a seamless and
-            unforgettable stay. immerse yourself in the beauty of the
-            surrounding landscape and explore the historic village of
-            wickhambreux, nestled in the heart of the countryside. known for its
-            picturesque charm and historic beauty, wickhambreux offers a
-            peaceful retreat away from the hustle and bustle of city life. with
-            its quaint cottages, winding lanes, and centuries-old buildings, the
-            village invites visitors to step back in time and experience a slice
-            of traditional english life.
-            <br />
-            <br />
-            
-            with a stellar 4.5-star rating from previous guests, cottonflower
-            lane promises an unparalleled blend of comfort, elegance, and
-            natural charm for your next getaway. discover a sanctuary of
-            serenity at cottonflower lane, where every corner is imbued with
-            warmth and hospitality. unwind in the comfort of spacious bedrooms,
-            gather around the crackling fireplace on chilly evenings, or soak
-            your cares away in the indulgent hot tub under the starlit sky. with
-            high-speed wifi and a fully equipped kitchen at your disposal, you
-            can effortlessly blend relaxation with productivity. whether you're
-            seeking adventure in the great outdoors or simply craving a peaceful
-            retreat, cottonflower lane offers the perfect setting to create
-            cherished memories with loved ones. come experience the magic of
-            this hidden gem and let your worries melt away in its embrace.
-          </p>
-        </div>
+          <div className="property-details">
+            <p>
+              escape to the idyllic countryside retreat of cottonflower lane in
+              canterbury, kent, where luxury meets tranquility. this enchanting
+              property boasts three bedrooms, five beds, and 1.5 bathrooms,
+              accommodating up to six guests in style. hosted by the hospitable
+              hannes and gertha, this haven offers a plethora of amenities
+              including a private hot tub, high-speed wifi, a cozy fireplace,
+              and a fully equipped kitchen. from serene lake views to secure
+              parking, every detail has been carefully curated to ensure a
+              seamless and unforgettable stay. immerse yourself in the beauty of
+              the surrounding landscape and explore the historic village of
+              wickhambreux, nestled in the heart of the countryside. known for
+              its picturesque charm and historic beauty, wickhambreux offers a
+              peaceful retreat away from the hustle and bustle of city life.
+              with its quaint cottages, winding lanes, and centuries-old
+              buildings, the village invites visitors to step back in time and
+              experience a slice of traditional english life.
+              <br />
+              <br />
+              with a stellar 4.5-star rating from previous guests, cottonflower
+              lane promises an unparalleled blend of comfort, elegance, and
+              natural charm for your next getaway. discover a sanctuary of
+              serenity at cottonflower lane, where every corner is imbued with
+              warmth and hospitality. unwind in the comfort of spacious
+              bedrooms, gather around the crackling fireplace on chilly
+              evenings, or soak your cares away in the indulgent hot tub under
+              the starlit sky. with high-speed wifi and a fully equipped kitchen
+              at your disposal, you can effortlessly blend relaxation with
+              productivity. whether you're seeking adventure in the great
+              outdoors or simply craving a peaceful retreat, cottonflower lane
+              offers the perfect setting to create cherished memories with loved
+              ones. come experience the magic of this hidden gem and let your
+              worries melt away in its embrace.
+            </p>
+          </div>
           <div className="amen-icons">
-          <FontAwesomeIcon icon={faShieldHalved}
-          className="icon"
-          title="verified host"
-          />
+            <FontAwesomeIcon
+              icon={faShieldHalved}
+              className="icon"
+              title="verified host"
+            />
 
             <FontAwesomeIcon
               icon={faDoorOpen}
@@ -181,17 +195,16 @@ const ListingInfo = () => {
             />
 
             <FontAwesomeIcon
-            icon={faWifi}
-            className="icon"
-            title="high speed wifi"
-          />
+              icon={faWifi}
+              className="icon"
+              title="high speed wifi"
+            />
             <FontAwesomeIcon icon={faBath} className="icon" title="bath tub" />
             <FontAwesomeIcon
               icon={faHotTub}
               className="icon"
               title="private outdoor hot tub"
             />
-           
 
             <FontAwesomeIcon
               icon={faHouseFire}
@@ -219,17 +232,14 @@ const ListingInfo = () => {
               title="wheelchair accessible"
             />
 
-            <FontAwesomeIcon icon={faSeedling}
-            className="icon"
-            title="eco friendly"
+            <FontAwesomeIcon
+              icon={faSeedling}
+              className="icon"
+              title="eco friendly"
             />
 
-            <FontAwesomeIcon icon={faTv}
-            className="icon"
-            title="smart tv"
-            />
+            <FontAwesomeIcon icon={faTv} className="icon" title="smart tv" />
           </div>
-        
         </div>
       </div>
     </div>

@@ -10,3 +10,4 @@ export const createListing = async (data) => {
     console.log(error);
   }
 };
+
