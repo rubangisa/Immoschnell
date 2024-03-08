@@ -182,7 +182,7 @@ const ListingInfo = () => {
 
             <FontAwesomeIcon
             icon={faWifi}
-            className="icon"
+            className="ico"
             title="high speed wifi"
           />
             <FontAwesomeIcon icon={faBath} className="icon" title="bath tub" />
