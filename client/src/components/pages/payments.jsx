@@ -8,13 +8,13 @@ import { CiCalendar } from "react-icons/ci";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import "../../../styling/payments.css";
 import { useReducer, useEffect, useState } from "react";
-import { bookingReducer } from "../../context/Bookingreducer.js";
-import { paymentsReducer } from "../../context/paymentsReducer.js";
-import { getPropertyDetails } from "../../apicalls/propertyApicalls.js";
+import { bookingReducer } from "../../reducers/BookingReducer.js";
+import { paymentsReducer } from "../../reducers/PaymentsReducer.js";
+import { getPropertyDetails } from "../../apiCalls/propertyApiCalls.js";
 import {
   getPaymentDetails,
   submitPaymentMethod,
-} from "../../apicalls/paymentApicalls";
+} from "../../apiCalls/paymentApiCalls.js";
 export default function Payments() {
   const [bookingState, bookingDispatch] = useReducer(bookingReducer);
   const { currentBooking, loading } = bookingState || {};

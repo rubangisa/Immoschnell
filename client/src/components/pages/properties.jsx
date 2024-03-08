@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../../../styling/properties.css";
 import { useReducer, useEffect, useState } from "react";
 import { IoBed } from "react-icons/io5";
@@ -7,10 +9,11 @@ import { TbGrid3X3 } from "react-icons/tb";
 import {
   getPropertyDetails,
   getAllPropertyList,
-} from "../../apicalls/propertyApicalls.js";
-import { bookingReducer } from "../../context/Bookingreducer.js";
+} from "../../apiCalls/propertyApiCalls.js";
+import { bookingReducer } from "../../reducers/BookingReducer.js";
 
 export default function Allproperties() {
+  const navigate = useNavigate();
   const [bookingState, bookingDispatch] = useReducer(bookingReducer, {
     propertyList: [],
   });
@@ -24,6 +27,11 @@ export default function Allproperties() {
     console.log("state", bookingState);
   }, [bookingState]);
 
+  const openListingInfo = (id) => {
+    console.log("id", id);
+    navigate(`/listing-info/${id}`);
+  };
+
   return (
     <div className="listingsbody">
       <h1 className="listingsh1">our properties</h1>
@@ -32,7 +40,11 @@ export default function Allproperties() {
           <p>Loading property details...</p>
         ) : (
           propertyList.map((property, index) => (
-            <div key={index} className="listings-card">
+            <div
+              key={index}
+              className="listings-card"
+              onClick={() => openListingInfo(property.id)}
+            >
               <div className="card-img">
                 <img
                   src={

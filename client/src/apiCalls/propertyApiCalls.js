@@ -1,6 +1,7 @@
 import axios from "axios";
 
 let propertyData = {
+  id: "1",
   name: "Cozy Apartment in the Heart of Downtown",
   streetName: "123 Main Street",
   apartmentNumber: "Apt 202",
@@ -70,6 +71,7 @@ let propertyData = {
 
 const propertyList = [
   {
+    id: "1",
     name: "Charming Cottage",
     streetName: "789 Serene Street",
     apartmentNumber: "Cottage 103",
@@ -137,6 +139,7 @@ const propertyList = [
     owner: "Alice Johnson",
   },
   {
+    id: "2",
     name: "Cozy Apartment ",
     streetName: "123 Main Street",
     apartmentNumber: "Apt 202",
@@ -204,6 +207,7 @@ const propertyList = [
     owner: "John Doe",
   },
   {
+    id: "3",
     name: "Luxurious Penthouse",
     streetName: "567 Skyline Drive",
     apartmentNumber: "Penthouse 2201",
@@ -271,6 +275,7 @@ const propertyList = [
     owner: "Robert Anderson",
   },
   {
+    id: "4",
     name: "Cozy Apartment ",
     streetName: "123 Main Street",
     apartmentNumber: "Apt 202",
@@ -338,6 +343,7 @@ const propertyList = [
     owner: "John Doe",
   },
   {
+    id: "5",
     name: "Charming Cottage",
     streetName: "789 Serene Street",
     apartmentNumber: "Cottage 103",
@@ -405,6 +411,7 @@ const propertyList = [
     owner: "Alice Johnson",
   },
   {
+    id: "6",
     name: "Cozy Apartment ",
     streetName: "123 Main Street",
     apartmentNumber: "Apt 202",
@@ -472,6 +479,7 @@ const propertyList = [
     owner: "John Doe",
   },
   {
+    id: "7",
     name: "Luxurious Penthouse",
     streetName: "567 Skyline Drive",
     apartmentNumber: "Penthouse 2201",
@@ -539,9 +547,11 @@ const propertyList = [
     owner: "Robert Anderson",
   },
 ];
+const API_ENDPOINT = import.meta.env.VITE_BACKEND_API_HOST;
+
 const getPropertyDetails = async (dispatchProperty) => {
   try {
-    const response = await axios.get("http://localhost:8000/listings/:id");
+    const response = await axios.get(`${API_ENDPOINT}/listings/:id`);
 
     dispatchProperty({
       type: "FETCH_PROPERTIES_SUCCESS",
@@ -559,11 +569,11 @@ const getPropertyDetails = async (dispatchProperty) => {
 
 const getAllPropertyList = async (dispatchProperty) => {
   try {
-    const response = await axios.get("http://localhost:8000/listings");
+    const responseAll = await axios.get(`${API_ENDPOINT}/listings`);
 
     dispatchProperty({
       type: "FETCH_ALL_PROPERTIES_SUCCESS",
-      payload: response.data,
+      payload: responseAll.data,
     });
   } catch (error) {
     console.log("Error fetching properties:", error);
@@ -577,7 +587,7 @@ const getAllPropertyList = async (dispatchProperty) => {
 
 const getLocationName = async (dispatchProperty) => {
   try {
-    const response = await axios.get("http://localhost:8000/listings");
+    const response = await axios.get(`${API_ENDPOINT}/listings/:id`);
 
     dispatchLocation({
       type: "FETCH_LOCATION_SUCCESS",

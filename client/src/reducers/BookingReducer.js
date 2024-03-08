@@ -35,7 +35,7 @@ export const bookingReducer = (state, action) => {
   }
 };
 
-const BookingContext = createContext();
+//const BookingContext = createContext();
 
 // const handlePropertyChange = (newPropertyValue) => {
 //     dispatch({ type: PROPERTY, payload: newPropertyValue });

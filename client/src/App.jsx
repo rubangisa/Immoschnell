@@ -6,14 +6,6 @@ import Footer from "./components/pages/footer.jsx";
 import SignUp from "./components/pages/signUp.jsx";
 import MyBooking from "./components/pages/myBookings.jsx";
 import Home from "./components/pages/homePage.jsx";
-import { Routes, Route } from "react-router-dom";
-import NavBar from "./components/navbar.jsx";
-import UserDash from "./components/pages/userDash.jsx";
-import ListingInfo from "./components/pages/listingInfo.jsx";
-import Footer from "./components/pages/footer.jsx";
-import SignUp from "./components/pages/signUp.jsx";
-import MyBooking from "./components/pages/myBookings.jsx";
-import Home from "./components/pages/homePage.jsx";
 import Login from "./components/pages/login.jsx";
 import About from "./components/pages/about.jsx";
 import AddListing from "./components/pages/addListing.jsx";
@@ -37,7 +29,7 @@ const App = () => {
         <Routes>
           <Route path="/my-booking" element={<MyBooking />} />
           <Route path="/" element={<Home />} />
-          <Route path="/listing-info" element={<ListingInfo />} />
+          <Route path="/listing-info/:listingId" element={<ListingInfo />} />
           <Route path="/" exact element={<Home />} />
           <Route
             path="/login-signup"
@@ -53,7 +45,7 @@ const App = () => {
           <Route path="/contacts" element={<ContactPage />} />
           {/* <Route path="/properties" element={<Properties />} />\ */}
           <Route path="/payments" element={<Payments />} />
-          <Route path="/allproperties" element={<AllProperties />} />
+          <Route path="/properties" element={<AllProperties />} />
           <Route path="/addProperty" element={<AddListing />} />
           <Route path="/userDash" element={<UserDash />} />
 
