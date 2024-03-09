@@ -3,7 +3,7 @@ import "../../styling/navbar.css";
 import logo from "./images/logo.png";
 import { CiUser } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useContext, useState } from "react";
+import {useState } from "react";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);

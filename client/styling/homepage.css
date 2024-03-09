@@ -26,4 +26,20 @@ body {
   color: #ede3d3;
 }
 
-# sourceMappingURL=homepage.css.map
+.homebox1-title{
+  display: flex;
+  justify-content: space-between;
+}
+
+.homebox1-title h2{
+  color: white;
+  font-size: 30px;
+  width: 60%;
+}
+
+.homebox1-title button{
+  width: 137px;
+  height:150px
+}
+
+/* # sourceMappingURL=homepage.css.map */

@@ -1,4 +1,4 @@
-import React from "react";
+
 import "../../../styling/homepage.css";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 import { HiOutlineHome } from "react-icons/hi2";
@@ -36,7 +36,10 @@ const Home = () => {
           </li>
         </ul>
       </div>
-      <div className=""></div>
+      <div className="homebox1">
+      <h2 className="pop-title">Popular properties</h2>
+      <button>Book now</button>
+      </div>
     </div>
     
   );
