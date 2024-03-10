@@ -6,12 +6,13 @@ body {
   margin: 0;
 }
 
-.homeContainer h2 {
+.homeContainer h1 {
   font-family: Playfair;
   padding: 190px 190px 70px;
   font-size: 50px;
   margin: auto;
   text-align: center;
+  color: #ede3d3;
 }
 
 .homeIcons {
@@ -26,20 +27,131 @@ body {
   color: #ede3d3;
 }
 
-.homebox1-title{
+.homebox1 {
   display: flex;
   justify-content: space-between;
+  padding: 200px 240px 50px;
 }
 
-.homebox1-title h2{
-  color: white;
+.homebox1 h2 {
+  color: #ede3d3;
   font-size: 30px;
   width: 60%;
 }
 
-.homebox1-title button{
-  width: 137px;
-  height:150px
+.homebox1 button {
+  color: #064426;
+  background-color: #ede3d3;
+}
+
+.home-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px 160px 20px 160px;
+}
+
+.home-prop-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 24%;
+  height: fit-content;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.home-prop-cards img {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+  margin-right: 0;
+}
+
+.home-prop-cards:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.home-prop-cont {
+  background-color: #ede3d3;
+  color: #064426;
+  width: 100%;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.homebox2 {
+  display: flex;
+  flex-direction: column;
+  padding: 200px 240px 50px;
+}
+
+.homebox2 h2 {
+  color: #ede3d3;
+  font-size: 30px;
+  width: 60%;
+  margin-bottom: 60px;
+}
+
+.homebox2-cont {
+  display: flex;
+  gap: 110px;
+}
+.homebox2 img {
+  height: 600px;
+  width: 400px;
+}
+
+.homebox2-icons {
+  flex-wrap: wrap;
+  width: 300px;
+  text-align: center;
+}
+.homebox2-icons2 {
+  flex-wrap: wrap;
+  width: 300px;
+  text-align: center;
+}
+
+.icon {
+  padding: 50px;
+}
+
+.homebox3 {
+  display: flex;
+  flex-direction: column;
+  padding: 200px 240px 50px;
+}
+
+.homebox3 h2 {
+  color: #ede3d3;
+  font-size: 30px;
+  width: 60%;
+  margin-bottom: 60px;
+}
+
+.homebox3-cont {
+  display: flex;
+  gap: 110px;
+}
+
+.homebox3 img {
+  height: 600px;
+  width: 400px;
+  
+}
+
+.homebox3-text{
+  font-size: 20px;
+  line-height: 35px;
+}
+
+span{
+  font-style: italic;
+  font-weight: 700;
 }
 
 /* # sourceMappingURL=homepage.css.map */
