@@ -174,6 +174,32 @@ const Home = () => {
           />
         </div>
       </div>
+      <div className="homebox4">
+      <h2>Our Partners</h2>
+      <div className="partner-card">
+      <div className="home-prop-cards">
+      <img
+        src="https://secure.uniquebookingservices.com/uf/properties/inkwell-cottage/header-xlg-v6/219733-inkwell-cottage-luxury-self-catering-cottage-burford.jpg"
+        alt="inkwell cottage, oxfordshire"
+      />
+      <div className="home-prop-cont">
+        <h4>
+          <b>Inkwell Cottage</b>
+        </h4>
+        <p>Oxfordshire, England</p>
+        <br />
+        <p>
+          Bedrooms: 2
+          <br />
+          Bathrooms: 1.5
+          <br />
+          Guests: 4
+          <br />
+          Price per Night: 200€
+        </p>
+      </div>
+    </div></div>
+      </div>
     </div>
   );
 };

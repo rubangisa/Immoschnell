@@ -98,7 +98,6 @@ body {
 
 .homebox2-cont {
   display: flex;
-  gap: 110px;
 }
 .homebox2 img {
   height: 600px;
@@ -109,11 +108,15 @@ body {
   flex-wrap: wrap;
   width: 300px;
   text-align: center;
+  font-size: 18px;
+  padding-left: 20px;
 }
 .homebox2-icons2 {
   flex-wrap: wrap;
   width: 300px;
   text-align: center;
+  font-size: 18px;
+  padding-left: 60px;
 }
 
 .icon {
@@ -135,21 +138,23 @@ body {
 
 .homebox3-cont {
   display: flex;
-  gap: 110px;
+  gap: 80px;
 }
 
 .homebox3 img {
   height: 600px;
-  width: 400px;
+  width: 700px;
   
 }
 
 .homebox3-text{
-  font-size: 20px;
+  padding-top: 20px;
+  font-size: 18px;
   line-height: 35px;
 }
 
 span{
+ 
   font-style: italic;
   font-weight: 700;
 }
