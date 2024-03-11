@@ -79,3 +79,78 @@
     transform: translateX(-50%);
     background: rgb(237, 227, 211);
 }
+
+/* Home page form */
+/* .homePageFormContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+.homePageFormWrapper {
+    background-color: rgb(237, 227, 211);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border: gray 1px solid;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px rgba(237, 227, 211, 0.539);
+    padding: 5px;
+    width: 100%;
+}
+.homePageFormSubCont {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+.homePageFormSubCont1,
+.homePageFormSubCont2,
+.homePageFormSubCont3 {
+    border-right: 1px solid rgba(128, 128, 128, 0.472);
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.homePageFormBtn {
+    background-color: red;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    margin-top: -30px;
+    padding: 30px;
+}
+.homePageFormSubCont44 {
+    display: flex;
+    justify-content: space-between;
+}
+.homePageFormIcon {
+    width: 40px;
+    height: 40px;
+    font-size: xx-large;
+    margin-top: -20px;
+    margin-left: -20px;
+}
+.homePageFormSubCont1 {
+    margin-left: 25px;
+    width: 25%;
+}
+
+
+.homePageFormInput {
+    border: none;
+    background-color: rgb(237, 227, 211);
+    color: rgb(6, 68, 38);
+    padding-top: 0;
+}
+.homePageFormLabel {
+    color: rgb(6, 68, 38);
+}
+.homePageFormInput:focus {
+    outline: none;
+    font-size: 16px;
+    color: rgb(6, 68, 38);
+} */

@@ -1,8 +1,8 @@
 import { useReducer } from "react";
 import "./userDash.css";
-import membpoints from "../images/mempoints_img.png";
-import membership_img from "../images/membership_img.png";
-import social from "../images/social-img.jpg";
+import membpoints from "../../assets/mempoints_img.png";
+import membership_img from "../../assets/membership_img.png";
+import social from "../../assets/social-img.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";

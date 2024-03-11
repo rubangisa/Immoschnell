@@ -1,5 +1,6 @@
 import React from "react";
 import "../../../styling/about.css";
+// import { IoMdSearch } from "react-icons/io";
 // import didier from '../../assets/walking.gif'
 
 const About = () => {
@@ -57,9 +58,34 @@ const About = () => {
                 <h3>Billie-Jean Bowdery</h3>
                 <p className="role">Lead Frontend</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum exercitationem iusto eveniet tempora fugiat possimus esse a alias! Eum!</p>
-
             </div>
         </div>
+        {/* <div className="homePageFormContainer">
+            <form className="homePageFormWrapper">
+            <div className="homePageFormSubCont homePageFormSubCont1">
+                <label htmlFor="place" className="homePageFormLabel" >where</label>
+                <input type="text" placeholder="Search destinations" className="homePageFormInput"/>
+            </div>
+            <div className="homePageFormSubCont homePageFormSubCont2">
+                <label htmlFor="date" className="homePageFormLabel" >Check in</label>
+                <input type="date" placeholder="Add dates" className="homePageFormInput"/>
+            </div>
+            <div className="homePageFormSubCont homePageFormSubCont3">
+                <label htmlFor="date" className="homePageFormLabel" >Check out</label>
+                <input type="date" placeholder="Add dates" className="homePageFormInput"/>
+            </div>
+            <div className="homePageFormSubCont homePageFormSubCont4">
+                <label htmlFor="numbers" className="homePageFormLabel" >Who </label>
+                <div className="homePageFormSubCont44">
+                    <input type="" placeholder="Number of guests" className="homePageFormInput"/>
+                    <div className="homePageFormBtn">
+                         <IoMdSearch  className="homePageFormIcon"/>
+                    </div>
+                </div>
+                
+            </div>
+            </form>
+        </div> */}
 
     </div>
   );

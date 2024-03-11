@@ -1,9 +1,8 @@
-import React from "react";
+import { useState } from "react";
 import { IoIosCheckbox } from "react-icons/io";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import "../../../styling/signUp.css";
-import { useState } from "react";
-import { signUp } from "../../api/userApi";
+import { signUp } from "../../apiCalls/userApi";
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
@@ -37,17 +36,15 @@ const SignUp = () => {
   };
 
   const handleSubmit = async () => {
-    
     const data = {
       firstName: firstName,
       lastName: lastName,
       dateOfBirth: dateOfBirth,
       password: password,
       email: email,
-      phone: phone
-    }
+      phone: phone,
+    };
 
-   
     await signUp(data);
   };
 
