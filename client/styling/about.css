@@ -97,57 +97,67 @@
     border: gray 1px solid;
     border-radius: 50px;
     box-shadow: 3px 3px 3px rgba(237, 227, 211, 0.539);
-    padding: 5px;
     width: 100%;
+    padding-left: 0px;
 }
 .homePageFormSubCont {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     padding-top: 5px;
-    padding-bottom: 0px;
+    padding: 10px;
 }
+.homePageFormSubCont1 {
+    margin-left: 60px;
+}
+
 .homePageFormSubCont1,
 .homePageFormSubCont2,
 .homePageFormSubCont3 {
     border-right: 1px solid rgba(128, 128, 128, 0.472);
-    padding-left: 8px;
-    padding-right: 8px;
+}
+.homePageFormSubCont1:hover,.homePageFormSubCont2:hover,
+ .homePageFormSubCont3:hover, .homePageFormSubCont4:hover {
+    cursor: pointer;
+
 }
 .homePageFormBtn {
     background-color: red;
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    margin-top: -30px;
+    margin-top: -18px;
     padding: 30px;
 }
 .homePageFormSubCont44 {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
+
 .homePageFormIcon {
     width: 40px;
     height: 40px;
     font-size: xx-large;
-    margin-top: -20px;
-    margin-left: -20px;
+    margin-top: -18px;
+    margin-left: -18px;
 }
-.homePageFormSubCont1 {
-    margin-left: 25px;
-    width: 25%;
-}
-
-
 .homePageFormInput {
     border: none;
     background-color: rgb(237, 227, 211);
     color: rgb(6, 68, 38);
-    padding-top: 0;
+    padding: 0;
+    margin: 0;
 }
 .homePageFormLabel {
     color: rgb(6, 68, 38);
+    margin: 0;
+    padding: 0;
+}
+.homePageFormLabel1 {
+    margin-right: 140px;
+    margin-bottom: -10px;
 }
 .homePageFormInput:focus {
     outline: none;

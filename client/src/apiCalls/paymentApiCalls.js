@@ -1,66 +1,26 @@
 import axios from "axios";
 
-const dummyPaymentData = [
-  {
-    id: 1,
-    cardType: "Visa",
-    cardNumber: "123    456    789",
-    cardHolder: "John Doe",
-    expiryDate: "12/25",
-    cvv: "123",
-  },
-  {
-    id: 2,
-    cardType: "Mastercard",
-    cardNumber: "123    456    789",
-    cardHolder: "John Doe",
-    expiryDate: "12/25",
-    cvv: "123",
-  },
-];
+const API_ENDPOINT = import.meta.env.VITE_BACKEND_API_HOST;
 
-const getPaymentDetails = async (dispatchPayment) => {
+
+
+export const submitPaymentMethod = async (paymentMethod) => {
   try {
-    const response = await axios.get("http://localhost:8000/payment-methods");
-    dispatchPayment({
-      type: "FETCH_PAYMENT_METHODS_SUCCESS",
-      payload: response.data,
-    });
+    const response = await axios.post(`${API_ENDPOINT}/payment-methods`,  paymentMethod);
+    console.log(response)
   } catch (error) {
-    console.log("Error fetching payment details:", error);
-    dispatchPayment({
-      type: "FETCH_PAYMENT_METHODS_SUCCESS",
-      payload: dummyPaymentData,
-    });
-  }
+    console.log(error);
+  } 
 };
 
-const submitPaymentMethod = async (paymentMethod, dispatchPayment) => {
+export const getPaymentMethodsOfUser = async (userId) => {
   try {
-    const response = await axios.post("http://localhost:8000/payment-methods", {
-      body: paymentMethod,
-    });
-    dispatchPayment({
-      type: "PAYMENT_METHOD_SUBMITTED",
-      payload: response.data,
-    });
-  } catch (error) {
-    console.log("Error submitting payment method:", error);
-  } finally {
-    getPaymentDetails(dispatchPayment);
+    const response = await axios.get(`${API_ENDPOINT}/payment-methods?userId=${userId}`)
+    return response.data
+  } catch(error) {
+    console.log(error)
   }
-};
+}
 
-// const addPaymentMethod = async (paymentMethod, dispatchPayment) => {
-//   try {
-//     const response = await axios.get("http://localhost:8000/payment-methods")
-//     dispatchPayment({
-//       type: "ADD_PAYMENT_METHOD",
-//       payload: response.data,
-//     });
-//   } catch (error) {
-//     console.log("Error adding payment method:", error);
-//   }
-// };
 
-export { getPaymentDetails, submitPaymentMethod };
+

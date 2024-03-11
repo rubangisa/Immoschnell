@@ -21,7 +21,7 @@
   color: $primary-color;
 }
 
-form {
+.payment-form {
   display: flex;
   flex-direction: column;
 }
@@ -39,15 +39,15 @@ label {
   font-weight: bold;
 }
 
-input {
-  background-color: white;
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 16px;
-  border: 2px solid $primary-color;
-  border-radius: 4px;
-  width: 150px;
-}
+// input {
+//   background-color: white;
+//   width: 100%;
+//   padding: 8px;
+//   margin-bottom: 16px;
+//   border: 2px solid $primary-color;
+//   border-radius: 4px;
+//   width: 150px;
+// }
 
 .container2 {
   display: flex;
@@ -276,6 +276,7 @@ input[type="checkbox"] {
     margin-bottom: 16px;
     border: 2px solid $primary-color;
     border-radius: 4px;
+    color: $primary-color;
   }
 }
 
