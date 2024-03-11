@@ -1,5 +1,5 @@
 import "./footer.css";
-import myhome from "../images/my home-logo.png";
+import myhome from "../../assets/my home-logo.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";

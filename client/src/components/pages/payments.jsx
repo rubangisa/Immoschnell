@@ -1,59 +1,96 @@
-import React from "react";
 import { IoIosCheckbox } from "react-icons/io";
 import { FaPaypal } from "react-icons/fa";
 import { FaCcApplePay } from "react-icons/fa";
 import { SiAmericanexpress } from "react-icons/si";
 import { CiCalendar } from "react-icons/ci";
-
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import "../../../styling/payments.css";
-import { useReducer, useEffect, useState } from "react";
-import { bookingReducer } from "../../context/Bookingreducer.js";
-import { paymentsReducer } from "../../context/paymentsReducer.js";
-import { getPropertyDetails } from "../../apicalls/propertyApicalls.js";
+import { useReducer, useEffect, useState, useContext } from "react";
+import { bookingReducer } from "../../reducers/BookingReducer.js";
 import {
-  getPaymentDetails,
+  getPaymentMethodsOfUser,
   submitPaymentMethod,
-} from "../../apicalls/paymentApicalls";
+} from "../../apiCalls/paymentApiCalls.js";
+import { BookingContext, LoginContext } from "../../contexts/AppContext.jsx";
+import { getListingById } from "../../apiCalls/listingApi";
+import { useNavigate } from "react-router-dom";
+import { updateBookingSuccess } from "../../apiCalls/bookingApiCalls.js";
+
 export default function Payments() {
-  const [bookingState, bookingDispatch] = useReducer(bookingReducer);
-  const { currentBooking, loading } = bookingState || {};
+  const { booking, dispatchBooking } = useContext(BookingContext);
+  const [showPaymentForm, setShowPaymentForm] = useState(false);
+  const [paymentMethods, setPaymentMethods] = useState([]);
+  const [listing, setListing] = useState(null);
 
-  const [paymentState, paymentDispatch] = useReducer(paymentsReducer);
-  const { paymentMethods, currentPayment } = paymentState || {};
-  useEffect(() => {
-    getPropertyDetails(bookingDispatch);
-    getPaymentDetails(paymentDispatch);
-  }, []);
+  const [newCard, setNewCard] = useState({
+    user: null,
+    cardNumber: "",
+    cvc: null,
+    nameOnCard: "",
+    type: "",
+    month: null,
+    year: null,
+    isDefault: false,
+  });
+  const navigate = useNavigate();
+  const { login } = useContext(LoginContext);
 
   useEffect(() => {
-    console.log("state", bookingState);
-  }, [bookingState]);
+    if (login.loggedIn) {
+      getPaymentMethodsOfUser(login.user._id).then((response) => {
+        setPaymentMethods(response.data);
+      });
+    } else {
+      navigate("/login-signup");
+    }
+  }, [showPaymentForm, login.loggedIn]);
 
   useEffect(() => {
-    console.log("state", paymentState);
-  }, [paymentState]);
+    if (booking.booking) {
+      getListingById(booking.booking.listing).then((response) => {
+        if (response) {
+          setListing(response.data);
+        }
+      });
+    } else {
+      navigate("/properties");
+    }
+  }, [booking]);
 
   const handlePaymentMethodSubmit = async (e) => {
     e.preventDefault();
-    console.log("payment method submitted", e);
-    const payload = {
-      cardNumber: e.target.cardNumber.value,
-      expiryDate: e.target.expiryDate.value,
-      cvv: e.target.cvv.value,
-      cardHolder: e.target.cardHolder.value,
-      cardType: e.target.cardType.value,
-    };
-    console.log("payload", payload);
-    await submitPaymentMethod(payload);
+
+    await submitPaymentMethod(newCard);
+    setShowPaymentForm(false);
   };
-  const [showPaymentForm, setShowPaymentForm] = useState(false);
 
   const showAddPayments = () => {
     if (showPaymentForm) {
       setShowPaymentForm(false);
     } else setShowPaymentForm(true);
   };
+
+  const handleNewCardChange = (e) => {
+    if (!newCard.user && login.loggedIn) {
+      setNewCard({
+        ...newCard,
+        [e.target.name]: e.target.value,
+        user: login.user._id,
+      });
+    } else {
+      setNewCard({ ...newCard, [e.target.name]: e.target.value });
+    }
+  };
+
+  const handleEdit = () => {
+    dispatchBooking({ type: "reset" });
+    navigate(`/listing-info/${booking.booking.listing}`);
+  };
+
+  const handlePay = () => {
+    updateBookingSuccess(booking.booking._id)
+    navigate("/my-booking")
+  }
 
   return (
     <div className="payment">
@@ -63,27 +100,32 @@ export default function Payments() {
           <div className="container-bookingdetails">
             <p className="bookingdetailsh4">booking details</p>
             <div className="bookingdetails">
-              <p className="property-name">{currentBooking?.name} </p>
-              <p className="property-location">
-                {currentBooking?.state}, {currentBooking?.country}{" "}
-              </p>
-              <p>Check in : </p>
-              <p>Check out : </p>
-              <p>Guests: </p>
+              <p className="property-name">{booking.booking?.name} </p>
+              <div className="property-location">
+                <p>{listing?.name}</p>
+                <p>{listing?.state}</p>
+                <p>{listing?.country}</p>{" "}
+              </div>
+              <p>Check in : {booking.booking?.checkIn.slice(0, 10)} </p>
+              <p>Check out : {booking.booking?.checkOut.slice(0, 10)} </p>
+              <p>Guests: {booking.booking?.guestCount}</p>
               <p className="property-rooms">
-                Number of Rooms: {currentBooking?.numberOfBedrooms}
+                Name of the Guest: {login.user?.firstName}
               </p>
-              <p>Notes:</p>
+              {/* <p>Notes:</p> */}
               <div />
             </div>
-            <button className="booking-btn">edit booking</button>
+            <button onClick={handlePay} className="booking-btn">Pay</button>
+            <button onClick={handleEdit} className="booking-btn">
+              Edit Booking
+            </button>
           </div>
           <div className="container-pricesummary">
             <h4 className="pricesummaryh4"> your price summary</h4>
             <div className="pricesummary-total">
               <p className="ps-text">total: </p>
               <div className="ps-value-conatiner">
-                <p className="ps-value">{currentBooking?.pricePerNight} € </p>
+                <p className="ps-value">{booking.booking?.price} € </p>
                 <p className="taxesandcharges">including taxes and charges</p>
               </div>
             </div>
@@ -92,7 +134,7 @@ export default function Payments() {
               <p>includes taxes and charges:</p>
               <div className="vat-container">
                 <p>VAT @ 10 %</p>
-                <p>{(currentBooking?.pricePerNight * 0.1).toFixed(2)}</p>
+                <p>{(booking.booking?.price * 0.1).toFixed(2)}</p>
               </div>
 
               <div className="vat-container">
@@ -108,21 +150,23 @@ export default function Payments() {
           </strong>
           <table className="payment-table">
             <tr className="payment-header">
-              <th>credit/debit card type</th>
-              <th>card number</th>
-              <th>card holder</th>
-              <th>expiry date</th>
-              <th>cvv</th>
+              <th>MasterCard/Visa/American Express</th>
+              <th>Card Number</th>
+              <th>Card Holder</th>
+              <th>Month</th>
+              <th>Year</th>
+              <th>cvc</th>
             </tr>
-            {paymentMethods?.map((payment) => {
+            {paymentMethods?.map((payment, index) => {
               return (
-                <tr className="payment-info">
-                  <td>{payment.cardType}</td>
+                <tr className="payment-info" key={index}>
+                  <td>{payment.type}</td>
                   <td>{payment.cardNumber}</td>
-                  <td>{payment.cardHolder}</td>
-                  <td>{payment.expiryDate}</td>
+                  <td>{payment.nameOnCard}</td>
+                  <td>{payment.month}</td>
+                  <td>{payment.year}</td>
                   <td>
-                    <input type="number" name="cvv" placeholder="cvv.." />
+                    <input type="number" name="cvc" placeholder="cvc.." />
                   </td>
                 </tr>
               );
@@ -137,11 +181,23 @@ export default function Payments() {
             </button>
           </div>
           {showPaymentForm && (
-            <form onSubmit={handlePaymentMethodSubmit}>
+            <form className="payment-form" onSubmit={handlePaymentMethodSubmit}>
               <div className="container1">
                 <div className="left-column">
-                  <label htmlFor="cardNumber">card number *</label>
+                  <label htmlFor="nameOnCard">Card holder *</label>
                   <input
+                    onChange={handleNewCardChange}
+                    type="text"
+                    id="nameOnCard"
+                    name="nameOnCard"
+                    placeholder="Card holder..."
+                    className="card-number-input"
+                    required
+                  />
+
+                  <label htmlFor="cardNumber">Card number *</label>
+                  <input
+                    onChange={handleNewCardChange}
                     type="text"
                     id="cardNumber"
                     name="cardNumber"
@@ -149,28 +205,49 @@ export default function Payments() {
                     className="card-number-input"
                     required
                   />
-                  <label htmlFor="cardType">card type *</label>
+                  <label htmlFor="cardType">Card type *</label>
                   <select
+                    onChange={handleNewCardChange}
                     type="text"
-                    name="cardType"
+                    name="type"
                     placeholder="Card type..."
                     className="card-type-select"
+                    required
                   >
-                    <option value="debit">Debit</option>
-                    <option value="credit">Credit</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="Visa">Visa</option>
+                    <option value="American Express">American Express</option>
                   </select>
-
-                  {/* 
-                  <label htmlFor="cvv">CVV</label>
-                  <input type="number" name="cvv" placeholder="CVV..." /> */}
                 </div>
                 <div className="right-column">
-                  <label htmlFor="expiryDate">Expiry Date</label>
+                  <label htmlFor="expiryMonth">Expiry Month *</label>
                   <input
-                    type="date"
-                    id="expiryDate"
-                    name="expiryDate"
-                    placeholder="Expiry date..."
+                    onChange={handleNewCardChange}
+                    type="number"
+                    id="month"
+                    name="month"
+                    placeholder="Expiry month..."
+                    className="expiry-date-input"
+                    required
+                  />
+
+                  <label htmlFor="expiryYear">Expiry Year *</label>
+                  <input
+                    onChange={handleNewCardChange}
+                    type="number"
+                    id="year"
+                    name="year"
+                    placeholder="Expiry year..."
+                    className="expiry-date-input"
+                    required
+                  />
+                  <label htmlFor="cvc">Cvc *</label>
+                  <input
+                    onChange={handleNewCardChange}
+                    type="number"
+                    id="cvc"
+                    name="cvc"
+                    placeholder="cvc..."
                     className="expiry-date-input"
                     required
                   />
@@ -178,16 +255,16 @@ export default function Payments() {
               </div>
               <div className="payment-options-container">
                 <button className="payment-option-button">
-                  <FaPaypal className="icon-payments" /> <p class="space"> </p>{" "}
-                  Paypal
+                  <FaPaypal className="icon-payments" />{" "}
+                  <p className="space"> </p> Paypal
                 </button>
                 <button className="payment-option-button">
                   <FaCcApplePay className="icon-payments" />
-                  <p class="space"> </p> Applepay
+                  <p className="space"> </p> Applepay
                 </button>
                 <button className="payment-option-button">
                   <SiAmericanexpress className="icon-payments" />
-                  <p class="space"> </p> American express
+                  <p className="space"> </p> American express
                 </button>
               </div>
               <div className="container-terms">

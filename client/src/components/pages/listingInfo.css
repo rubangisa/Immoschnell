@@ -107,6 +107,16 @@ button:hover {
   font-size: 15px;
 }
 
+.booking-dates input[type="number"] {
+  width: 270px;
+  height: 30px;
+  background-color: #064426;
+  color: #ede3d3;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+
 .booking-dates {
   font-size: 20px;
 }

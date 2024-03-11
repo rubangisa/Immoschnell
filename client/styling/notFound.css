@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Gluten:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@500&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Open+Sans:wght@300&family=Pacifico&family=Sedgwick+Ave+Display&family=Space+Mono&display=swap');
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "poppins", sans-serif;
+  /* font-family: "poppins", sans-serif; */
 }
 
 .notFoundContainer {
@@ -12,15 +14,16 @@
   padding-top: 300px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center
 }
 .content {
   position: relative;
+  text-align: center;
 }
 .content h2 {
   position: absolute;
   transform: translate(-50%, -50%);
-  font-size: 15em;
+  font-size: 15rem;
 }
 .content h2:nth-child(1) {
   color: transparent;
@@ -39,17 +42,21 @@
   z-index: 2;
   animation: animate 4s ease-in-out infinite;
 }
-.notfoundIcon {
-    width: 70px;
-    height: 70px;
-    margin: 0;
-    padding: 0;
-}
-.section1 {
+.notFoundSection1 {
     width: 100vw;
     height: 50vh;
+    position: relative;
 }
-.section2 {
+.notFoundSection2 {
+  position: absolute;
+  z-index: 2;
+    width: 100vw;
+    height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notFoundSection3 {
     width: 100vw;
     height: 35vh;
     display: flex;
@@ -57,12 +64,41 @@
     align-items: center;
 }
 .imageHolder {
+    padding-top: 1px;
     height: 5vh;
     width: 600px;
-    background: white;
-    border-bottom: 3px solid red;
+    border-bottom: 3px dashed rgb(237, 227, 211);
 }
-
+.notFoundImage {
+  height: 50px;
+  width: 55px;
+}
+.notFoundSpan {
+  font-size: 130px;
+}
+.notFoundp {
+  color: rgb(237, 227, 211);
+  font-family: "Allura", cursive;
+  font-size: xx-large;
+}
+.pHolder {
+  height: 5vh;
+  width: 600px;
+  text-align: center;
+  padding-bottom: 760px;
+  position: absolute;
+}
+.notFoundHome {
+  font-family: "Allura", cursive;
+  color: rgb(237, 227, 211);
+  text-decoration: underline;
+}
+.notFoundHome:hover {
+  font-size: 35px;
+  cursor: pointer;
+  text-shadow: 5px 5px 15px white;
+  text-decoration: none;
+}
 @keyframes animate {
   0%,
   100% {
@@ -73,3 +109,38 @@
     clip-path: polygon(100% 63%, 73% 57%, 72% 100%, 56% 100%, 55% 57%, 30% 63%, 63% 19%);
   } 
 }
+@media (width <= 1020px){
+  .content h2 {
+    font-size: 8rem;
+  }
+  .pHolder {
+    margin-bottom: -460px;
+  }
+
+    
+}
+@media ((min-width: 300px) and (max-width:600px)){
+    .content h2 {
+      font-size: 7rem;
+    }
+    .notFoundSpan {
+      font-size: 100px;
+    }
+    .pHolder {
+      height: 3vh;
+      width: fit-content;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .notFoundp {
+      font-size: 25px;
+    }
+    .imageHolder {
+      height: 3vh;
+      width: 350px;
+    }
+    .notFoundImage {
+      width: 35px;
+      height: 28px;
+    }
+  }

@@ -1,22 +1,23 @@
 import { NavLink } from "react-router-dom";
 import "../../styling/navbar.css";
-import logo from "./images/logo.png";
+import logo from  '../assets/logo.png';
 import { CiUser } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
-import {useState } from "react";
-
+import { useContext, useState } from "react";
+import { LoginContext } from "../contexts/AppContext";
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
-
+  const {login, dispatchLogin} = useContext(LoginContext);
   const toggleProfile = () => {
     setProfileMenuOpen(!profileMenuOpen);
   };
-
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+  const handleSignOut = () => {
+    dispatchLogin ({type : "loggedOut"})
+  }
   return (
     <div id="header-container">
       <div className="logo-div">
@@ -42,46 +43,68 @@ export default function NavBar() {
           </div>
           <div className="nav-parent">
             <NavLink className="nav-button" to="/addProperty">
-              Sign Up
+              Add Property
             </NavLink>{" "}
             <div id="underline-hover"></div>
           </div>
-          
-          
+          <div className="nav-parent">
+            <NavLink className="nav-button" to="/about">
+              About
+            </NavLink>
+            <div id="underline-hover"></div>
+          </div>
+          <div className="nav-parent">
+            <NavLink className="nav-button" to="/contacts">
+              Contact us
+            </NavLink>
+            <div id="underline-hover"></div>
+          </div>
         </div>
       </nav>
-
+      <div className="user-name-container">
+      <span>{login.loggedIn && login.user.firstName}</span>
       <div className="nav-parent">
         <button id="profile-icon" onClick={toggleProfile}>
           <CiUser className="profile-icon" />
         </button>
       </div>
+      </div>
       {profileMenuOpen && (
         <div className="dropdown-menu">
-        <div className="nav-parent-profile">
-        <NavLink className="profile-button" to="/login-signup">
-          Login
-          <div id="underline-hover"></div>
-        </NavLink>
-      </div>
-
+          <div className="nav-parent-profile">
+            <NavLink className="profile-button" to="/manage-account">
+              Manage Account
+              <div id="underline-hover"></div>
+            </NavLink>
+          </div>
           <div className="nav-parent-profile">
             <NavLink className="profile-button" to="/my-profile">
-              My profile
+              My Profile
               <div id="underline-hover"></div>
             </NavLink>
           </div>
-
           <div className="nav-parent-profile">
             <NavLink className="profile-button" to="/bookings-and-trips">
-              Book a property
+              Bookings and Trips
               <div id="underline-hover"></div>
             </NavLink>
           </div>
-
-         
-
-          
+          <div className="nav-parent-profile">
+            <NavLink className="profile-button" to="/wallet-and-rewards">
+              Wallet and Rewards
+              <div id="underline-hover"></div>
+            </NavLink>
+          </div>
+          <div className="nav-parent-profile">
+          {login.loggedIn ? <NavLink className="profile-button" onClick={handleSignOut}>
+              Logout
+              <div id="underline-hover"></div>
+            </NavLink> :
+            <NavLink className="profile-button" to="/login-signup">
+              Login/Sign Up
+              <div id="underline-hover"></div>
+            </NavLink> }
+          </div>
         </div>
       )}
     </div>
