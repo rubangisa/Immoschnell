@@ -11,3 +11,12 @@ export const createListing = async (data) => {
   }
 };
 
+export const getListingById = async (id) => {
+  try{
+    const response = await axios.get(`${API_ENDPOINT}/listings/${id}`);
+    console.log(response)
+    return response.data
+  } catch(error) {
+    console.log(error);
+  }
+};
