@@ -100,11 +100,11 @@ body {
 
 .homebox2-cont {
   display: flex;
-  gap: 80px;
+  gap: 100px;
 }
 .homebox2 img {
   height: 700px;
-  width: 600px;
+  width: 500px;
 }
 
 .homebox2-icons {
@@ -146,14 +146,16 @@ body {
 
 .homebox3 img {
   height: 700px;
-  width: 600px;
+  width: 500px;
+  margin-top:70px ;
 }
 
 .homebox3-text {
   padding-top: 20px;
   font-size: 18px;
   line-height: 35px;
-  width: 7ß0px;
+  width: 700px;
+  text-align: center;
 }
 
 span {
@@ -207,6 +209,8 @@ span {
 
 .partner-text{
   font-size: 18px;
+  text-align: center;
+  padding: 60px;
 }
 
 .homebox5 {
@@ -236,7 +240,31 @@ span {
   padding-top: 20px;
   font-size: 18px;
   line-height: 35px;
-  width: 70px;
+  text-align: center;
+}
+
+
+.review{
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.text{
+  flex-direction: column;
+  margin: 20px;
+}
+
+.text h5{
+  font-size: 20px;
+}
+
+.review img{
+  width: 500px;
+  height: 400px;
+}
+
+.numbertext{
+  display: none;
 }
 
 /* # sourceMappingURL=homepage.css.map */

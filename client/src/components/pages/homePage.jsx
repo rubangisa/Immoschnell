@@ -13,6 +13,7 @@ import { faAward } from "@fortawesome/free-solid-svg-icons";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 
+
 const Home = () => {
   return (
     <div className="homeContainer">
@@ -20,6 +21,10 @@ const Home = () => {
         Explore our selection of boutique rentals to find your perfect home away
         from home.
       </h1>
+
+      <div className="booking-search">
+     
+      </div>
       <div>
         <ul className="homeIcons">
           <li>
@@ -291,49 +296,67 @@ const Home = () => {
       </div>
       <div className="homebox5">
         <h2>Happy guests and happy hosts</h2>
-        <div className="homebox3-cont">
-          <img
-            src="https://images.unsplash.com/photo-1633113215988-4eaddc3965d9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="couple using computer"
-          />
-          <div className="homebox3-text">
-            <p>
-              <span>myhome</span> is designed to empower property owners like
-              you, offering a streamlined and effective avenue to showcase your
-              unique space to a global audience of travelers. By partnering with
-              us, you embark on a journey of hospitality excellence, elevating
-              your property into a sought-after destination that stands out in
-              the marketplace. Our platform is built with you in mind, featuring
-              user-friendly interfaces, transparent pricing, and secure
-              transactions, ensuring that you have all the tools and support
-              needed to excel. This allows you to concentrate on what you do
-              best – crafting an unforgettable and enriching experience for your
-              guests, while we handle the intricacies of connecting you with
-              those eager to discover what you have to offer.
-              <br />
-              <br />
-              Embark on a journey of hospitality excellence by signing up with{" "}
-              <span>myhome </span>today. Watch as your property transforms into
-              a sought-after destination, attracting global travelers seeking
-              distinctive and memorable stays. Our user-friendly platform,
-              transparent pricing, and secure transactions give you the peace of
-              mind to focus on what you do best – providing an unforgettable
-              experience for your guests.
-              <br />
-              <br />
-              Don't miss out on the opportunity to maximize your property's
-              potential. By joining our community of esteemed hosts, you let
-              your property shine on the global stage, captivating the hearts
-              and minds of travelers with its unique charm and unparalleled
-              hospitality. <span>myhome</span> is not just a platform; it's a
-              gateway to bringing the world to your doorstep, allowing your
-              property to be discovered and appreciated by a diverse and
-              discerning audience. Let's embark on this journey together,
-              transforming your space into more than just a place to stay, but a
-              destination in its own right, cherished by guests from around the
-              world.
-            </p>
+        <div className="homebox5-cont">
+          <div className="review-container">
+            <div className="review">
+              <div className="numbertext">1 / 3</div>
+              <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+              <div className="text">
+                <h5>IanPlus2, Arizona</h5>
+                <p>
+                  "Our stay in Mexico City was absolutely fantastic! The home we
+                  booked through MyHome was perfect for me and my two little
+                  ones. It was spacious, clean, and had all the amenities we
+                  needed. The location was great too, close to parks and
+                  kid-friendly attractions. The host was incredibly
+                  accommodating and even provided some toys for the kids. We
+                  felt safe and comfortable throughout our entire stay. Thank
+                  you, MyHome, for making our trip memorable and stress-free!"
+                </p>
+              </div>
+            </div>
+
+            <div className="review">
+              <div className="numbertext">2 / 3</div>
+
+              <div className="text">
+                <h5>Connie&George, Southend</h5>
+                <p>
+                  "Returning to Brighton after all these years was like stepping
+                  back in time. My husband and I chose to stay in a charming
+                  seaside cottage booked through MyHome, and it was everything
+                  we could have hoped for. The cottage was cozy, with
+                  breathtaking views of the pier and the sea. We spent our days
+                  reminiscing about our youth and exploring the quaint streets
+                  of Brighton. The host was gracious and even left us a bottle
+                  of wine to enjoy as we watched the sunset from the porch. It
+                  was a trip down memory lane that we'll cherish forever."
+                </p>
+              </div>
+              <img src="https://images.unsplash.com/photo-1508963493744-76fce69379c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+
+            <div className="review">
+              <div className="numbertext">2 / 3</div>
+              <img src="https://i.pinimg.com/564x/f8/95/b0/f895b0f6ff17d71f063a3c5b1cd12b88.jpg" />
+              <div className="text">
+                <h5>MadSummerCrew92, Auckland</h5>
+                <p>
+                  Our summer holiday in Bali was nothing short of amazing! My
+                  friends and I booked a stunning villa through MyHome, and it
+                  exceeded all our expectations. The villa was luxurious, with a
+                  private pool and breathtaking views of the ocean. We spent our
+                  days lounging by the pool, exploring the vibrant culture of
+                  Bali, and indulging in delicious local cuisine. The host went
+                  above and beyond to ensure we had everything we needed, from
+                  arranging transportation to recommending the best places to
+                  visit. It was the perfect getaway with friends, and we're
+                  already planning our next trip back. "
+                </p>
+              </div>
+            </div>
           </div>
+          <br />
         </div>
       </div>
     </div>
