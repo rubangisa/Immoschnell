@@ -79,3 +79,68 @@
 .propertylocation {
   padding-bottom: 15px;
 }
+
+.pagination {
+  display: inline-block;
+
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+@keyframes spinning {
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.spin{
+  color:#ede3d3;
+  font-size: 4rem;
+  animation: spinning 3s infinite;
+  position: absolute ; 
+  
+}
+
+.search-and-sorting {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+
+  .search {
+    input {
+      max-width:10rem;
+
+    }
+
+    @media(max-width:1010px) {
+      .search-label {
+        display: none;
+      }
+      input {
+        max-width:7rem;
+
+      }
+    }
+  }
+  .sort {
+    margin-right: 8rem;
+  }
+}
