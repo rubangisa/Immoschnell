@@ -87,7 +87,7 @@ body {
 .homebox2 {
   display: flex;
   flex-direction: column;
-  padding: 200px 240px 50px;
+  padding: 200px 270px 50px;
   width: 100%;
 }
 
@@ -129,7 +129,7 @@ body {
 .homebox3 {
   display: flex;
   flex-direction: column;
-  padding: 200px 240px 50px;
+  padding: 200px 270px 50px;
 }
 
 .homebox3 h2 {
@@ -185,7 +185,7 @@ span {
   background-color: transparent;
   border-radius: 10px;
   margin-top: 60px;
-  gap: 80px;
+  gap: 70px;
 }
 
 .partner-info img {
@@ -210,7 +210,7 @@ span {
 .partner-text{
   font-size: 18px;
   text-align: center;
-  padding: 60px;
+  padding: 30px 90px 0px 30px;
 }
 
 .homebox5 {
@@ -246,12 +246,15 @@ span {
 
 .review{
   display: flex;
-  margin-bottom: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+  padding: 30px 0px 0px 60px;
 }
 
 .text{
   flex-direction: column;
-  margin: 20px;
+  padding: 70px;
+  width: 700px;
 }
 
 .text h5{
