@@ -81,6 +81,9 @@ body {
     height: 2px;
     background-color: rgb(6, 68, 38);
   }
+  .logInForm {
+    color: rgb(6, 68, 38);
+  }
   .logInLinkHolder {
     display: flex;
     justify-content: center;
