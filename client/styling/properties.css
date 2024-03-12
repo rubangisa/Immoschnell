@@ -87,7 +87,6 @@ body {
 
 .pagination {
   display: inline-block;
- 
 }
 
 .pagination a {
@@ -95,34 +94,31 @@ body {
   float: left;
   padding: 8px 16px;
   text-decoration: none;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
   border: 1px solid #ddd;
 }
 
 .pagination a.active {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
-  border: 1px solid #4CAF50;
+  border: 1px solid #4caf50;
 }
 
-.pagination a:hover:not(.active) {background-color: #ddd;}
-
-
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
 
 @keyframes spinning {
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
-
-.spin{
+.spin {
   color: #ede3d3;
   font-size: 4rem;
   animation: spinning 3s infinite;
-  position: absolute ; 
-
+  position: absolute;
 }
-/*# sourceMappingURL=properties.css.map */
 
 .search-and-sorting {
   display: flex;
@@ -131,17 +127,31 @@ body {
   margin-bottom: 2rem;
   margin-top: 1rem;
 }
-  .search input {
-      
-      max-width:10rem;
-      
-    }
-  .search label {
-     
-    color: #ede3d3;
+.search-and-sorting .search {
+  font-size: 18px;
+}
+.search-and-sorting .search input {
+  max-width: 10rem;
+  background-color: #ede3d3;
+  margin-left: 14px;
+  height: 25px;
+  color: #064426;
+}
+@media (max-width: 1010px) {
+  .search-and-sorting .search .search-label {
+    display: none;
   }
+  .search-and-sorting .search input {
+    max-width: 7rem;
+  }
+}
+.search-and-sorting .sort {
+  margin-right: 8rem;
+}
+.search-and-sorting .sort select {
+  background-color: #ede3d3;
+  color: #064426;
+  height: 25px;
+}
 
- 
-  .sort {
-    margin-right: 8rem;
-  }
+/*# sourceMappingURL=properties.css.map */

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+   import { useNavigate } from "react-router-dom";
 import "../../../styling/properties.css";
 import { useEffect, useState , useContext} from "react";
 import { IoBed } from "react-icons/io5";

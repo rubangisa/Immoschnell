@@ -1,5 +1,6 @@
 import React from "react";
 import "../../../styling/about.css";
+import { IoMdSearch } from "react-icons/io";
 // import didier from '../../assets/walking.gif'
 
 const About = () => {
@@ -21,7 +22,7 @@ const About = () => {
                 </div>
                 <h3>Selma Atasert</h3>
                 <p className="role">Lead Backend</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum exercitationem iusto eveniet tempora fugiat possimus esse a alias! Eum!</p>
+                <p>Responsible for overseeing the development of robust backend systems, ensuring scalability, efficiency, and security. Leads the team in implementing innovative solutions and optimizing performance to meet project objectives.</p>
             </div>
             <div className="team-member">
                 <div className="team-img">
@@ -29,7 +30,7 @@ const About = () => {
                 </div>
                 <h3>Illia Zubrytskyi</h3>
                 <p className="role">Co-Lead Backend</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum exercitationem iusto eveniet tempora fugiat possimus esse a alias! Eum!</p>
+                <p>Collaborates closely with the Lead Backend to design and develop backend solutions that align with project requirements and industry best practices. Assists in mentoring team members and maintaining high code quality standards.</p>
 
             </div>
             <div className="team-member">
@@ -38,7 +39,7 @@ const About = () => {
                 </div>
                 <h3>Didier Rubangisa</h3>
                 <p className="role">Repository maintainer </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum exercitationem iusto eveniet tempora fugiat possimus esse a alias! Eum!</p>
+                <p>Manages and maintains code repositories, ensuring version control and collaboration among team members. Implements branching strategies, conducts code reviews, and resolves merge conflicts to streamline the development process.</p>
 
             </div>
             <div className="team-member">
@@ -47,7 +48,7 @@ const About = () => {
                 </div>
                 <h3>Pavithra Narayanan Kutty</h3>
                 <p className="role">Project Manager</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum exercitationem iusto eveniet tempora fugiat possimus esse a alias! Eum!</p>
+                <p>Coordinates project activities, schedules, and resources to ensure timely delivery of milestones and objectives. Facilitates communication between team members and stakeholders, manages risks, and ensures project alignment with strategic goals.</p>
 
             </div>
             <div className="team-member">
@@ -56,11 +57,43 @@ const About = () => {
                 </div>
                 <h3>Billie-Jean Bowdery</h3>
                 <p className="role">Lead Frontend</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, rerum exercitationem iusto eveniet tempora fugiat possimus esse a alias! Eum!</p>
-
+                <p>Leads the development of intuitive and responsive frontend interfaces, focusing on user experience and accessibility. Collaborates with the team and backend developers to integrate frontend components seamlessly into the overall architecture.</p>
             </div>
         </div>
-
+        {/* <div className="homePageFormContainer">
+            <form className="homePageFormWrapper">
+            <div className="homePageFormSubCont homePageFormSubCont1" onClick={() =>
+                document.querySelector(".homePageFormInput1").click()
+              }>
+                <label htmlFor="place" className="homePageFormLabel" >where</label>
+                <input type="text" placeholder="Search destinations" className="homePageFormInput homePageFormInput1"/>
+            </div>
+            <div className="homePageFormSubCont homePageFormSubCont2" onClick={() =>
+                document.querySelector(".homePageFormInput2").click()
+              }>
+                <label htmlFor="date" className="homePageFormLabel" >Check in</label>
+                <input type="date" placeholder="Add dates" className="homePageFormInput homePageFormInput2"/>
+            </div>
+            <div className="homePageFormSubCont homePageFormSubCont3" onClick={() =>
+                document.querySelector(".homePageFormInput3").click()
+              }>
+                <label htmlFor="date" className="homePageFormLabel" >Check out</label>
+                <input type="date" placeholder="Add dates" className="homePageFormInput homePageFormInput3"/>
+            </div>
+            <div className="homePageFormSubCont homePageFormSubCont4" onClick={() =>
+                document.querySelector(".homePageFormInput4").click()
+              }>
+                <label htmlFor="numbers" className="homePageFormLabel homePageFormLabel1" >Who </label>
+                <div className="homePageFormSubCont44">
+                    <input type="" placeholder="Number of guests" className="homePageFormInput homePageFormInput4"/>
+                    <div className="homePageFormBtn">
+                        <IoMdSearch type="submit"  className="homePageFormIcon" />
+                    </div>
+                </div>
+                
+            </div>
+            </form>
+        </div> */}
     </div>
   );
 };

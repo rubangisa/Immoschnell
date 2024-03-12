@@ -12,6 +12,7 @@ import AddListing from "./components/pages/addListing.jsx";
 import NotFound from "./components/pages/notFound.jsx";
 import ContactPage from "./components/pages/contactUs.jsx";
 import Payments from "./components/pages/payments.jsx";
+// import Properties from "./components/pages/properties.jsx";
 import AllProperties from "./components/pages/properties.jsx";
 import "./App.css";
 import { BookingContext, LoginContext, SearchContext } from "./contexts/AppContext.jsx";
