@@ -44,7 +44,7 @@ const Login = () => {
       <h1 className="login-tittle">Log in</h1>
       <div className="login-wrapper">
         <div className="log-sub-container1 innerMedia">
-          <form onSubmit={handleSubmit}>
+          <form className="logInForm" onSubmit={handleSubmit}>
             <div className="log-left-column">
               <label htmlFor="email">E-mail</label>
               <input
@@ -79,7 +79,7 @@ const Login = () => {
             <div className="word">or</div>
             <div className="horizontal-line"></div>
           </div>
-          <div className="logInLinkHolder">
+          <div className="logInLinkHolder logInForm">
               <p>Are you new to myHome, Please use the following link to <Link to="/signup" className="signUpLink"> Sign up</Link></p>
             </div>
           <div className="links-container">

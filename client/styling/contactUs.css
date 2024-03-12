@@ -52,6 +52,9 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
+.contact-wrapper .contactForm {
+    color: rgb(6, 68, 38);
+}
 
 .contact-submitButton {
     color: rgb(237, 227, 211);

@@ -63,6 +63,9 @@ body {
     padding: 20px;
     border-radius: 10px;
 }
+.signUp-wrapper .signUpForm {
+    color: rgb(6, 68, 38);
+}
 .submitButton {
     color: rgb(237, 227, 211);
     background-color: rgb(6, 68, 38);

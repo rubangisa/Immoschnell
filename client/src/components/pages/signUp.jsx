@@ -53,7 +53,7 @@ const SignUp = () => {
     <div className="signUp-container">
       <h1 className="signUp-tittle">create your account</h1>
       <div className="signUp-wrapper">
-        <form onSubmit={handleSubmit}>
+        <form className="signUpForm" onSubmit={handleSubmit}>
           <div className="sub-container1">
             <div className="signUp-left-column">
               <label htmlFor="firstName">First Name</label>
