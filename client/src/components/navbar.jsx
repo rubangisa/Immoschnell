@@ -100,7 +100,7 @@ export default function NavBar() {
               Logout
               <div id="underline-hover"></div>
             </NavLink> :
-            <NavLink className="profile-button" to="/login-signup">
+            <NavLink className="profile-button" to="/login">
               Login/Sign Up
               <div id="underline-hover"></div>
             </NavLink> }

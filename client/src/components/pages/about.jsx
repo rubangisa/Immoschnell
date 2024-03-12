@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../styling/about.css";
-import { IoMdSearch } from "react-icons/io";
+// import { IoMdSearch } from "react-icons/io";
 // import didier from '../../assets/walking.gif'
 
 const About = () => {

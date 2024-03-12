@@ -41,7 +41,7 @@ export default function Payments() {
         setPaymentMethods(response.data);
       });
     } else {
-      navigate("/login-signup");
+      navigate("/login");
     }
   }, [showPaymentForm, login.loggedIn]);
 
