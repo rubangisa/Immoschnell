@@ -1,4 +1,5 @@
 import "../../../styling/homepage.css";
+import {IoMdSearch} from "react-icons/io";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 import { HiOutlineHome } from "react-icons/hi2";
 import { BsBuildings } from "react-icons/bs";
@@ -12,7 +13,8 @@ import { faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
 import { faAward } from "@fortawesome/free-solid-svg-icons";
 import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
-
+import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   return (
@@ -22,9 +24,80 @@ const Home = () => {
         from home.
       </h1>
 
-      <div className="booking-search">
+      
+        <div className="homePageFormContainer">
+          <form className="homePageFormWrapper">
+            <div
+              className="homePageFormSubCont homePageFormSubCont1"
+              onClick={() =>
+                document.querySelector(".homePageFormInput1").click()
+              }
+            >
+              <label htmlFor="place" className="homePageFormLabel">
+                Destination
+              </label>
+              <input
+                type="text"
+                placeholder="Search destinations"
+                className="homePageFormInput homePageFormInput1"
+              />
+            </div>
+            <div
+              className="homePageFormSubCont homePageFormSubCont2"
+              onClick={() =>
+                document.querySelector(".homePageFormInput2").click()
+              }
+            >
+              <label htmlFor="date" className="homePageFormLabel">
+                Check in
+              </label>
+              <input
+                type="date"
+                placeholder="Add dates"
+                className="homePageFormInput homePageFormInput2"
+              />
+            </div>
+            <div
+              className="homePageFormSubCont homePageFormSubCont3"
+              onClick={() =>
+                document.querySelector(".homePageFormInput3").click()
+              }
+            >
+              <label htmlFor="date" className="homePageFormLabel">
+                Check out
+              </label>
+              <input
+                type="date"
+                placeholder="Add dates"
+                className="homePageFormInput homePageFormInput3"
+              />
+            </div>
+            <div
+              className="homePageFormSubCont homePageFormSubCont4"
+              onClick={() =>
+                document.querySelector(".homePageFormInput4").click()
+              }
+            >
+              <label
+                htmlFor="numbers"
+                className="homePageFormLabel homePageFormLabel1"
+              >
+                Guests{" "}
+              </label>
+              <div className="homePageFormSubCont44">
+                <input
+                  type=""
+                  placeholder="Number of guests"
+                  className="homePageFormInput homePageFormInput4"
+                />
+                <div className="homePageFormBtn">
+                  <IoMdSearch type="submit" className="homePageFormIcon" />
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
      
-      </div>
       <div>
         <ul className="homeIcons">
           <li>
@@ -299,30 +372,30 @@ const Home = () => {
         <div className="homebox5-cont">
           <div className="review-container">
             <div className="review">
-              <div className="numbertext">1 / 3</div>
               <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
               <div className="text">
                 <h5>IanPlus2, Arizona</h5>
                 <p>
-                  "Our stay in Mexico City was absolutely fantastic! The home we
+                  <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
+                  Our stay in Mexico City was absolutely fantastic! The home we
                   booked through MyHome was perfect for me and my two little
                   ones. It was spacious, clean, and had all the amenities we
                   needed. The location was great too, close to parks and
                   kid-friendly attractions. The host was incredibly
                   accommodating and even provided some toys for the kids. We
                   felt safe and comfortable throughout our entire stay. Thank
-                  you, MyHome, for making our trip memorable and stress-free!"
+                  you, MyHome, for making our trip memorable and stress-free!{" "}
+                  <FontAwesomeIcon icon={faQuoteRight} className="icon-rev" />
                 </p>
               </div>
             </div>
 
             <div className="review">
-              <div className="numbertext">2 / 3</div>
-
               <div className="text">
                 <h5>Connie&George, Southend</h5>
                 <p>
-                  "Returning to Brighton after all these years was like stepping
+                  <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
+                  Returning to Brighton after all these years was like stepping
                   back in time. My husband and I chose to stay in a charming
                   seaside cottage booked through MyHome, and it was everything
                   we could have hoped for. The cottage was cozy, with
@@ -330,18 +403,19 @@ const Home = () => {
                   reminiscing about our youth and exploring the quaint streets
                   of Brighton. The host was gracious and even left us a bottle
                   of wine to enjoy as we watched the sunset from the porch. It
-                  was a trip down memory lane that we'll cherish forever."
+                  was a trip down memory lane that we'll cherish forever.
+                  <FontAwesomeIcon icon={faQuoteRight} className="icon-rev" />
                 </p>
               </div>
               <img src="https://images.unsplash.com/photo-1508963493744-76fce69379c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
             </div>
 
             <div className="review">
-              <div className="numbertext">2 / 3</div>
               <img src="https://i.pinimg.com/564x/f8/95/b0/f895b0f6ff17d71f063a3c5b1cd12b88.jpg" />
               <div className="text">
                 <h5>MadSummerCrew92, Auckland</h5>
                 <p>
+                  <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Our summer holiday in Bali was nothing short of amazing! My
                   friends and I booked a stunning villa through MyHome, and it
                   exceeded all our expectations. The villa was luxurious, with a
@@ -351,7 +425,8 @@ const Home = () => {
                   above and beyond to ensure we had everything we needed, from
                   arranging transportation to recommending the best places to
                   visit. It was the perfect getaway with friends, and we're
-                  already planning our next trip back. "
+                  already planning our next trip back.{" "}
+                  <FontAwesomeIcon icon={faQuoteRight} className="icon-rev" />
                 </p>
               </div>
             </div>

@@ -19,6 +19,7 @@ body {
   display: flex;
   justify-content: center;
   list-style-type: none;
+  margin-top: 100px;
 }
 .homeIcons li {
   font-size: 80px;
@@ -26,7 +27,88 @@ body {
   padding: 10px;
   color: #ede3d3;
 }
+.homePageFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+}
+.homePageFormWrapper {
+  background-color: rgb(237, 227, 211);
+  display: flex;
+gap: 40px;
+  align-items: center;
+  flex-direction: row;
+  border: gray 1px solid;
+  border-radius: 50px;
+  box-shadow: 3px 3px 3px rgba(237, 227, 211, 0.539);
+  width: 60%;
 
+  padding-left: 0px;
+}
+.homePageFormSubCont {
+  display: flex;
+  
+  flex-direction: column;
+  padding-top: 5px;
+  padding: 10px;
+}
+.homePageFormSubCont1 {
+  margin-left: 70px;
+}
+.homePageFormSubCont1,
+.homePageFormSubCont2,
+.homePageFormSubCont3 {
+  border-right: 1px solid rgba(128, 128, 128, 0.472);
+}
+.homePageFormSubCont1:hover,.homePageFormSubCont2:hover,
+.homePageFormSubCont3:hover, .homePageFormSubCont4:hover {
+  cursor: pointer;
+}
+.homePageFormBtn {
+  background-color:#064426;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-top: -18px;
+  padding: 30px;
+}
+.homePageFormSubCont44 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.homePageFormIcon {
+  width: 40px;
+  height: 40px;
+  font-size: xx-large;
+  margin-top: -18px;
+  margin-left: -18px;
+}
+.homePageFormInput {
+  border: none;
+  background-color: rgb(237, 227, 211);
+  color: rgb(6, 68, 38);
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  font-family: "Playfair Display", serif;;
+}
+.homePageFormLabel {
+  color: rgb(6, 68, 38);
+  margin: 0;
+  padding: 0;
+}
+.homePageFormLabel1 {
+  margin-right: 140px;
+  margin-bottom: -10px;
+}
+.homePageFormInput:focus {
+  outline: none;
+  font-size: 16px;
+  color: rgb(6, 68, 38);
+}
 .homebox1 {
   display: flex;
   justify-content: space-between;
@@ -87,7 +169,7 @@ body {
 .homebox2 {
   display: flex;
   flex-direction: column;
-  padding: 200px 270px 50px;
+  padding: 200px 300px 50px;
   width: 100%;
 }
 
@@ -102,7 +184,7 @@ body {
   display: flex;
   gap: 100px;
 }
-.homebox2 img {
+.homebox2-cont img {
   height: 700px;
   width: 500px;
 }
@@ -167,6 +249,7 @@ span {
   display: flex;
   flex-direction: column;
   padding: 200px 240px 50px;
+  width: fit-content
 }
 
 .homebox4 h2 {
@@ -232,7 +315,7 @@ span {
 }
 
 .homebox5 img {
-  height: 700px;
+  height: 400px;
   width: 600px;
 }
 
@@ -247,8 +330,11 @@ span {
 .review{
   display: flex;
   align-items: center;
+  margin-left: 30px;
   margin-bottom: 60px;
-  padding: 30px 0px 0px 60px;
+  padding: 30px;
+  border: 2px solid #ede3d3;
+  border-radius: 5px;
 }
 
 .text{
@@ -266,8 +352,10 @@ span {
   height: 400px;
 }
 
-.numbertext{
-  display: none;
+.icon-rev{
+  font-size: 40px;
+  padding: 2px;
 }
+
 
 /* # sourceMappingURL=homepage.css.map */
