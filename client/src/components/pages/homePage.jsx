@@ -273,10 +273,11 @@ const Home = () => {
         <h2>Our Partners</h2>
         <div className="partner-card">
           <div className="partner-info">
+          <a href="https://byplenty.com/portfolio/cooee-oral-care/">
             <img
               src="https://byplenty.com/wp-content/uploads/2021/05/cooee_3.jpg.webp"
               alt="cooee sustainable oral care "
-            />
+            /></a>
             <div className="partner-card-cont">
               <h4>
                 <b>Cooee</b>
@@ -284,10 +285,11 @@ const Home = () => {
             </div>
           </div>
           <div className="partner-info">
+          <a href="https://goshencoffee.com/">
             <img
               src="https://i.pinimg.com/564x/1b/c1/48/1bc14897ade16ff205209ca51727786b.jpg"
               alt="goshen ethically sourced coffee"
-            />
+            /></a>
             <div className="partner-card-cont">
               <h4>
                 <b>Goshen Coffee</b>
@@ -295,10 +297,10 @@ const Home = () => {
             </div>
           </div>
           <div className="partner-info">
-            <img
+            <a href="https://teklafabrics.com/"><img
               src="https://i.pinimg.com/736x/5e/7b/a5/5e7ba53e012a89ce0b83f85f4363f80a.jpg"
               alt="tekla home furnishings"
-            />
+            /></a>
             <div className="partner-card-cont">
               <h4>
                 <b>Tekla</b>
@@ -317,10 +319,11 @@ const Home = () => {
             </div>
           </div>
           <div className="partner-info">
+          <a href="https://www.ode-aperitif.com/en">
             <img
               src="https://shop.ashleyandco.co/cdn/shop/products/AC_SZLLL_Web.jpg?v=1646865262%20%20%20%20%20%20%20%20//shop.ashleyandco.co/cdn/shop/products/AC_SZLLL_Web.jpg?v=1646865262"
               alt="ashley&co natural cleaning products"
-            />
+            /></a>
             <div className="partner-card-cont">
               <h4>
                 <b>Ashley&Co</b>
@@ -328,10 +331,10 @@ const Home = () => {
             </div>
           </div>
           <div className="partner-info">
-            <img
+            <a href="https://antipodesnature.com/"><img
               src="https://i.pinimg.com/564x/6a/da/6c/6ada6c337b9ce083435ab1953605ab9a.jpg"
               alt="antipodes organic cosmetics"
-            />
+            /></a>
             <div className="partner-card-cont">
               <h4>
                 <b>Antipodes</b>

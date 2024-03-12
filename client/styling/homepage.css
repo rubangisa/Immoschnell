@@ -182,7 +182,7 @@ gap: 40px;
 
 .homebox2-cont {
   display: flex;
-  gap: 100px;
+  gap: 80px;
 }
 .homebox2-cont img {
   height: 700px;
@@ -194,6 +194,7 @@ gap: 40px;
   width: 300px;
   text-align: center;
   font-size: 18px;
+  padding-top: 30px;
   padding-left: 20px;
 }
 .homebox2-icons2 {
@@ -201,6 +202,7 @@ gap: 40px;
   width: 300px;
   text-align: center;
   font-size: 18px;
+  padding-top: 30px;
   padding-left: 60px;
 }
 
@@ -314,10 +316,7 @@ span {
   gap: 80px;
 }
 
-.homebox5 img {
-  height: 400px;
-  width: 600px;
-}
+
 
 .homebox5-text {
   padding-top: 20px;
@@ -349,7 +348,7 @@ span {
 
 .review img{
   width: 500px;
-  height: 400px;
+  height: 300px;
 }
 
 .icon-rev{
