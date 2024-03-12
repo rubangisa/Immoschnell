@@ -47,15 +47,16 @@ const App = () => {
             <Route path="/listing-info/:listingId" element={<ListingInfo />} />
             <Route path="/" exact element={<Home />} />
             <Route
-              path="/login-signup"
+              path="/login"
               element={
                 <div>
                   {" "}
-                  <Login /> <SignUp />{" "}
+                  <Login />
                 </div>
               }
               exact
             />
+            <Route path="/signup" element={ <div> <SignUp />{" "} </div>} />
             <Route path="/about" element={<About />} exact />
             <Route path="/contacts" element={<ContactPage />} />
             {/* <Route path="/properties" element={<Properties />} />\ */}

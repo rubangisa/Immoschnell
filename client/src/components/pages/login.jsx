@@ -5,6 +5,7 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { LiaApple } from "react-icons/lia";
 import { userLogin } from "../../apiCalls/userApi";
+import { Link } from "react-router-dom";
 import "../../../styling/login.css";
 import { LoginContext } from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
@@ -78,6 +79,9 @@ const Login = () => {
             <div className="word">or</div>
             <div className="horizontal-line"></div>
           </div>
+          <div className="logInLinkHolder">
+              <p>Are you new to myHome, Please use the following link to <Link to="/signup" className="signUpLink"> Sign up</Link></p>
+            </div>
           <div className="links-container">
             <a
               href="https://support.google.com/answer/2451065?hl=en"

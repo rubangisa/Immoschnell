@@ -20,6 +20,11 @@ body {
 .accent-color {
     accent-color: rgb(6, 68, 38);
 }
+.signUpLink:hover {
+    background-color: rgb(6, 68, 38);
+    padding: 3px;
+    border-radius: 5px;
+}
 .sub-container1 {
     display: flex;
 }
@@ -34,6 +39,20 @@ body {
 .sub-containerP2 {
     display: flex;
 }
+.signUpLinkHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .loginLink {
+    text-decoration: underline;
+  }
+  .signUplinkHolder {
+    margin-top: 8px;
+    padding-left: 50px;
+  }
 
 .signUp-tittle {
     color: rgb(237, 227, 211);
