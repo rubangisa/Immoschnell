@@ -39,23 +39,18 @@ const Footer = () => {
         </div>
         <div className="footer-links">
           <ul>
+           
             <li>
-             <Link to="/about"> about us</Link>
+              <a href="#">Privacy policy</a>
             </li>
             <li>
-             <Link to="/contacts"> contact us</Link>
-            </li>
-            <li>
-              <a href="#">privacy policy</a>
-            </li>
-            <li>
-              <a href="#">imprint</a>
+              <a href="#">Imprint</a>
             </li>
           </ul>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 myhome lettings ltd. all rights reserved.</p>
+        <p>&copy; 2024 myhome lettings ltd. All rights reserved.</p>
       </div>
     </footer>
   );
