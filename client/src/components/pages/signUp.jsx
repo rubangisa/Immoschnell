@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoIosCheckbox } from "react-icons/io";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
+import { Link } from "react-router-dom";
 import "../../../styling/signUp.css";
 import { signUp } from "../../apiCalls/userApi";
 
@@ -52,7 +53,7 @@ const SignUp = () => {
     <div className="signUp-container">
       <h1 className="signUp-tittle">create your account</h1>
       <div className="signUp-wrapper">
-        <form onSubmit={handleSubmit}>
+        <form className="signUpForm" onSubmit={handleSubmit}>
           <div className="sub-container1">
             <div className="signUp-left-column">
               <label htmlFor="firstName">First Name</label>
@@ -128,6 +129,9 @@ const SignUp = () => {
                   Sign up to receive myhome newsletters, offer and promotional
                   material
                 </span>
+              </div>
+              <div className="signUplinkHolder">
+                 <p>If you already have an account, Please use the following link to <Link to="/login" className="loginLink"> Login</Link></p>
               </div>
             </div>
             <div className="sub-containerButton">

@@ -66,6 +66,7 @@ body {
   font-size: 23px;
   padding-left: 40px;
   border-left: 2px solid #064426;
+  cursor: pointer;
 }
 .listing-icons .listing-icon:first-child {
   border-left: none;

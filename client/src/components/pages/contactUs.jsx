@@ -33,7 +33,7 @@ const contactPage = () => {
     <div className="contact-container">
       <h1 className="contact-tittle">Contact Us</h1>
       <div className="contact-wrapper">
-        <form ref={form} onSubmit={sendEmail}>
+        <form className="contactForm" ref={form} onSubmit={sendEmail}>
           <div className="contact-container1">
             <div className="contact-left-column">
               <label htmlFor="firstName">First Name</label>

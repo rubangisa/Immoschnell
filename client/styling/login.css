@@ -70,11 +70,29 @@ body {
     align-items: center;
     margin-top: 60px;
   }
+  .loginLink:hover {
+    background-color: rgb(6, 68, 38);
+    padding: 3px;
+    border-radius: 5px;
+}
   
   .horizontal-line {
     flex-grow: 1;
     height: 2px;
     background-color: rgb(6, 68, 38);
+  }
+  .logInForm {
+    color: rgb(6, 68, 38);
+  }
+  .logInLinkHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+  }
+  .signUpLink {
+    text-decoration: underline;
   }
   
   .word {
