@@ -15,6 +15,14 @@ export const getAllPropertyList = async (currentPage, limit, search) => {
       path = path + `&destination=${search.keyword}`;
     }
 
+    if(search.checkIn && search.checkOut) {
+      path = path + `&checkIn=${search.checkIn}&checkOut=${search.checkOut}`
+    }
+
+    if(search.guest){
+      path = path + `&guestCount=${search.guest}`
+    }
+
     const responseAll = await axios.get(path);
     return responseAll.data;
   } catch (error) {

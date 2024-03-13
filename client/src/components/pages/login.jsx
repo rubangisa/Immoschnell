@@ -5,6 +5,7 @@ import { FaGooglePlusG } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { LiaApple } from "react-icons/lia";
 import { userLogin } from "../../apiCalls/userApi";
+import { Link } from "react-router-dom";
 import "../../../styling/login.css";
 import { LoginContext } from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
@@ -43,7 +44,7 @@ const Login = () => {
       <h1 className="login-tittle">Log in</h1>
       <div className="login-wrapper">
         <div className="log-sub-container1 innerMedia">
-          <form onSubmit={handleSubmit}>
+          <form className="logInForm" onSubmit={handleSubmit}>
             <div className="log-left-column">
               <label htmlFor="email">E-mail</label>
               <input
@@ -78,6 +79,9 @@ const Login = () => {
             <div className="word">or</div>
             <div className="horizontal-line"></div>
           </div>
+          <div className="logInLinkHolder logInForm">
+              <p>Are you new to myHome, Please use the following link to <Link to="/signup" className="signUpLink"> Sign up</Link></p>
+            </div>
           <div className="links-container">
             <a
               href="https://support.google.com/answer/2451065?hl=en"

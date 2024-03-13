@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoIosCheckbox } from "react-icons/io";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../styling/signUp.css";
 import { signUp } from "../../apiCalls/userApi";
 
@@ -11,6 +12,7 @@ const SignUp = () => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate()
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
@@ -35,7 +37,8 @@ const SignUp = () => {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     const data = {
       firstName: firstName,
       lastName: lastName,
@@ -46,13 +49,14 @@ const SignUp = () => {
     };
 
     await signUp(data);
+    navigate(`/login`)
   };
 
   return (
     <div className="signUp-container">
       <h1 className="signUp-tittle">create your account</h1>
       <div className="signUp-wrapper">
-        <form onSubmit={handleSubmit}>
+        <form className="signUpForm" onSubmit={handleSubmit}>
           <div className="sub-container1">
             <div className="signUp-left-column">
               <label htmlFor="firstName">First Name</label>
@@ -129,10 +133,13 @@ const SignUp = () => {
                   material
                 </span>
               </div>
+              <div className="signUplinkHolder">
+                 <p>If you already have an account, Please use the following link to <Link to="/login" className="loginLink"> Login</Link></p>
+              </div>
             </div>
             <div className="sub-containerButton">
               <button type="submit" className="submitButton">
-                Sign in
+                Sign up
               </button>
             </div>
           </div>

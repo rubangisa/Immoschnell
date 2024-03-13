@@ -1,12 +1,8 @@
-import { IoIosCheckbox } from "react-icons/io";
 import { FaPaypal } from "react-icons/fa";
 import { FaCcApplePay } from "react-icons/fa";
 import { SiAmericanexpress } from "react-icons/si";
-import { CiCalendar } from "react-icons/ci";
-import { MdCheckBoxOutlineBlank } from "react-icons/md";
 import "../../../styling/payments.css";
-import { useReducer, useEffect, useState, useContext } from "react";
-import { bookingReducer } from "../../reducers/BookingReducer.js";
+import {  useEffect, useState, useContext } from "react";
 import {
   getPaymentMethodsOfUser,
   submitPaymentMethod,
@@ -27,7 +23,7 @@ export default function Payments() {
     cardNumber: "",
     cvc: null,
     nameOnCard: "",
-    type: "",
+    type: "MasterCard",
     month: null,
     year: null,
     isDefault: false,
@@ -41,7 +37,7 @@ export default function Payments() {
         setPaymentMethods(response.data);
       });
     } else {
-      navigate("/login-signup");
+      navigate("/login");
     }
   }, [showPaymentForm, login.loggedIn]);
 

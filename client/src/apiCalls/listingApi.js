@@ -20,3 +20,12 @@ export const getListingById = async (id) => {
     console.log(error);
   }
 };
+
+export const getListingsOfUser = async (userId, currentPage, limit) => {
+  try {
+    const response = await axios.get(`${API_ENDPOINT}/listings/user/${userId}?page=${currentPage}&limit=${limit}`)
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+};

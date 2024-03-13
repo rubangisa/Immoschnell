@@ -1,59 +1,114 @@
-import { useReducer } from 'react';
-import './myBooking.css';
+import { useContext, useEffect, useState } from "react";
+import "./myBooking.css";
+import { LoginContext } from "../../contexts/AppContext";
+import { cancelBooking, getBookingsOfUser, updateBookingFavorite } from "../../apiCalls/bookingApiCalls";
+import { useNavigate } from "react-router-dom";
 
 
-const initialState = {
-  propertyData: [
-    { id: 'test123', image: 'https://www.thespruce.com/thmb/Ix89S6tu9dOcaWddD08Woko7pnw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/badiuth-0rNiWRN8RtQ-unsplash-4f0652f47082414c9d89d72357c0b3ba.jpg', name: 'Cottonflower Lane', location: 'New Jersey', price: 300 },
-    { id: 'test567', image: 'https://3.bp.blogspot.com/-cuDVUdL2uGE/T9MbF4P98uI/AAAAAAAACoI/ev0R2e86nDc/s1600/Nice+house+design+Toronto+Canada+1.jpg', name: 'Stonesmiths Point', location: 'Toronto', price: 780 },
-    { id: 'test8910', image: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhUOhBzBEXm74Pza7zLMpRdmFjFymcYV7WhFfVY8zaQnPvzF9eh-Sj7kS4N3-frLNKJx4mzYIE7UtvT-HaC7ZOCUiY8DlWBLcXRLcWrzt7IT_wzGBvuZFi7YajSgaYjhbcATXLe91XogRASz5McuRcEiJJhOhVs1lKL1DZOi783tfjT9cEk9vWUY1d2g6k/s750/MED445FC27DDAA8433B8055AF6336724710_20230602130501_w2200_q80.jpg', name: 'Fika Lagom Cottage', location: 'Djurgården', price: 420 }
-  ]
-};
-
-const FETCH_DATA = 'FETCH_DATA';
-
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case FETCH_DATA:
-      return state;
-    default:
-      return state;
-  }
-};
 
 const MyBooking = () => {
-  const [state] = useReducer(reducer, initialState);
+  const [filter, setFilter] = useState("upcoming");
+  const [bookings, setBookings] = useState([]);
+  const {login} = useContext(LoginContext);
+  const navigate = useNavigate();
+  const [showBookingDetails, setShowBookingDetails] = useState(false);
+  const [refreshToggle, setRefreshToggle] = useState(false)
+  
+
+  
+
+  const handleFilterChange = (e) => {
+    setFilter(e.target.getAttribute("name"))
+    
+  };
+
+
+  useEffect(() => {
+    if(login.loggedIn) {
+      getBookingsOfUser(login.user._id, filter).then((response) => {
+        console.log(response.data)
+           setBookings(response.data)
+      })
+    } else {
+      navigate("/login")
+    }
+    
+  }, [filter, login.loggedIn, refreshToggle])
+
+  const handleCancelBooking = async (e) => {
+    
+    await cancelBooking(e.target.getAttribute("name"))
+    setFilter("cancelled")
+  }
+     
+
+  const handleReeBook =  (e) => {
+    navigate(`/listing-info/${e.target.getAttribute("name")}`)
+  }
+
+  const handleBookingDetails = () => {
+    setShowBookingDetails(!showBookingDetails)
+  }
+
+  const handleAddFavorite = async (e) => {
+    await updateBookingFavorite(e.target.getAttribute("name"), true)
+    setRefreshToggle(!refreshToggle)
+   
+  }
+
+  const handleRemoveFavorite = async (e) => {
+    await updateBookingFavorite(e.target.getAttribute("name"), false)
+    setRefreshToggle(!refreshToggle)
+   
+  }
+
 
   return (
     <div className="booking-container">
-    <div className='booking-title'>
-    <h1>My bookings</h1></div>
-      <div className='booking-tabs'>
-        <ul>
-          <li>Previous bookings</li>
-          <li>Upcoming bookings</li>
-          <li>Cancelled bookings</li>
+      <div className="booking-title">
+        <h1>My bookings</h1>
+      </div>
+      <div className="booking-tabs">
+        <ul >
+          <li onClick={handleFilterChange} name="previous">
+            Previous bookings
+          </li>
+          <li onClick={handleFilterChange} name="upcoming">
+            Upcoming bookings
+          </li>
+          <li onClick={handleFilterChange} name="cancelled">
+            Cancelled bookings
+          </li>
         </ul>
       </div>
       <div className="main-content">
-        {state.propertyData.map(property => (
-          <div key={property.id} className="booking-box">
+        {bookings?.map((booking) => (
+          <div key={booking._id} className="booking-box">
             <div className="left-content">
-              <div className='prop-pic'><img src={property.image} alt={property.id} /></div>
+              <div className="prop-pic">
+                <img src={booking.listing.images[0]} alt={booking.id} />
+              </div>
               <div className="property-details">
-                <h2>{property.name}, 
-                <br />
-                {property.location}</h2>
-                <h3>dates</h3>
-                <h3>{property.price}€
-                per night</h3>
+                <h2>
+                  {booking.listing.name},
+                  <br />
+                  {booking.listing.city}
+                  <br/>
+                  {booking.price}€
+                </h2>
+                <h4 hidden={!showBookingDetails}>{new Date(booking.checkIn).toLocaleDateString()}</h4>
+                <h4 hidden={!showBookingDetails}>{new Date(booking.checkOut).toLocaleDateString()}</h4>
+                <h4 hidden={!showBookingDetails}>{booking.listing.pricePerNight}€ per night</h4>
+                <h4 hidden={!showBookingDetails}>{booking.guestCount} guest</h4>
               </div>
             </div>
             <div className="right-content">
-              <button><p>Booking details</p></button>
-              <button>Re-book property</button>
-              <button>Add to favorites</button>
+              <button onClick={handleBookingDetails} >
+                <p>Booking details</p>
+              </button>
+              <button onClick={handleReeBook} name={booking.listing._id}> Re-book property</button>
+              <button onClick={handleCancelBooking} name={booking._id} hidden={filter=== "upcoming" ? false : true} >Cancel</button>
+              <button onClick={booking.favorite ? handleRemoveFavorite : handleAddFavorite} name={booking._id} hidden = {filter === "upcoming" ? true : false}>{booking.favorite ? "Remove favorite" : "Add to favorites"} </button>
             </div>
           </div>
         ))}

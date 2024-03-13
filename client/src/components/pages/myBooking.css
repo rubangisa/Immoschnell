@@ -74,6 +74,7 @@ body {
   border-radius: 10px;
 }
 
+
 .left-content {
   display: flex;
   align-items: center;
@@ -88,7 +89,7 @@ img {
 
 .property-details {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   color: #064426;
 }
