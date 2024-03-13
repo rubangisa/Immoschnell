@@ -23,7 +23,7 @@ export default function Payments() {
     cardNumber: "",
     cvc: null,
     nameOnCard: "",
-    type: "",
+    type: "MasterCard",
     month: null,
     year: null,
     isDefault: false,
