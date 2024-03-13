@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./userDash.css";
 import membpoints from "../../assets/mempoints_img.png";
 import membership_img from "../../assets/membership_img.png";
@@ -6,58 +6,84 @@ import social from "../../assets/social-img.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
-const initialState = {
-  propertyData: [
-    {
-      id: "test123",
-      image:
-        "https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y290dGFnZXxlbnwwfHwwfHx8MA%3D%3D",
-      name: "Cottonflower Lane",
-      location: "New Jersey",
-      price: 300,
-    },
-    {
-      id: "test123",
-      image:
-        "https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y290dGFnZXxlbnwwfHwwfHx8MA%3D%3D",
-      name: "Cottonflower Lane",
-      location: "New Jersey",
-      price: 300,
-    },
-    {
-      id: "test123",
-      image:
-        "https://images.unsplash.com/photo-1580202313707-46a966af5c6f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Y290dGFnZXxlbnwwfHwwfHx8MA%3D%3D",
-      name: "Cottonflower Lane",
-      location: "New Jersey",
-      price: 300,
-    },
-  ],
-  userData: [
-    {
-      image:
-        "https://images.unsplash.com/photo-1647888774545-96f662a65e15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      name: "Bugmakesthree",
-      updated_at: "14.02.2024",
-    },
-  ],
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "UPDATE_PROPERTY_DATA":
-      return { ...state, propertyData: action.payload };
-    case "UPDATE_USER_DATA":
-      return { ...state, userData: action.payload };
-    default:
-      return state;
-  }
-};
+import { getListingsOfUser } from "../../apiCalls/listingApi";
+import { LoginContext } from "../../contexts/AppContext";
+import { useNavigate } from "react-router-dom";
+import { getBookingsOfUser, getFavoriteBookingsOfUser, updateBookingFavorite } from "../../apiCalls/bookingApiCalls";
 
 const UserDash = () => {
-  const [state] = useReducer(reducer, initialState);
-  const { propertyData, userData } = state;
+  const [propertyList, setPropertyList] = useState([]);
+  const [favoritePropertyList, setFavoritePropertyList] = useState([]);
+
+  const { login } = useContext(LoginContext);
+  const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
+  const [pageItemArr, setPageItemArr] = useState([1]);
+
+
+  const LIMIT = 3;
+ 
+
+  useEffect(() => {
+    if (login.loggedIn) {
+      getListingsOfUser(login.user._id, currentPage, LIMIT).then((response) => {
+        setPropertyList(response.data);
+        const totalItems = response.numberOfItems;
+        const pageCount = Math.ceil(totalItems / LIMIT);
+        setTotalPage(pageCount);
+
+        let newPageItemArr = [];
+        for (let i = 1; i <= pageCount; i++) {
+          newPageItemArr.push(i);
+        }
+        setPageItemArr(newPageItemArr);
+      });
+    } else {
+      navigate("/login");
+    }
+  }, [currentPage]);
+
+  useEffect(()=> {
+    if(login.loggedIn) {
+      getFavoriteBookingsOfUser(login.user._id, LIMIT).then((response)=> {
+        console.log()
+        setFavoritePropertyList(response.data)
+      })
+    }
+  }, [])
+
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const nextPage = () => {
+    if (currentPage < totalPage) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePageChange = (e) => {
+    setCurrentPage(parseInt(e.target.innerText));
+  };
+
+  const handleAddListing =  () => {
+    navigate(`/addProperty`)
+  }
+
+  const handleContactUs = () => {
+    navigate(`/contacts`)
+  }
+
+  const handleViewProperty =  (e) => {
+    navigate(`/listing-info/${e.target.getAttribute("name")}`)
+  }
+
+  const handleManageFavorite = () => {
+    navigate(`/my-booking`)
+  }
 
   return (
     <div className="dash-container">
@@ -67,27 +93,26 @@ const UserDash = () => {
           <div className="box-1">
             <div className="profile-box">
               <div className="user-data">
-                {userData.map((user, index) => (
-                  <div key={index}>
-                    <img
-                      className="profile-pic"
-                      src={user.image}
-                      alt={user.name}
-                    />
-                    <h2>
-                      Welcome back:
-                      <br />
-                      {user.name}
-                    </h2>
-                    <div className="user-info">
-                      <p>
-                        Last login: {user.updated_at} <br /> Number of visits: 6{" "}
-                        <br /> Host rating: 4.5
-                      </p>
-                      <button>Manage profile</button>
-                    </div>
+                <div>
+                  <img
+                    className="profile-pic"
+                    src="https://images.unsplash.com/photo-1647888774545-96f662a65e15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt={login.user.firstName}
+                  />
+                  <h2>
+                    Welcome back:
+                    <br />
+                    {login.user.firstName}
+                  </h2>
+                  <div className="user-info">
+                    <p>
+                      email: {login.user.email} <br /> birth date:{" "}
+                      {new Date(login.user.dateOfBirth).toLocaleDateString()}
+                      <br /> Phone: {login.user.phone}
+                    </p>
+                    <button>Manage profile</button>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
             <div className="member-status">
@@ -103,53 +128,71 @@ const UserDash = () => {
               <p>Points earned</p>
               <button className="mem-button">Use points</button>
             </div>
-                </div>
+          </div>
           <div className="box-2">
             <div className="favourites-box">
               <div className="title-button">
                 <h2 className="favourites-title">Your favourites</h2>
-                <button className="manage-favourites-button">
+                <button onClick={handleManageFavorite} className="manage-favourites-button">
                   Manage favourites
                 </button>
               </div>
               <div className="property-cards">
-                {propertyData.map((property, index) => (
+                {favoritePropertyList.map((booking, index) => (
                   <div key={index} className="property-card">
-                    <img src={property.image} alt={property.id} />
+                    <img src={booking.listing.images[0]} alt={booking.listing._id} />
                     <p>
-                      {property.name}, {property.location}
+                      {booking.listing.name}, {booking.listing.city}
                     </p>
-                    <button>View property</button>
+                    <button onClick={handleViewProperty} name={booking.listing._id}>View property</button>
                   </div>
                 ))}
               </div>
-                </div>
+            </div>
 
             <div className="your-listings">
               <div className="title-button">
                 <h2 className="listings-title">Your listings</h2>
-                <button className="add-new-listing-button">
+                <button onClick={handleAddListing} className="add-new-listing-button" >
                   Add new listing
                 </button>
               </div>
               <div className="listing-cards">
-                {propertyData.map((property, index) => (
+                {propertyList.map((property, index) => (
                   <div key={index} className="listing-card">
-                    <img src={property.image} alt={property.id} />
+                    <img src={property.images[0]} alt={property._id} />
                     <p>
-                      {property.name}, {property.location}
+                      {property.name}, {property.city}
                     </p>
                     <button>Manage listing</button>
                   </div>
                 ))}
               </div>
+              <div className="pagination">
+                <a href="#" onClick={prevPage}>
+                  &laquo;
+                </a>
+                {pageItemArr.map((item, index) => (
+                  <a
+                    key={index}
+                    onClick={handlePageChange}
+                    className={currentPage == item ? "active" : ""}
+                    href="#"
+                  >
+                    {item}
+                  </a>
+                ))}
+                <a href="#" onClick={nextPage}>
+                  &raquo;
+                </a>
+              </div>
             </div>
           </div>
-                </div>
+        </div>
         <div className="box-3">
           <div className="socials">
-          <div className="socials-title">
-            <h2 >Socials</h2>
+            <div className="socials-title">
+              <h2>Socials</h2>
             </div>
             <div className="icon-image">
               <FontAwesomeIcon icon={faArrowLeft} className="arrows" />
@@ -168,7 +211,7 @@ const UserDash = () => {
             <div className="help-buttons">
               <button>FAQS</button>
               <button>Guidelines</button>
-              <button>Contact us</button>
+              <button onClick={handleContactUs}>Contact us</button>
             </div>
           </div>
         </div>

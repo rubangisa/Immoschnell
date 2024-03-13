@@ -22,7 +22,6 @@ export const updateBookingSuccess= async ( id , dispatchBooking) => {
   try{
     const data = {status:"active"}
     response = await axios.patch(`${API_ENDPOINT}/bookings/${id}`, data)
-    console.log(response)
     if(response.data.status === 200) {
       dispatchBooking({type:"reset"})
     } else {
@@ -53,3 +52,23 @@ export const cancelBooking = async (bookingId) => {
   }
 
 }
+
+export const updateBookingFavorite= async (id, isFavorite) => {
+  let response;
+  try{
+    const data = {favorite:isFavorite}
+    response = await axios.patch(`${API_ENDPOINT}/bookings/${id}`, data)
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+};
+
+export const getFavoriteBookingsOfUser = async (userId, limit) => {
+  try{
+    const response = await axios.get(`${API_ENDPOINT}/bookings?userId=${userId}&favorite=true&limit=${limit}`)
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+};

@@ -32,7 +32,10 @@ const App = () => {
 
   const [search, dispatchSearch] = useReducer(searchReducer, {
     keyword:null,
-    sort:null
+    sort:null,
+    checkIn:null,
+    checkOut:null,
+    guest:0
   })
   return (
     <div>

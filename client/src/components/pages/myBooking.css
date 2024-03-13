@@ -89,7 +89,7 @@ img {
 
 .property-details {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   color: #064426;
 }

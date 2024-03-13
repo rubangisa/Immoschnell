@@ -1,22 +1,28 @@
 import { useContext, useEffect, useState } from "react";
 import "./myBooking.css";
 import { LoginContext } from "../../contexts/AppContext";
-import { cancelBooking, getBookingsOfUser } from "../../apiCalls/bookingApiCalls";
+import { cancelBooking, getBookingsOfUser, updateBookingFavorite } from "../../apiCalls/bookingApiCalls";
 import { useNavigate } from "react-router-dom";
 
 
 
 const MyBooking = () => {
   const [filter, setFilter] = useState("upcoming");
-  const [bookings, setBookings] = useState([])
-  const {login} = useContext(LoginContext)
-  const navigate = useNavigate()
+  const [bookings, setBookings] = useState([]);
+  const {login} = useContext(LoginContext);
+  const navigate = useNavigate();
+  const [showBookingDetails, setShowBookingDetails] = useState(false);
+  const [refreshToggle, setRefreshToggle] = useState(false)
+  
+
+  
 
   const handleFilterChange = (e) => {
-    console.log(e.target.getAttribute("name"))
     setFilter(e.target.getAttribute("name"))
     
   };
+
+
   useEffect(() => {
     if(login.loggedIn) {
       getBookingsOfUser(login.user._id, filter).then((response) => {
@@ -24,10 +30,10 @@ const MyBooking = () => {
            setBookings(response.data)
       })
     } else {
-      navigate("/login-signup")
+      navigate("/login")
     }
     
-  }, [filter, login.loggedIn])
+  }, [filter, login.loggedIn, refreshToggle])
 
   const handleCancelBooking = async (e) => {
     
@@ -35,6 +41,27 @@ const MyBooking = () => {
     setFilter("cancelled")
   }
      
+
+  const handleReeBook =  (e) => {
+    navigate(`/listing-info/${e.target.getAttribute("name")}`)
+  }
+
+  const handleBookingDetails = () => {
+    setShowBookingDetails(!showBookingDetails)
+  }
+
+  const handleAddFavorite = async (e) => {
+    await updateBookingFavorite(e.target.getAttribute("name"), true)
+    setRefreshToggle(!refreshToggle)
+   
+  }
+
+  const handleRemoveFavorite = async (e) => {
+    await updateBookingFavorite(e.target.getAttribute("name"), false)
+    setRefreshToggle(!refreshToggle)
+   
+  }
+
 
   return (
     <div className="booking-container">
@@ -66,18 +93,22 @@ const MyBooking = () => {
                   {booking.listing.name},
                   <br />
                   {booking.listing.city}
+                  <br/>
+                  {booking.price}€
                 </h2>
-                <h3>dates</h3>
-                <h4>{booking.listing.pricePerNight}€ per night</h4>
+                <h4 hidden={!showBookingDetails}>{new Date(booking.checkIn).toLocaleDateString()}</h4>
+                <h4 hidden={!showBookingDetails}>{new Date(booking.checkOut).toLocaleDateString()}</h4>
+                <h4 hidden={!showBookingDetails}>{booking.listing.pricePerNight}€ per night</h4>
+                <h4 hidden={!showBookingDetails}>{booking.guestCount} guest</h4>
               </div>
             </div>
             <div className="right-content">
-              <button>
+              <button onClick={handleBookingDetails} >
                 <p>Booking details</p>
               </button>
-              <button>Re-book property</button>
+              <button onClick={handleReeBook} name={booking.listing._id}> Re-book property</button>
               <button onClick={handleCancelBooking} name={booking._id} hidden={filter=== "upcoming" ? false : true} >Cancel</button>
-              <button hidden = {filter === "upcoming" ? true : false}>Add to favorites</button>
+              <button onClick={booking.favorite ? handleRemoveFavorite : handleAddFavorite} name={booking._id} hidden = {filter === "upcoming" ? true : false}>{booking.favorite ? "Remove favorite" : "Add to favorites"} </button>
             </div>
           </div>
         ))}
