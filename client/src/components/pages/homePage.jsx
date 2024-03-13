@@ -1,5 +1,6 @@
+import { useContext, useState } from "react";
 import "../../../styling/homepage.css";
-import {IoMdSearch} from "react-icons/io";
+import { IoMdSearch } from "react-icons/io";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 import { HiOutlineHome } from "react-icons/hi2";
 import { BsBuildings } from "react-icons/bs";
@@ -15,8 +16,42 @@ import { faUsers } from "@fortawesome/free-solid-svg-icons";
 import { faSeedling } from "@fortawesome/free-solid-svg-icons";
 import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
 import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import { SearchContext } from "../../contexts/AppContext";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const [keyword, setKeyword] = useState("");
+  const [checkIn, setCheckIn] = useState("");
+  const [checkOut, setCheckOut] = useState("");
+  const [guestCount, setGuestCount] = useState(0)
+  const { dispatchSearch } = useContext(SearchContext);
+  const navigate = useNavigate()
+
+  const handleCheckInChange = (e) => {
+    setCheckIn(e.target.value);
+  };
+
+  const handleCheckOutChange = (e) => {
+    setCheckOut(e.target.value);
+  };
+
+
+ const handleGuestCountChange = (e) => {
+  setGuestCount(e.target.value)
+ }
+
+ const handleKeywordChange = (e) => {
+  setKeyword(e.target.value)
+ }
+
+ const handleSearch = (e) => {
+    e.preventDefault()
+    dispatchSearch({type: "search", keyword:keyword, checkIn:checkIn, checkOut:checkOut, guest:guestCount})
+    console.log("search")
+    navigate(`/properties`)
+
+ }
+
   return (
     <div className="homeContainer">
       <h1>
@@ -24,80 +59,83 @@ const Home = () => {
         from home.
       </h1>
 
-      
-        <div className="homePageFormContainer">
-          <form className="homePageFormWrapper">
-            <div
-              className="homePageFormSubCont homePageFormSubCont1"
-              onClick={() =>
-                document.querySelector(".homePageFormInput1").click()
-              }
+      <div className="homePageFormContainer">
+        <form className="homePageFormWrapper">
+          <div
+            className="homePageFormSubCont homePageFormSubCont1"
+            onClick={() =>
+              document.querySelector(".homePageFormInput1").click()
+            }
+          >
+            <label htmlFor="place" className="homePageFormLabel">
+              Destination
+            </label>
+            <input
+            onChange={handleKeywordChange}
+              type="text"
+              placeholder="Search destinations"
+              className="homePageFormInput homePageFormInput1"
+            />
+          </div>
+          <div
+            className="homePageFormSubCont homePageFormSubCont2"
+            onClick={() =>
+              document.querySelector(".homePageFormInput2").click()
+            }
+          >
+            <label htmlFor="date" className="homePageFormLabel">
+              Check in
+            </label>
+            <input
+              onChange={handleCheckInChange}
+              type="date"
+              placeholder="Add dates"
+              className="homePageFormInput homePageFormInput2"
+            />
+          </div>
+          <div
+            className="homePageFormSubCont homePageFormSubCont3"
+            onClick={() =>
+              document.querySelector(".homePageFormInput3").click()
+            }
+          >
+            <label htmlFor="date" className="homePageFormLabel">
+              Check out
+            </label>
+            <input
+              onChange={handleCheckOutChange}
+              type="date"
+              placeholder="Add dates"
+              className="homePageFormInput homePageFormInput3"
+            />
+          </div>
+          <div
+            className="homePageFormSubCont homePageFormSubCont4"
+            onClick={() =>
+              document.querySelector(".homePageFormInput4").click()
+            }
+          >
+            <label
+              htmlFor="numbers"
+              className="homePageFormLabel homePageFormLabel1"
             >
-              <label htmlFor="place" className="homePageFormLabel">
-                Destination
-              </label>
+              Guests{" "}
+            </label>
+            <div className="homePageFormSubCont44">
               <input
-                type="text"
-                placeholder="Search destinations"
-                className="homePageFormInput homePageFormInput1"
+                onChange={handleGuestCountChange}
+                type="number"
+                placeholder="Number of guests"
+                className="homePageFormInput homePageFormInput4"
               />
-            </div>
-            <div
-              className="homePageFormSubCont homePageFormSubCont2"
-              onClick={() =>
-                document.querySelector(".homePageFormInput2").click()
-              }
-            >
-              <label htmlFor="date" className="homePageFormLabel">
-                Check in
-              </label>
-              <input
-                type="date"
-                placeholder="Add dates"
-                className="homePageFormInput homePageFormInput2"
-              />
-            </div>
-            <div
-              className="homePageFormSubCont homePageFormSubCont3"
-              onClick={() =>
-                document.querySelector(".homePageFormInput3").click()
-              }
-            >
-              <label htmlFor="date" className="homePageFormLabel">
-                Check out
-              </label>
-              <input
-                type="date"
-                placeholder="Add dates"
-                className="homePageFormInput homePageFormInput3"
-              />
-            </div>
-            <div
-              className="homePageFormSubCont homePageFormSubCont4"
-              onClick={() =>
-                document.querySelector(".homePageFormInput4").click()
-              }
-            >
-              <label
-                htmlFor="numbers"
-                className="homePageFormLabel homePageFormLabel1"
-              >
-                Guests{" "}
-              </label>
-              <div className="homePageFormSubCont44">
-                <input
-                  type=""
-                  placeholder="Number of guests"
-                  className="homePageFormInput homePageFormInput4"
-                />
-                <div className="homePageFormBtn">
-                  <IoMdSearch type="submit" className="homePageFormIcon" />
-                </div>
+              <div onClick={handleSearch} className="homePageFormBtn">
+                <IoMdSearch  type="submit" className="homePageFormIcon" />
               </div>
             </div>
-          </form>
-        </div>
-     
+          </div>
+        </form>
+      </div>
+
       <div>
         <ul className="homeIcons">
           <li>

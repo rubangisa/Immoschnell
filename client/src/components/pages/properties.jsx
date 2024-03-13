@@ -12,7 +12,7 @@ export default function AllProperties() {
   const navigate = useNavigate();
   const {search, dispatchSearch} = useContext(SearchContext);
   const [searchFilter, setSearchFilter] = useState("");
-  const [sort, setSort] = useState({sortBy: "rating", sortOrder: "descending"});
+  const [setSort] = useState({sortBy: "rating", sortOrder: "descending"});
   const [propertyList, setPropertyList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -40,7 +40,6 @@ export default function AllProperties() {
   );
 
   const openListingInfo = (id) => {
-    console.log("id", id);
     navigate(`/listing-info/${id}`);
   };
 

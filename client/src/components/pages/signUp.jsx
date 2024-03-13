@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { IoIosCheckbox } from "react-icons/io";
 import { MdCheckBoxOutlineBlank } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../../styling/signUp.css";
 import { signUp } from "../../apiCalls/userApi";
 
@@ -12,6 +12,7 @@ const SignUp = () => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate()
 
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
@@ -36,7 +37,8 @@ const SignUp = () => {
     setEmail(e.target.value);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     const data = {
       firstName: firstName,
       lastName: lastName,
@@ -47,6 +49,7 @@ const SignUp = () => {
     };
 
     await signUp(data);
+    navigate(`/login`)
   };
 
   return (
@@ -136,7 +139,7 @@ const SignUp = () => {
             </div>
             <div className="sub-containerButton">
               <button type="submit" className="submitButton">
-                Sign in
+                Sign up
               </button>
             </div>
           </div>

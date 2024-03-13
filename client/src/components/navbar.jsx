@@ -4,11 +4,12 @@ import logo from  '../assets/logo.png';
 import { CiUser } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useContext, useState } from "react";
-import { LoginContext } from "../contexts/AppContext";
+import { LoginContext, SearchContext } from "../contexts/AppContext";
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
   const {login, dispatchLogin} = useContext(LoginContext);
+  const {dispatchSearch} = useContext(SearchContext)
   const toggleProfile = () => {
     setProfileMenuOpen(!profileMenuOpen);
   };
@@ -17,6 +18,10 @@ export default function NavBar() {
   };
   const handleSignOut = () => {
     dispatchLogin ({type : "loggedOut"})
+  }
+
+  const handlePropertiesReset = () => {
+    dispatchSearch({type: "reset"})
   }
   return (
     <div id="header-container">
@@ -36,7 +41,7 @@ export default function NavBar() {
             <div id="underline-hover"></div>
           </div>
           <div className="nav-parent">
-            <NavLink className="nav-button" to="/properties">
+            <NavLink onClick={handlePropertiesReset} className="nav-button" to="/properties">
               Properties
             </NavLink>{" "}
             <div id="underline-hover"></div>
@@ -78,13 +83,13 @@ export default function NavBar() {
             </NavLink>
           </div>
           <div className="nav-parent-profile">
-            <NavLink className="profile-button" to="/my-profile">
+            <NavLink className="profile-button" to="/userDash">
               My Profile
               <div id="underline-hover"></div>
             </NavLink>
           </div>
           <div className="nav-parent-profile">
-            <NavLink className="profile-button" to="/bookings-and-trips">
+            <NavLink className="profile-button" to="/my-booking">
               Bookings and Trips
               <div id="underline-hover"></div>
             </NavLink>
