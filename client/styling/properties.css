@@ -9,7 +9,7 @@ body {
 }
 
 .listingsh1 {
-  padding-left: 40px;
+  padding: 0 55px;
   font-size: 30px;
   color: #ede3d3;
 }
@@ -66,7 +66,6 @@ body {
   font-size: 23px;
   padding-left: 40px;
   border-left: 2px solid #064426;
-  cursor: pointer;
 }
 .listing-icons .listing-icon:first-child {
   border-left: none;
@@ -127,16 +126,39 @@ body {
   justify-content: space-between;
   margin-bottom: 2rem;
   margin-top: 1rem;
+  padding: 0 40px;
+}
+.search-and-sorting .search-label {
+  font-size: 18px;
+  color: #064426;
+}
+.search-and-sorting .search-icon {
+  font-size: 20px;
+  color: #064426;
+  margin-right: 14px;
+  position: absolute;
+  right: 0;
 }
 .search-and-sorting .search {
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 25px;
+  position: relative;
 }
 .search-and-sorting .search input {
-  max-width: 10rem;
   background-color: #ede3d3;
   margin-left: 14px;
-  height: 25px;
+  height: 40px;
   color: #064426;
+  border: none;
+  border-radius: 25px;
+  max-width: 14rem;
+  padding: 10px;
+}
+.search-and-sorting .search input :focus-visible {
+  border: none;
 }
 @media (max-width: 1010px) {
   .search-and-sorting .search .search-label {
@@ -152,7 +174,40 @@ body {
 .search-and-sorting .sort select {
   background-color: #ede3d3;
   color: #064426;
-  height: 25px;
+  height: 40px;
+  width: 200px;
+  margin-right: -115px;
+}
+
+.sorting {
+  border-radius: 25px;
+  padding: 10px;
+}
+.sorting option {
+  border-radius: 25px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination a {
+  background-color: #ede3d3;
+}
+
+@media screen and (max-width: 450px) {
+  .search-and-sorting {
+    padding: 0 20px;
+  }
+  .search-and-sorting .sort select {
+    width: 100px;
+  }
+  .listings-card-container {
+    padding: 50px 16px;
+  }
+  .listingsh1 {
+    padding: 10px 40px;
+  }
 }
 
 /*# sourceMappingURL=properties.css.map */
