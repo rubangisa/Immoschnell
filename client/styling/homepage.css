@@ -27,6 +27,7 @@ body {
   padding: 10px;
   color: #ede3d3;
 }
+
 .homePageFormContainer {
   display: flex;
   justify-content: center;
@@ -94,11 +95,13 @@ gap: 40px;
   margin: 0;
   align-items: center;
   font-family: "Playfair Display", serif;;
+ 
 }
 .homePageFormLabel {
   color: rgb(6, 68, 38);
   margin: 0;
   padding: 0;
+  font-size: 20px;
 }
 .homePageFormLabel1 {
   margin-right: 140px;
@@ -124,6 +127,7 @@ gap: 40px;
 .homebox1 button {
   color: #064426;
   background-color: #ede3d3;
+  font-size: 20px;
 }
 
 .home-cards {
@@ -188,9 +192,13 @@ gap: 40px;
   margin-bottom: 60px;
 }
 
+.homebox2 p{
+  font-size: 20px;
+}
+
 .homebox2-cont {
   display: flex;
-  gap: 80px;
+  gap: 60px;
 }
 .homebox2-cont img {
   height: 700px;
@@ -201,21 +209,21 @@ gap: 40px;
   flex-wrap: wrap;
   width: 350px;
   text-align: center;
-  font-size: 18px;
-  padding-top: 30px;
+  font-size: 30px;
+  padding-top: 90px;
   padding-left: 20px;
 }
 .homebox2-icons2 {
   flex-wrap: wrap;
   width: 350px;
   text-align: center;
-  font-size: 18px;
-  padding-top: 30px;
+  font-size: 20px;
+  padding-top: 90px;
   padding-left: 60px;
 }
 
 .icon {
-  padding: 50px;
+  padding: 70px 50px 20px;
 }
 
 .homebox3 {
@@ -243,8 +251,8 @@ gap: 40px;
 }
 
 .homebox3-text {
-  padding-top: 20px;
-  font-size: 18px;
+  padding-top: 10px;
+  font-size: 20px;
   line-height: 35px;
   width: 700px;
   text-align: center;
@@ -253,6 +261,19 @@ gap: 40px;
 span {
   font-style: italic;
   font-weight: 700;
+  font-size: 25px;
+}
+video {
+  border: 2px solid #EDE3D3;
+  padding:50px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.homebox3 button {
+  margin: 50px ;
+  color: #064426;
+  background-color: #ede3d3;
 }
 
 
@@ -367,7 +388,7 @@ span {
 
 .partner-text{
   font-size: 20px;
-  padding: 200px 200px 0;
+  padding: 200px 250px 0;
   text-align: center;
 }
 
@@ -391,9 +412,10 @@ span {
 
 
 
-.homebox5-text {
+
+.homebox5 p {
   padding-top: 20px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 35px;
   text-align: center;
 }
@@ -435,5 +457,27 @@ span {
 .fade-in {
   opacity: 3;
 }
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.homeIcons li {
+  opacity: 0;
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.homeIcons li:nth-child(1) { animation-delay: 1s; }
+.homeIcons li:nth-child(2) { animation-delay: 1.5s; }
+.homeIcons li:nth-child(3) { animation-delay: 2s; }
+.homeIcons li:nth-child(4) { animation-delay: 2.5s; }
+.homeIcons li:nth-child(5) { animation-delay: 3s; }
+.homeIcons li:nth-child(6) { animation-delay: 3.5s; }
 
 /* # sourceMappingURL=homepage.css.map */

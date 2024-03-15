@@ -18,6 +18,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { SearchContext } from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
+import listWithUsVideo from "../../assets/listwithus.mp4";
+import whyBook from "../../assets/whybook.mp4"
 
 const Home = () => {
   const [keyword, setKeyword] = useState("");
@@ -235,10 +237,9 @@ const Home = () => {
       <div className="homebox2">
         <h2>Why book with us?</h2>
         <div className="homebox2-cont">
-          <img
-            src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="minial home interior with plants"
-          />
+        <video autoPlay loop muted playsInline width="600px" height="800px">
+            <source src={whyBook} type="video/mp4" alt="plants watered in apartment"/>
+          </video>
           <div className="homebox2-icons">
             <FontAwesomeIcon icon={faComments} className="icon" />
             <p>direct contact with hosts</p>
@@ -279,15 +280,6 @@ const Home = () => {
               those eager to discover what you have to offer.
               <br />
               <br />
-              Embark on a journey of hospitality excellence by signing up with{" "}
-              <span>myhome </span>today. Watch as your property transforms into
-              a sought-after destination, attracting global travelers seeking
-              distinctive and memorable stays. Our user-friendly platform,
-              transparent pricing, and secure transactions give you the peace of
-              mind to focus on what you do best – providing an unforgettable
-              experience for your guests.
-              <br />
-              <br />
               Don't miss out on the opportunity to maximize your property's
               potential. By joining our community of esteemed hosts, you let
               your property shine on the global stage, captivating the hearts
@@ -300,11 +292,13 @@ const Home = () => {
               destination in its own right, cherished by guests from around the
               world.
             </p>
+            <a href="addProperty">
+              <button>Add your property</button>
+            </a>
           </div>
-          <img
-            src="https://images.unsplash.com/photo-1633113215988-4eaddc3965d9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="couple using computer"
-          />
+          <video autoPlay loop muted playsInline width="600px" height="900px">
+            <source src={listWithUsVideo} type="video/mp4" alt="couple looking at computer"/>
+          </video>
         </div>
       </div>
       <div className="homebox4">
