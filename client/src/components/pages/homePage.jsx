@@ -237,7 +237,7 @@ const Home = () => {
       <div className="homebox2">
         <h2>Why book with us?</h2>
         <div className="homebox2-cont">
-        <video autoPlay loop muted playsInline width="600px" height="800px">
+        <video autoPlay loop muted playsInline width="600px" height="900px">
             <source src={whyBook} type="video/mp4" alt="plants watered in apartment"/>
           </video>
           <div className="homebox2-icons">
@@ -302,7 +302,7 @@ const Home = () => {
         </div>
       </div>
       <div className="homebox4">
-        <h2>Our Partners</h2>
+        <h2>Our partners</h2>
         <div className="partner-card">
           <div className="partner-info">
             <div className="partner-card-cont">
@@ -559,13 +559,13 @@ const Home = () => {
                 <p>
                   <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Our stay in Mexico City was absolutely fantastic! The home we
-                  booked through MyHome was perfect for me and my two little
+                  booked through <span>myhome</span> was perfect for me and my two little
                   ones. It was spacious, clean, and had all the amenities we
                   needed. The location was great too, close to parks and
                   kid-friendly attractions. The host was incredibly
                   accommodating and even provided some toys for the kids. We
                   felt safe and comfortable throughout our entire stay. Thank
-                  you, MyHome, for making our trip memorable and stress-free!{" "}
+                  you <span>myhome</span>, for making our trip memorable and stress-free!{" "}
                   <FontAwesomeIcon icon={faQuoteRight} className="icon-rev" />
                 </p>
               </div>
@@ -578,7 +578,7 @@ const Home = () => {
                   <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Returning to Brighton after all these years was like stepping
                   back in time. My husband and I chose to stay in a charming
-                  seaside cottage booked through MyHome, and it was everything
+                  seaside cottage booked through <span>myhome</span>, and it was everything
                   we could have hoped for. The cottage was cozy, with
                   breathtaking views of the pier and the sea. We spent our days
                   reminiscing about our youth and exploring the quaint streets
@@ -598,7 +598,7 @@ const Home = () => {
                 <p>
                   <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Our summer holiday in Bali was nothing short of amazing! My
-                  friends and I booked a stunning villa through MyHome, and it
+                  friends and I booked a stunning villa through <span>myhome</span>, and it
                   exceeded all our expectations. The villa was luxurious, with a
                   private pool and breathtaking views of the ocean. We spent our
                   days lounging by the pool, exploring the vibrant culture of

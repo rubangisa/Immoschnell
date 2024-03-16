@@ -8,6 +8,7 @@
 hr{
   border-top: 2px solid #ede3d3;
   width: 90%;
+  margin: 0px 20px 0 60px;
   
 }
 
@@ -66,7 +67,7 @@ hr{
 .footer-social svg:hover {
   background-color: #ede3d3;
   color: #064426;
-  padding: 2px;
+  padding: 1px;
   border-radius: 10px;
 }
 
@@ -74,3 +75,17 @@ hr{
   margin-top: 10px;
   text-align: center;
 }
+
+.footer-contact p a {
+  color: #ede3d3;
+  font-weight: 700;
+}
+
+.footer-contact p a:hover{
+  text-decoration: underline;
+}
+
+.footer-links li:hover{
+  text-decoration: underline;
+}
+

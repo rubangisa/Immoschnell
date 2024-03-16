@@ -23,7 +23,6 @@ const Footer = () => {
               <br />Berlin 13355 
               <br/>Germany</p>
               <br/>
-              <br/>
               <p><a href="mailto:info@myhome.com">info@myhome.com</a></p>
               <p>(+49)  030 752 2151920</p>
             </div>
@@ -32,7 +31,7 @@ const Footer = () => {
         <div className="footer-box">
           <div className="footer-links">
             <ul>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Privacy policy</a></li>
               <li><a href="#">Imprint</a></li>
               <li><a href="#">Careers</a></li>
               <li><a href="#">Become a partner</a></li>
