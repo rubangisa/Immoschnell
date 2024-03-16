@@ -1,18 +1,19 @@
-   import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../../styling/properties.css";
-import { useEffect, useState , useContext} from "react";
+import { useEffect, useState, useContext } from "react";
 import { IoBed } from "react-icons/io5";
 import { GiBathtub } from "react-icons/gi";
 import { TbGrid3X3 } from "react-icons/tb";
 import { getAllPropertyList } from "../../apiCalls/propertyApiCalls.js";
 import { ImSpinner } from "react-icons/im";
 import { SearchContext } from "../../contexts/AppContext.jsx";
+import { IoSearchSharp } from "react-icons/io5";
 
 export default function AllProperties() {
   const navigate = useNavigate();
-  const {search, dispatchSearch} = useContext(SearchContext);
+  const { search, dispatchSearch } = useContext(SearchContext);
   const [searchFilter, setSearchFilter] = useState("");
-  const [setSort] = useState({sortBy: "rating", sortOrder: "descending"});
+  const [setSort] = useState({ sortBy: "rating", sortOrder: "descending" });
   const [propertyList, setPropertyList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -36,8 +37,7 @@ export default function AllProperties() {
 
       setLoading(false);
     });
-  }, [currentPage, search]
-  );
+  }, [currentPage, search]);
 
   const openListingInfo = (id) => {
     navigate(`/listing-info/${id}`);
@@ -56,56 +56,57 @@ export default function AllProperties() {
   };
 
   const handlePageChange = (e) => {
-    setLoading(true)
-    setCurrentPage (parseInt(e.target.innerText))
-  
+    setLoading(true);
+    setCurrentPage(parseInt(e.target.innerText));
   };
-
 
   const handleSort = (e) => {
     let newSort;
     if (e.target.value === "highest") {
-       newSort = {sortBy: "pricePerNight" , sortOrder: "descending"}
-      
+      newSort = { sortBy: "pricePerNight", sortOrder: "descending" };
     } else if (e.target.value === "lowest") {
-       newSort = {sortBy: "pricePerNight" , sortOrder: "ascending"}
+      newSort = { sortBy: "pricePerNight", sortOrder: "ascending" };
     } else if (e.target.value === "name-asc") {
-      newSort = {sortBy: "name" , sortOrder: "ascending"}
+      newSort = { sortBy: "name", sortOrder: "ascending" };
     } else if (e.target.value === "name-desc") {
-       newSort = {sortBy: "name" , sortOrder: "descending"}
+      newSort = { sortBy: "name", sortOrder: "descending" };
     } else if (e.target.value === "popular") {
-       newSort = {sortBy: "rating" , sortOrder: "descending"}
+      newSort = { sortBy: "rating", sortOrder: "descending" };
     }
-    setSort(newSort)
-    dispatchSearch({type : "sort" , sort: newSort })
-
+    setSort(newSort);
+    dispatchSearch({ type: "sort", sort: newSort });
   };
 
   const handleSearch = (e) => {
-    
-     setSearchFilter(e.target.value)
-     dispatchSearch({type: "keyword", keyword: e.target.value})
-    
+    setSearchFilter(e.target.value);
+    dispatchSearch({ type: "keyword", keyword: e.target.value });
   };
 
   return (
     <div className="listingsbody">
       <h1 className="listingsh1">our properties</h1>
       <div className="search-and-sorting">
+        <div className="search-container">
           <div className="search">
-            <label className="search-label" htmlFor="find">Search:</label>
-            <input type="text" name="find" onChange={handleSearch} value={searchFilter}/>
-          </div>
-          <div className="sort">
-            <select name="sorting"  onChange={handleSort}>
-              <option value="popular">Most Popular</option>
-              <option value="highest">Highest Price</option>
-              <option value="lowest">Lowest Price</option>
-              <option value="name-asc">Name Ascending</option>
-              <option value="name-desc">Name Descending</option>
-            </select>
+            <input
+              type="text"
+              name="find"
+              onChange={handleSearch}
+              value={searchFilter}
+            />
+            <IoSearchSharp className="search-icon" />
           </div>
         </div>
+        <div className="sort">
+          <select className="sorting" onChange={handleSort}>
+            <option value="popular">Most Popular</option>
+            <option value="highest">Highest Price</option>
+            <option value="lowest">Lowest Price</option>
+            <option value="name-asc">Name Ascending</option>
+            <option value="name-desc">Name Descending</option>
+          </select>
+        </div>
+      </div>
       <div className="listings-card-container">
         {loading ? (
           <ImSpinner className="spin" />

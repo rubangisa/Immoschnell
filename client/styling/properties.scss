@@ -6,7 +6,7 @@
   margin: auto;
 }
 .listingsh1 {
-  padding-left: 40px;
+  padding: 0 55px;
   font-size: 30px;
   color: $secondary-color;
 }
@@ -122,16 +122,40 @@
   justify-content: space-between;
   margin-bottom: 2rem;
   margin-top: 1rem;
+  padding: 0 40px;
+  .search-label {
+    font-size: 18px;
+    color: $primary-color;
+  }
+  .search-icon {
+    font-size: 20px;
+    color: $primary-color;
+    margin-right: 14px;
+    position: absolute;
+    right: 0;
+  }
 
   .search {
     font-size: 18px;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 25px;
+    position: relative;
 
     input {
-      max-width: 10rem;
       background-color: $secondary-color;
       margin-left: 14px;
-      height: 25px;
+      height: 40px;
       color: $primary-color;
+      border: none;
+      border-radius: 25px;
+      max-width: 14rem;
+      padding: 10px;
+
+      :focus-visible {
+        border: none;
+      }
     }
 
     @media (max-width: 1010px) {
@@ -143,12 +167,44 @@
       }
     }
   }
+
   .sort {
     margin-right: 8rem;
     select {
       background-color: $secondary-color;
       color: $primary-color;
-      height: 25px;
+      height: 40px;
+      width: 200px;
+      margin-right: -115px;
     }
+  }
+}
+.sorting {
+  border-radius: 25px;
+  padding: 10px;
+  option {
+    border-radius: 25px;
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  a {
+    background-color: $secondary-color;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .search-and-sorting {
+    padding: 0 20px;
+  }
+  .search-and-sorting .sort select {
+    width: 100px;
+  }
+  .listings-card-container {
+    padding: 50px 16px;
+  }
+  .listingsh1 {
+    padding: 10px 40px;
   }
 }
