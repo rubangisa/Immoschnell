@@ -80,8 +80,8 @@ body {
 }
 
 .profile-pic {
-  width: 250px;
-  height: 250px;
+  width: 220px;
+height: 230px;
   margin-top: 30px;
   margin-left: 60px;
   border-radius: 50%;
@@ -92,20 +92,20 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  margin-left: 120px;
+  margin-left: 50px;
   margin-top: 10px;
 }
 
-.user-data p {
+.user-info p {
   font-size: 20px;
-  text-align: center;
+  text-align: left;
+  margin-left: 50px;
   margin-top: 30px;
 }
 
 .user-data button {
   background-color: #064426;
   color: #ede3d3;
-  margin-left: 30px;
   margin-top: 50px;
   padding: 8px 16px;
   border: none;
@@ -313,6 +313,7 @@ body {
 .socials-title {
   font-size: 20px;
   margin-top: 35px;
+  margin-bottom: 50px;
   width: 100%;
   padding-left: 30px;
 }
@@ -327,7 +328,7 @@ body {
 
 .icon-image img {
   width: 380px;
-  height: 400px;
+  height: 320px;
   border-radius: 10px;
   margin: 0;
 }
