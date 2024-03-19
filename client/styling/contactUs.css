@@ -55,7 +55,16 @@ body {
 .contact-wrapper .contactForm {
     color: rgb(6, 68, 38);
 }
-
+.contactForm label {
+    color: rgb(6, 68, 38);
+}
+.contactForm input {
+    background-color: white;
+}
+.contactForm textarea {
+    color: rgb(6, 68, 38);
+    background-color: white;
+}
 .contact-submitButton {
     color: rgb(237, 227, 211);
     background-color: rgb(6, 68, 38);

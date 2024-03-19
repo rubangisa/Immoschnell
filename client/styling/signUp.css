@@ -66,6 +66,13 @@ body {
 .signUp-wrapper .signUpForm {
     color: rgb(6, 68, 38);
 }
+.signUpForm label{
+    color: rgb(6, 68, 38);
+}
+.signUpForm input {
+    color: rgb(6, 68, 38);
+    background-color: white;
+}
 .submitButton {
     color: rgb(237, 227, 211);
     background-color: rgb(6, 68, 38);
