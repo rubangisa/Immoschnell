@@ -13,7 +13,7 @@ export default function AllProperties() {
   const navigate = useNavigate();
   const { search, dispatchSearch } = useContext(SearchContext);
   const [searchFilter, setSearchFilter] = useState("");
-  const [setSort] = useState({ sortBy: "rating", sortOrder: "descending" });
+  const [sort, setSort] = useState({ sortBy: "rating", sortOrder: "descending" });
   const [propertyList, setPropertyList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
