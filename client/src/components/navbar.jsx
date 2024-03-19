@@ -4,6 +4,7 @@ import logo from "../assets/my home-logo.png";
 import { CiUser } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useContext, useState } from "react";
+
 import { LoginContext, SearchContext } from "../contexts/AppContext";
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,8 +22,8 @@ export default function NavBar() {
   };
 
   const handlePropertiesReset = () => {
-    dispatchSearch({type: "reset"})
-  }
+    dispatchSearch({ type: "reset" });
+  };
   return (
     <div id="header-container">
       <div className="logo-div">
