@@ -1,31 +1,57 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import "../../../styling/homepage.css";
 import { IoMdSearch } from "react-icons/io";
-import { HiOutlineHomeModern } from "react-icons/hi2";
-import { HiOutlineHome } from "react-icons/hi2";
+import { HiOutlineHomeModern, HiOutlineHome } from "react-icons/hi2";
 import { BsBuildings } from "react-icons/bs";
 import { TbCamper } from "react-icons/tb";
-import { PiCastleTurretLight } from "react-icons/pi";
-import { PiTent } from "react-icons/pi";
+import { PiCastleTurretLight, PiTent } from "react-icons/pi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComments } from "@fortawesome/free-solid-svg-icons";
-import { faShieldHalved } from "@fortawesome/free-solid-svg-icons";
-import { faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
-import { faAward } from "@fortawesome/free-solid-svg-icons";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
-import { faSeedling } from "@fortawesome/free-solid-svg-icons";
-import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
-import { faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faComments,
+  faShieldHalved,
+  faHandHoldingDollar,
+  faAward,
+  faUsers,
+  faSeedling,
+  faQuoteLeft,
+  faQuoteRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { SearchContext } from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
+import listWithUsVideo from "../../assets/listwithus.mp4";
+import whyBook from "../../assets/whybook.mp4"
 
 const Home = () => {
   const [keyword, setKeyword] = useState("");
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
-  const [guestCount, setGuestCount] = useState(0)
+  const [guestCount, setGuestCount] = useState(0);
   const { dispatchSearch } = useContext(SearchContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const handleIntersection = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fade-in");
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const reviews = document.querySelectorAll(".review");
+    const observer = new IntersectionObserver(handleIntersection, options);
+
+    reviews.forEach((review) => {
+      observer.observe(review);
+    });
+  }, []);
 
   const handleCheckInChange = (e) => {
     setCheckIn(e.target.value);
@@ -35,22 +61,26 @@ const Home = () => {
     setCheckOut(e.target.value);
   };
 
+  const handleGuestCountChange = (e) => {
+    setGuestCount(e.target.value);
+  };
 
- const handleGuestCountChange = (e) => {
-  setGuestCount(e.target.value)
- }
+  const handleKeywordChange = (e) => {
+    setKeyword(e.target.value);
+  };
 
- const handleKeywordChange = (e) => {
-  setKeyword(e.target.value)
- }
-
- const handleSearch = (e) => {
-    e.preventDefault()
-    dispatchSearch({type: "search", keyword:keyword, checkIn:checkIn, checkOut:checkOut, guest:guestCount})
-    console.log("search")
-    navigate(`/properties`)
-
- }
+  const handleSearch = (e) => {
+    e.preventDefault();
+    dispatchSearch({
+      type: "search",
+      keyword: keyword,
+      checkIn: checkIn,
+      checkOut: checkOut,
+      guest: guestCount,
+    });
+    console.log("search");
+    navigate(`/properties`);
+  };
 
   return (
     <div className="homeContainer">
@@ -71,7 +101,7 @@ const Home = () => {
               Destination
             </label>
             <input
-            onChange={handleKeywordChange}
+              onChange={handleKeywordChange}
               type="text"
               placeholder="Search destinations"
               className="homePageFormInput homePageFormInput1"
@@ -129,7 +159,7 @@ const Home = () => {
                 className="homePageFormInput homePageFormInput4"
               />
               <div onClick={handleSearch} className="homePageFormBtn">
-                <IoMdSearch  type="submit" className="homePageFormIcon" />
+                <IoMdSearch type="submit" className="homePageFormIcon" />
               </div>
             </div>
           </div>
@@ -160,7 +190,9 @@ const Home = () => {
       </div>
       <div className="homebox1">
         <h2>Popular properties</h2>
-        <button>Book now</button>
+        <a href="/properties">
+          <button>Book now</button>
+        </a>
       </div>
 
       <div className="home-cards">
@@ -174,16 +206,6 @@ const Home = () => {
               <b>Kookaburra Ranch</b>
             </h4>
             <p>Queensland, Australia</p>
-            <br />
-            <p>
-              Bedrooms: 4
-              <br />
-              Bathrooms: 4
-              <br />
-              Guests: 4
-              <br />
-              Price per Night: 780€
-            </p>
           </div>
         </div>
         <div className="home-prop-cards">
@@ -196,16 +218,6 @@ const Home = () => {
               <b>Sunset Spires</b>
             </h4>
             <p>California, USA</p>
-            <br />
-            <p>
-              Bedrooms: 7
-              <br />
-              Bathrooms: 9
-              <br />
-              Guests: 14
-              <br />
-              Price per Night: 1300€
-            </p>
           </div>
         </div>
         <div className="home-prop-cards">
@@ -218,16 +230,6 @@ const Home = () => {
               <b>Inkwell Cottage</b>
             </h4>
             <p>Oxfordshire, England</p>
-            <br />
-            <p>
-              Bedrooms: 2
-              <br />
-              Bathrooms: 1.5
-              <br />
-              Guests: 4
-              <br />
-              Price per Night: 200€
-            </p>
           </div>
         </div>
       </div>
@@ -235,10 +237,9 @@ const Home = () => {
       <div className="homebox2">
         <h2>Why book with us?</h2>
         <div className="homebox2-cont">
-          <img
-            src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="minial home interior with plants"
-          />
+        <video autoPlay loop muted playsInline width="600px" height="800px">
+            <source src={whyBook} type="video/mp4" alt="plants watered in apartment"/>
+          </video>
           <div className="homebox2-icons">
             <FontAwesomeIcon icon={faComments} className="icon" />
             <p>direct contact with hosts</p>
@@ -279,15 +280,6 @@ const Home = () => {
               those eager to discover what you have to offer.
               <br />
               <br />
-              Embark on a journey of hospitality excellence by signing up with{" "}
-              <span>myhome </span>today. Watch as your property transforms into
-              a sought-after destination, attracting global travelers seeking
-              distinctive and memorable stays. Our user-friendly platform,
-              transparent pricing, and secure transactions give you the peace of
-              mind to focus on what you do best – providing an unforgettable
-              experience for your guests.
-              <br />
-              <br />
               Don't miss out on the opportunity to maximize your property's
               potential. By joining our community of esteemed hosts, you let
               your property shine on the global stage, captivating the hearts
@@ -300,80 +292,231 @@ const Home = () => {
               destination in its own right, cherished by guests from around the
               world.
             </p>
+            <a href="addProperty">
+              <button>Add your property</button>
+            </a>
           </div>
-          <img
-            src="https://images.unsplash.com/photo-1633113215988-4eaddc3965d9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            alt="couple using computer"
-          />
+          <video autoPlay loop muted playsInline width="600px" height="800px">
+            <source src={listWithUsVideo} type="video/mp4" alt="couple looking at computer"/>
+          </video>
         </div>
       </div>
       <div className="homebox4">
-        <h2>Our Partners</h2>
+        <h2>Our partners</h2>
         <div className="partner-card">
           <div className="partner-info">
-            <img
-              src="https://byplenty.com/wp-content/uploads/2021/05/cooee_3.jpg.webp"
-              alt="cooee sustainable oral care "
-            />
             <div className="partner-card-cont">
-              <h4>
-                <b>Cooee</b>
-              </h4>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img
+                      src="https://byplenty.com/wp-content/uploads/2021/05/cooee_3.jpg.webp"
+                      alt="cooee sustainable oral care"
+                    />
+                    <h4>
+                      <b>Cooee</b>
+                    </h4>
+                  </div>
+                  <div className="flip-card-back">
+                    <h4>
+                      <b>Cooee</b>
+                    </h4>
+                    <p>
+                      Cooee is a company dedicated to providing sustainable oral
+                      care solutions. They offer a range of products made from
+                      natural ingredients, designed to promote oral health while
+                      minimizing environmental impact.
+                      <br />
+                      <br />
+                      From toothpaste to mouthwash, Cooee's products are
+                      ethically sourced and eco-friendly, ensuring that your
+                      oral care routine aligns with your values.
+                    </p>
+                    <a href="https://byplenty.com/portfolio/cooee-oral-care/">
+                      Visit Cooee
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="partner-info">
-            <img
-              src="https://i.pinimg.com/564x/1b/c1/48/1bc14897ade16ff205209ca51727786b.jpg"
-              alt="goshen ethically sourced coffee"
-            />
             <div className="partner-card-cont">
-              <h4>
-                <b>Goshen Coffee</b>
-              </h4>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img
+                      src="https://i.pinimg.com/564x/1b/c1/48/1bc14897ade16ff205209ca51727786b.jpg"
+                      alt="goshen ethically sourced coffee"
+                    />
+
+                    <h4>
+                      <b>Goshen Coffee</b>
+                    </h4>
+                  </div>
+                  <div className="flip-card-back">
+                    <h4>
+                      <b>Goshen Coffee</b>
+                    </h4>
+                    <p>
+                      Goshen Coffee is family-owned and female-lead coffee
+                      roaster in the heart of Southern Illinois that has been
+                      providing specialty crafted coffee for 20+ years.
+                      <br />
+                      <br />
+                      Goshen Coffee is committed to sourcing ethically and
+                      providing high-quality coffee beans. With a focus on
+                      sustainability and fair trade practices, Goshen ensures
+                      that every cup of coffee supports communities and promotes
+                      environmental responsibility.
+                    </p>
+                    <a href="https://goshencoffee.com/">Visit Goshen Coffee</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="partner-info">
-            <img
-              src="https://i.pinimg.com/736x/5e/7b/a5/5e7ba53e012a89ce0b83f85f4363f80a.jpg"
-              alt="tekla home furnishings"
-            />
             <div className="partner-card-cont">
-              <h4>
-                <b>Tekla</b>
-              </h4>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img
+                      src="https://i.pinimg.com/736x/5e/7b/a5/5e7ba53e012a89ce0b83f85f4363f80a.jpg"
+                      alt="tekla home furnishings"
+                    />
+                    <h4>
+                      <b>Tekla</b>
+                    </h4>
+                  </div>
+                  <div className="flip-card-back">
+                    <h4>
+                      <b>Tekla</b>
+                    </h4>
+                    <p>
+                      Established in Copenhagen in 2017, Tekla was born from a
+                      desire to bring modernity and freedom of expression to the
+                      homeware category.
+                      <br />
+                      <br />
+                      Tekla continues to grow through close collaboration with
+                      its production partners. As a brand, it recognises its
+                      responsibility to mitigate its impact; it rejects rapid
+                      trend cycles by designing for longevity and producing
+                      responsibly. Tekla holds B Corp certification, joining a
+                      global movement of people using business as a force for
+                      good.
+                    </p>
+                    <a href="https://teklafabrics.com/">Visit Tekla</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className="partner-info">
-            <img
-              src="https://i.pinimg.com/564x/d3/28/0e/d3280e55f73fb98d33d21a6ac98afe86.jpg"
-              alt="ode natural aperatif"
-            />
             <div className="partner-card-cont">
-              <h4>
-                <b>Ode NA</b>
-              </h4>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img
+                      src="https://i.pinimg.com/564x/d3/28/0e/d3280e55f73fb98d33d21a6ac98afe86.jpg"
+                      alt="ode natural aperatif"
+                    />
+                    <h4>
+                      <b>Ode</b>
+                    </h4>
+                  </div>
+                  <div className="flip-card-back">
+                    <h4>
+                      <b>Ode</b>
+                    </h4>
+                    <p>
+                      Ode is a purveyor of natural aperitifs crafted from
+                      organic botanicals and artisanal ingredients, offering a
+                      refreshing alternative to traditional alcoholic beverages.
+                      Blending botanical extracts, fruits, and spices, Ode
+                      creates sophisticated flavors that invigorate the senses
+                      without artificial additives or preservatives.
+                      <br />
+                      <br />
+                      Perfect for social gatherings or casual indulgence, Ode
+                      celebrates the art of natural mixology and conviviality.
+                    </p>
+                    <a href="https://www.ode-aperitif.com/en/"> Visit Ode</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
           <div className="partner-info">
-            <img
-              src="https://shop.ashleyandco.co/cdn/shop/products/AC_SZLLL_Web.jpg?v=1646865262%20%20%20%20%20%20%20%20//shop.ashleyandco.co/cdn/shop/products/AC_SZLLL_Web.jpg?v=1646865262"
-              alt="ashley&co natural cleaning products"
-            />
             <div className="partner-card-cont">
-              <h4>
-                <b>Ashley&Co</b>
-              </h4>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img
+                      src="https://shop.ashleyandco.co/cdn/shop/products/AC_SZLLL_Web.jpg?v=1646865262%20%20%20%20%20%20%20%20//shop.ashleyandco.co/cdn/shop/products/AC_SZLLL_Web.jpg?v=1646865262"
+                      alt="ashley&co natural cleaning products"
+                    />
+                    <h4>
+                      <b>Ashley&Co</b>
+                    </h4>
+                  </div>
+                  <div className="flip-card-back">
+                    <h4>
+                      <b>Ashley&Co</b>
+                    </h4>
+                    <p>
+                      Ashley & Co is synonymous with luxurious yet eco-conscious
+                      home fragrance and body care products, to evoke sensory
+                      experiences that delight the soul.
+                      <br />
+                      <br />
+                      Their range includes 8 signature scents and over 50+
+                      products and is found in some of finest retail hotspots
+                      worldwide. They have recently partnered supplying products
+                      for Air New Zealand’s Business and Premium Economy class
+                      inflight packs.
+                    </p>
+                    <a href="https://www.ashleyandco.co/"> Visit Ashley&Co</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
           <div className="partner-info">
-            <img
-              src="https://i.pinimg.com/564x/6a/da/6c/6ada6c337b9ce083435ab1953605ab9a.jpg"
-              alt="antipodes organic cosmetics"
-            />
             <div className="partner-card-cont">
-              <h4>
-                <b>Antipodes</b>
-              </h4>
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img
+                      src="https://i.pinimg.com/564x/6a/da/6c/6ada6c337b9ce083435ab1953605ab9a.jpg"
+                      alt="antipodes organic cosmetics"
+                    />
+                    <h4>
+                      <b>Antipodes</b>
+                    </h4>
+                  </div>
+                  <div className="flip-card-back">
+                    <h4>
+                      <b>Antipodes</b>
+                    </h4>
+                    <p>
+                      Antipodes is a pioneer in organic skincare, harnessing the
+                      healing properties of New Zealand's native botanicals to
+                      create scientifically validated skincare solutions.
+                      <br />
+                      <br />
+                      With a focus on natural, cruelty-free ingredients and
+                      sustainable packaging, Antipodes offers a range of
+                      cleansers, serums, and moisturizers designed to nourish
+                      and rejuvenate the skin while respecting the planet.
+                    </p>
+                    <a href="https://www.ashleyandco.co/"> Visit Antipodes</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -416,13 +559,13 @@ const Home = () => {
                 <p>
                   <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Our stay in Mexico City was absolutely fantastic! The home we
-                  booked through MyHome was perfect for me and my two little
+                  booked through <span>myhome</span> was perfect for me and my two little
                   ones. It was spacious, clean, and had all the amenities we
                   needed. The location was great too, close to parks and
                   kid-friendly attractions. The host was incredibly
                   accommodating and even provided some toys for the kids. We
                   felt safe and comfortable throughout our entire stay. Thank
-                  you, MyHome, for making our trip memorable and stress-free!{" "}
+                  you <span>myhome</span>, for making our trip memorable and stress-free!{" "}
                   <FontAwesomeIcon icon={faQuoteRight} className="icon-rev" />
                 </p>
               </div>
@@ -435,7 +578,7 @@ const Home = () => {
                   <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Returning to Brighton after all these years was like stepping
                   back in time. My husband and I chose to stay in a charming
-                  seaside cottage booked through MyHome, and it was everything
+                  seaside cottage booked through <span>myhome</span>, and it was everything
                   we could have hoped for. The cottage was cozy, with
                   breathtaking views of the pier and the sea. We spent our days
                   reminiscing about our youth and exploring the quaint streets
@@ -455,7 +598,7 @@ const Home = () => {
                 <p>
                   <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Our summer holiday in Bali was nothing short of amazing! My
-                  friends and I booked a stunning villa through MyHome, and it
+                  friends and I booked a stunning villa through <span>myhome</span>, and it
                   exceeded all our expectations. The villa was luxurious, with a
                   private pool and breathtaking views of the ocean. We spent our
                   days lounging by the pool, exploring the vibrant culture of

@@ -80,9 +80,9 @@ body {
 }
 
 .profile-pic {
-  width: 250px;
-  height: 250px;
-  margin-top: 30px;
+  width: 210px;
+height: 210px;
+  margin-top: 60px;
   margin-left: 60px;
   border-radius: 50%;
   border: 5px solid #064426;
@@ -92,11 +92,11 @@ body {
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  margin-left: 120px;
-  margin-top: 10px;
+  margin-left: 70px;
+  margin-top: 50px;
 }
 
-.user-data p {
+.user-info p {
   font-size: 20px;
   text-align: center;
   margin-top: 30px;
@@ -105,7 +105,6 @@ body {
 .user-data button {
   background-color: #064426;
   color: #ede3d3;
-  margin-left: 30px;
   margin-top: 50px;
   padding: 8px 16px;
   border: none;
@@ -196,12 +195,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 605px;
+  height: 680px;
 }
 
 .member-title {
   font-size: 30px;
-  margin-top: 30px;
+  margin-top: 40px;
  margin-left: 10px;
  margin-bottom: 10px;
 }
@@ -301,8 +300,9 @@ body {
   background-color: #064426;
 }
 
+
 /* SOCIALS BOX */
-.socials {
+/* .socials {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -313,6 +313,7 @@ body {
 .socials-title {
   font-size: 20px;
   margin-top: 35px;
+  margin-bottom: 50px;
   width: 100%;
   padding-left: 30px;
 }
@@ -327,7 +328,7 @@ body {
 
 .icon-image img {
   width: 380px;
-  height: 400px;
+  height: 320px;
   border-radius: 10px;
   margin: 0;
 }
@@ -351,10 +352,10 @@ body {
   color: #ede3d3;
   border-radius: 50px;
   cursor: pointer;
-}
+} */
 
 /* HELP CENTER BOX */
-.help-center {
+/* .help-center {
   display: flex;
   flex-direction: column;
   width: 45%;
@@ -381,29 +382,37 @@ body {
   padding: 8px 16px;
   font-size: 20px;
   margin-bottom: 40px;
-}
+} */
 
-.pagination {
+.dash-pagination {
   display: inline-block;
+  margin-bottom: 20px;
+  margin-left: 420px;
 }
 
-.pagination a {
-  color: black;
+.dash-pagination a {
+  color: #064426;
   float: left;
   padding: 8px 16px;
   text-decoration: none;
   transition: background-color 0.3s;
-  border: 1px solid #ddd;
+  margin: 5px;
+  
 }
 
-.pagination a.active {
-  background-color: #4caf50;
-  color: white;
-  border: 1px solid #4caf50;
+.dash-pagination a.active {
+  background-color:#064426;
+  color:#ede3d3;
+  border: 1px solid #064426;
+  border-radius: 10px;
 }
 
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
+.dash-pagination a:hover:not(.active) {
+  background-color:#064426;
+  color:#ede3d3;
+  border: 1px solid #064426;
+  border-radius: 10px;
+
 }
 
 
