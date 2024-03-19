@@ -5,10 +5,10 @@
   background-color: #064426;
 }
 
-hr{
-  border-top: 2px solid #ede3d3;
+.footer hr{
+  border-top: 1px solid #ede3d3;
   width: 90%;
-  margin: 0px 20px 0 60px;
+  margin: 0px 20px 0 110px;
   
 }
 

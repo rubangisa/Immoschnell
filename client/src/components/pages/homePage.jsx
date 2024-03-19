@@ -237,7 +237,7 @@ const Home = () => {
       <div className="homebox2">
         <h2>Why book with us?</h2>
         <div className="homebox2-cont">
-        <video autoPlay loop muted playsInline width="600px" height="900px">
+        <video autoPlay loop muted playsInline width="600px" height="800px">
             <source src={whyBook} type="video/mp4" alt="plants watered in apartment"/>
           </video>
           <div className="homebox2-icons">
@@ -296,7 +296,7 @@ const Home = () => {
               <button>Add your property</button>
             </a>
           </div>
-          <video autoPlay loop muted playsInline width="600px" height="900px">
+          <video autoPlay loop muted playsInline width="600px" height="800px">
             <source src={listWithUsVideo} type="video/mp4" alt="couple looking at computer"/>
           </video>
         </div>

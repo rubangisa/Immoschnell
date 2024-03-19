@@ -9,7 +9,7 @@ import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
   return (
     <footer className="footer">
-    <hr/>
+    <hr className="footer-hr"/>
       <div className="footer-content">
         <div className="footer-box">
           <div className="footer-logo">

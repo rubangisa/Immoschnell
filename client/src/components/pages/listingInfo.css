@@ -61,15 +61,17 @@ button:hover {
 }
 
 .main-image{
+  display: flex;
+align-items: center;
   width: 100%;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 
 .main-image img{
  width:100%;
  height: 600px;
  margin-top: 10px;
- margin-bottom: 130px;
+ margin-bottom: 50px;
 }
 
 .gallery {
@@ -82,10 +84,11 @@ button:hover {
 
 
 .gallery .gallery-img {
-  width: 320px;
-  height: 300px;
+  width: 20%;
+  height: 150px;
   border-radius: 5px;
 }
+
 
 .booking-dates label,
 .booking-dates input[type="date"] {
@@ -174,6 +177,7 @@ margin-top: 80px;
   width: 25%;
   gap: 20px;
   border-radius: 5px;
+  height: fit-content;
 }
 
 .booking-dates, .booking-location{
