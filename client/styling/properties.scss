@@ -68,12 +68,22 @@
   }
 }
 .pricepernight {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: -10px;
-  padding-left: 200px;
   font-size: 15px;
   font-weight: 800;
   color: $primary-color;
+}
+
+.starAndPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 23px;
+}
+.readOnlyStar {
+  padding: 5px;
+  
 }
 
 .propertylocation {
