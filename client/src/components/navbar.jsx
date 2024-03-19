@@ -1,15 +1,16 @@
 import { NavLink } from "react-router-dom";
 import "../../styling/navbar.css";
-import logo from  '../assets/logo.png';
+import logo from "../assets/my home-logo.png";
 import { CiUser } from "react-icons/ci";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useContext, useState } from "react";
+
 import { LoginContext, SearchContext } from "../contexts/AppContext";
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
-  const {login, dispatchLogin} = useContext(LoginContext);
-  const {dispatchSearch} = useContext(SearchContext)
+  const { login, dispatchLogin } = useContext(LoginContext);
+  const { dispatchSearch } = useContext(SearchContext);
   const toggleProfile = () => {
     setProfileMenuOpen(!profileMenuOpen);
   };
@@ -17,12 +18,12 @@ export default function NavBar() {
     setMenuOpen(!menuOpen);
   };
   const handleSignOut = () => {
-    dispatchLogin ({type : "loggedOut"})
-  }
+    dispatchLogin({ type: "loggedOut" });
+  };
 
   const handlePropertiesReset = () => {
-    dispatchSearch({type: "reset"})
-  }
+    dispatchSearch({ type: "reset" });
+  };
   return (
     <div id="header-container">
       <div className="logo-div">
@@ -41,7 +42,11 @@ export default function NavBar() {
             <div id="underline-hover"></div>
           </div>
           <div className="nav-parent">
-            <NavLink onClick={handlePropertiesReset} className="nav-button" to="/properties">
+            <NavLink
+              onClick={handlePropertiesReset}
+              className="nav-button"
+              to="/properties"
+            >
               Properties
             </NavLink>{" "}
             <div id="underline-hover"></div>
@@ -67,12 +72,12 @@ export default function NavBar() {
         </div>
       </nav>
       <div className="user-name-container">
-      <span>{login.loggedIn && login.user.firstName}</span>
-      <div className="nav-parent">
-        <button id="profile-icon" onClick={toggleProfile}>
-          <CiUser className="profile-icon" />
-        </button>
-      </div>
+        <div className="nav-parent">
+          <button id="profile-icon" onClick={toggleProfile}>
+            <CiUser className="profile-icon" />
+            <span className="username">{login.loggedIn && login.user.firstName}</span>
+          </button>
+        </div>
       </div>
       {profileMenuOpen && (
         <div className="dropdown-menu">
@@ -101,14 +106,17 @@ export default function NavBar() {
             </NavLink>
           </div>
           <div className="nav-parent-profile">
-          {login.loggedIn ? <NavLink className="profile-button" onClick={handleSignOut}>
-              Logout
-              <div id="underline-hover"></div>
-            </NavLink> :
-            <NavLink className="profile-button" to="/login">
-              Login/Sign Up
-              <div id="underline-hover"></div>
-            </NavLink> }
+            {login.loggedIn ? (
+              <NavLink className="profile-button" onClick={handleSignOut}>
+                Logout
+                <div id="underline-hover"></div>
+              </NavLink>
+            ) : (
+              <NavLink className="profile-button" to="/login">
+                Login/Sign Up
+                <div id="underline-hover"></div>
+              </NavLink>
+            )}
           </div>
         </div>
       )}

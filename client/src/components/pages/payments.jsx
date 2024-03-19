@@ -2,7 +2,7 @@ import { FaPaypal } from "react-icons/fa";
 import { FaCcApplePay } from "react-icons/fa";
 import { SiAmericanexpress } from "react-icons/si";
 import "../../../styling/payments.css";
-import {  useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import {
   getPaymentMethodsOfUser,
   submitPaymentMethod,
@@ -84,9 +84,9 @@ export default function Payments() {
   };
 
   const handlePay = () => {
-    updateBookingSuccess(booking.booking._id)
-    navigate("/my-booking")
-  }
+    updateBookingSuccess(booking.booking._id);
+    navigate("/my-booking");
+  };
 
   return (
     <div className="payment">
@@ -111,7 +111,9 @@ export default function Payments() {
               {/* <p>Notes:</p> */}
               <div />
             </div>
-            <button onClick={handlePay} className="booking-btn">Pay</button>
+            <button onClick={handlePay} className="booking-btn">
+              Pay
+            </button>
             <button onClick={handleEdit} className="booking-btn">
               Edit Booking
             </button>
@@ -146,11 +148,11 @@ export default function Payments() {
           </strong>
           <table className="payment-table">
             <tr className="payment-header">
-              <th>MasterCard/Visa/American Express</th>
+              <th className="exp-date" >Card Type</th>
               <th>Card Number</th>
-              <th>Card Holder</th>
-              <th>Month</th>
-              <th>Year</th>
+              <th className="exp-date" >Card Holder</th>
+              <th className="exp-date">Month</th>
+              <th className="exp-date">Year</th>
               <th>cvc</th>
             </tr>
             {paymentMethods?.map((payment, index) => {
@@ -252,15 +254,15 @@ export default function Payments() {
               <div className="payment-options-container">
                 <button className="payment-option-button">
                   <FaPaypal className="icon-payments" />{" "}
-                  <p className="space"> </p> Paypal
+                  <p className="space"> </p> <span className="icon-text">Paypal</span>
                 </button>
                 <button className="payment-option-button">
                   <FaCcApplePay className="icon-payments" />
-                  <p className="space"> </p> Applepay
+                  <p className="space"> </p>  <span className="icon-text">Applepay</span>
                 </button>
                 <button className="payment-option-button">
                   <SiAmericanexpress className="icon-payments" />
-                  <p className="space"> </p> American express
+                  <p className="space"> </p> <span className="icon-text">American express</span>
                 </button>
               </div>
               <div className="container-terms">
