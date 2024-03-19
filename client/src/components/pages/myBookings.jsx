@@ -3,6 +3,7 @@ import "./myBooking.css";
 import { LoginContext } from "../../contexts/AppContext";
 import { cancelBooking, getBookingsOfUser, updateBookingFavorite } from "../../apiCalls/bookingApiCalls";
 import { useNavigate } from "react-router-dom";
+import Star from "./star";
 
 
 
@@ -12,7 +13,8 @@ const MyBooking = () => {
   const {login} = useContext(LoginContext);
   const navigate = useNavigate();
   const [showBookingDetails, setShowBookingDetails] = useState(false);
-  const [refreshToggle, setRefreshToggle] = useState(false)
+  const [refreshToggle, setRefreshToggle] = useState(false);
+
   
 
   
@@ -34,6 +36,8 @@ const MyBooking = () => {
     }
     
   }, [filter, login.loggedIn, refreshToggle])
+
+  
 
   const handleCancelBooking = async (e) => {
     
@@ -61,6 +65,8 @@ const MyBooking = () => {
     setRefreshToggle(!refreshToggle)
    
   }
+
+
 
 
   return (
@@ -109,6 +115,7 @@ const MyBooking = () => {
               <button onClick={handleReeBook} name={booking.listing._id}> Re-book property</button>
               <button onClick={handleCancelBooking} name={booking._id} hidden={filter=== "upcoming" ? false : true} >Cancel</button>
               <button onClick={booking.favorite ? handleRemoveFavorite : handleAddFavorite} name={booking._id} hidden = {filter === "upcoming" ? true : false}>{booking.favorite ? "Remove favorite" : "Add to favorites"} </button>
+              <Star bookingId={booking._id} userId={login?.user?._id}/>
             </div>
           </div>
         ))}
