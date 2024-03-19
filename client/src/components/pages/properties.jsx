@@ -8,12 +8,16 @@ import { getAllPropertyList } from "../../apiCalls/propertyApiCalls.js";
 import { ImSpinner } from "react-icons/im";
 import { SearchContext } from "../../contexts/AppContext.jsx";
 import { IoSearchSharp } from "react-icons/io5";
+import ReadOnlyStar from "./readOnlyStar.jsx";
 
 export default function AllProperties() {
   const navigate = useNavigate();
   const { search, dispatchSearch } = useContext(SearchContext);
   const [searchFilter, setSearchFilter] = useState("");
-  const [sort, setSort] = useState({ sortBy: "rating", sortOrder: "descending" });
+  const [sort, setSort] = useState({
+    sortBy: "rating",
+    sortOrder: "descending",
+  });
   const [propertyList, setPropertyList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -131,9 +135,12 @@ export default function AllProperties() {
                   {property.name.toLowerCase()}
                 </h3>
                 <p className="propertylocation">{property.city}</p>
-                <p className="pricepernight">
-                  {property.pricePerNight} € per night
-                </p>
+                <div className="starAndPrice">
+                  <ReadOnlyStar currentRating={property.rating} />
+                  <p className="pricepernight">
+                    {property.pricePerNight} € per night
+                  </p>
+                </div>
               </div>
               <div className="listing-icons">
                 <div className="listing-icon">
