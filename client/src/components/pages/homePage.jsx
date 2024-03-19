@@ -19,7 +19,7 @@ import {
 import { SearchContext } from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
 import listWithUsVideo from "../../assets/listwithus.mp4";
-import whyBook from "../../assets/whybook.mp4"
+import whyBook from "../../assets/whybook.mp4";
 
 const Home = () => {
   const [keyword, setKeyword] = useState("");
@@ -158,9 +158,11 @@ const Home = () => {
                 placeholder="Number of guests"
                 className="homePageFormInput homePageFormInput4"
               />
-              <div onClick={handleSearch} className="homePageFormBtn">
-                <IoMdSearch type="submit" className="homePageFormIcon" />
-              </div>
+            </div>
+          </div>
+          <div className="homePageFormSubCont homePageFormSubCont5">
+            <div onClick={handleSearch} className="homePageFormBtn">
+              <IoMdSearch type="submit" className="homePageFormIcon" />
             </div>
           </div>
         </form>
@@ -196,11 +198,8 @@ const Home = () => {
       </div>
 
       <div className="home-cards">
-        <div className="home-prop-cards">
-          <img
-            src="https://f7e5m2b4.rocketcdn.me/wp-content/uploads/2016/01/Modern-Australian-Farm-House-with-Passive-Solar-Design-1.jpg"
-            alt="kookaburra ranch,queensland"
-          />
+        <div className="home-prop-cards card-1">
+          <div className="home-prop-card-image" />
           <div className="home-prop-cont">
             <h4>
               <b>Kookaburra Ranch</b>
@@ -208,11 +207,8 @@ const Home = () => {
             <p>Queensland, Australia</p>
           </div>
         </div>
-        <div className="home-prop-cards">
-          <img
-            src="https://st.hzcdn.com/simgs/pictures/exteriors/modern-homes-in-laguna-beach-j-kramer-corp-img~9e51960000f722cb_4-8314-1-1292123.jpg"
-            alt="sunset spires, california"
-          />
+        <div className="home-prop-cards card-2">
+          <div className="home-prop-card-image" />
           <div className="home-prop-cont">
             <h4>
               <b>Sunset Spires</b>
@@ -220,11 +216,8 @@ const Home = () => {
             <p>California, USA</p>
           </div>
         </div>
-        <div className="home-prop-cards">
-          <img
-            src="https://www.underthethatch.co.uk/uploads/estateCategoryImages/63c03761091c6.JPG"
-            alt="inkwell cottage, oxfordshire"
-          />
+        <div className="home-prop-cards card-3">
+          <div className="home-prop-card-image" />
           <div className="home-prop-cont">
             <h4>
               <b>Inkwell Cottage</b>
@@ -237,36 +230,57 @@ const Home = () => {
       <div className="homebox2">
         <h2>Why book with us?</h2>
         <div className="homebox2-cont">
-        <video autoPlay loop muted playsInline width="600px" height="800px">
-            <source src={whyBook} type="video/mp4" alt="plants watered in apartment"/>
-          </video>
-          <div className="homebox2-icons">
-            <FontAwesomeIcon icon={faComments} className="icon" />
-            <p>direct contact with hosts</p>
-            <FontAwesomeIcon icon={faShieldHalved} className="icon" />
-            <p>secure payment options</p>
-            <FontAwesomeIcon icon={faHandHoldingDollar} className="icon" />{" "}
-            <p>transparant and fair pricing</p>
+          <div className="homebox-media-container">
+            <video autoPlay loop muted playsInline height="800px">
+              <source
+                src={whyBook}
+                type="video/mp4"
+                alt="plants watered in apartment"
+              />
+            </video>
           </div>
-          <div className="homebox2-icons2">
-            <FontAwesomeIcon icon={faAward} className="icon" />
-            <p>trusted and verified reviews</p>
-            <FontAwesomeIcon icon={faUsers} className="icon" />
-            <p>accessability and inclusivity</p>
-            <FontAwesomeIcon icon={faSeedling} className="icon" />
-            <p>eco-friedly and sustainable properties</p>
+
+          <div className="homebox-icon-container">
+            <div className="homebox2-icons">
+              <div className="each-feature">
+                <FontAwesomeIcon icon={faComments} className="icon" />
+                <p>direct contact with hosts</p>
+              </div>
+              <div className="each-feature">
+                <FontAwesomeIcon icon={faShieldHalved} className="icon" />
+                <p>secure payment options</p>
+              </div>
+              <div className="each-feature">
+                <FontAwesomeIcon icon={faHandHoldingDollar} className="icon" />{" "}
+                <p>transparant and fair pricing</p>
+              </div>
+            </div>
+            <div className="homebox2-icons">
+              <div className="each-feature">
+                <FontAwesomeIcon icon={faAward} className="icon" />
+                <p>trusted and verified reviews</p>
+              </div>
+              <div className="each-feature">
+                <FontAwesomeIcon icon={faUsers} className="icon" />
+                <p>accessability and inclusivity</p>
+              </div>
+              <div className="each-feature">
+                <FontAwesomeIcon icon={faSeedling} className="icon" />
+                <p>eco-friedly and sustainable properties</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="homebox3">
         <h2>
-          Unlock your property with <span>myhome</span>
+          Unlock your property with <span className="brand-name">myhome</span>
         </h2>
         <div className="homebox3-cont">
           <div className="homebox3-text">
             <p>
-              <span>myhome</span> is designed to empower property owners like
+              <span className="brand-name">myhome</span> is designed to empower property owners like
               you, offering a streamlined and effective avenue to showcase your
               unique space to a global audience of travelers. By partnering with
               us, you embark on a journey of hospitality excellence, elevating
@@ -284,7 +298,7 @@ const Home = () => {
               potential. By joining our community of esteemed hosts, you let
               your property shine on the global stage, captivating the hearts
               and minds of travelers with its unique charm and unparalleled
-              hospitality. <span>myhome</span> is not just a platform; it's a
+              hospitality. <span className="brand-name">myhome</span> is not just a platform; it's a
               gateway to bringing the world to your doorstep, allowing your
               property to be discovered and appreciated by a diverse and
               discerning audience. Let's embark on this journey together,
@@ -296,8 +310,12 @@ const Home = () => {
               <button>Add your property</button>
             </a>
           </div>
-          <video autoPlay loop muted playsInline width="600px" height="800px">
-            <source src={listWithUsVideo} type="video/mp4" alt="couple looking at computer"/>
+          <video autoPlay loop muted playsInline width="100%" height="800px">
+            <source
+              src={listWithUsVideo}
+              type="video/mp4"
+              alt="couple looking at computer"
+            />
           </video>
         </div>
       </div>
@@ -521,7 +539,7 @@ const Home = () => {
           </div>
         </div>
         <p className="partner-text">
-          Diving deeper into our commitment, <span>myhome</span> has established
+          Diving deeper into our commitment, <span className="brand-name">myhome</span> has established
           partnerships with pioneering brands that are at the forefront of
           sustainability and ethical practices. By choosing to equip our
           properties with these thoughtfully selected products, we're not just
@@ -537,49 +555,52 @@ const Home = () => {
           <br />
           Furthermore, we believe that luxury and sustainability can coexist,
           and our mission is to prove that to our guests. By staying with{" "}
-          <span>myhome</span>, you become part of a movement that prioritizes
-          the well-being of our environment without compromising on quality or
-          comfort. We encourage you to explore the stories behind the brands we
-          partner with, to understand the impact of your choice to stay with us.
-          From reducing carbon footprints to supporting local communities, your
-          stay at <span>myhome</span> contributes to a cycle of positive change.
-          We're excited for you to experience the harmony between luxury living
-          and sustainable practices, and to see how small choices can lead to
-          significant impacts.
+          <span className="brand-name">myhome</span>, you become part of a
+          movement that prioritizes the well-being of our environment without
+          compromising on quality or comfort. We encourage you to explore the
+          stories behind the brands we partner with, to understand the impact of
+          your choice to stay with us. From reducing carbon footprints to
+          supporting local communities, your stay at{" "}
+          <span className="brand-name">myhome</span> contributes to a cycle of
+          positive change. We're excited for you to experience the harmony
+          between luxury living and sustainable practices, and to see how small
+          choices can lead to significant impacts.
         </p>
       </div>
       <div className="homebox5">
         <h2>Happy guests and happy hosts</h2>
         <div className="homebox5-cont">
           <div className="review-container">
-            <div className="review">
-              <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            <div className="review review-1">
+              <div className="review-image"></div>
+
               <div className="text">
                 <h5>IanPlus2, Arizona</h5>
                 <p>
                   <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Our stay in Mexico City was absolutely fantastic! The home we
-                  booked through <span>myhome</span> was perfect for me and my two little
-                  ones. It was spacious, clean, and had all the amenities we
-                  needed. The location was great too, close to parks and
-                  kid-friendly attractions. The host was incredibly
+                  booked through <span  className="brand-name">myhome</span> was perfect for me and my
+                  two little ones. It was spacious, clean, and had all the
+                  amenities we needed. The location was great too, close to
+                  parks and kid-friendly attractions. The host was incredibly
                   accommodating and even provided some toys for the kids. We
                   felt safe and comfortable throughout our entire stay. Thank
-                  you <span>myhome</span>, for making our trip memorable and stress-free!{" "}
+                  you <span className="brand-name">myhome</span>, for making our trip memorable and
+                  stress-free!{" "}
                   <FontAwesomeIcon icon={faQuoteRight} className="icon-rev" />
                 </p>
               </div>
             </div>
 
-            <div className="review">
+            <div className="review review-reverse review-2">
               <div className="text">
                 <h5>Connie&George, Southend</h5>
                 <p>
                   <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Returning to Brighton after all these years was like stepping
                   back in time. My husband and I chose to stay in a charming
-                  seaside cottage booked through <span>myhome</span>, and it was everything
-                  we could have hoped for. The cottage was cozy, with
+                  seaside cottage booked through <span className="brand-name">myhome</span>, and it was
+                  everything we could have hoped for. The cottage was cozy, with
                   breathtaking views of the pier and the sea. We spent our days
                   reminiscing about our youth and exploring the quaint streets
                   of Brighton. The host was gracious and even left us a bottle
@@ -588,25 +609,27 @@ const Home = () => {
                   <FontAwesomeIcon icon={faQuoteRight} className="icon-rev" />
                 </p>
               </div>
-              <img src="https://images.unsplash.com/photo-1508963493744-76fce69379c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+
+              <div className="review-image"></div>
             </div>
 
-            <div className="review">
-              <img src="https://i.pinimg.com/564x/f8/95/b0/f895b0f6ff17d71f063a3c5b1cd12b88.jpg" />
+            <div className="review review-3">
+              <div className="review-image"></div>
               <div className="text">
                 <h5>MadSummerCrew92, Auckland</h5>
                 <p>
                   <FontAwesomeIcon icon={faQuoteLeft} className="icon-rev" />
                   Our summer holiday in Bali was nothing short of amazing! My
-                  friends and I booked a stunning villa through <span>myhome</span>, and it
-                  exceeded all our expectations. The villa was luxurious, with a
-                  private pool and breathtaking views of the ocean. We spent our
-                  days lounging by the pool, exploring the vibrant culture of
-                  Bali, and indulging in delicious local cuisine. The host went
-                  above and beyond to ensure we had everything we needed, from
-                  arranging transportation to recommending the best places to
-                  visit. It was the perfect getaway with friends, and we're
-                  already planning our next trip back.{" "}
+                  friends and I booked a stunning villa through{" "}
+                  <span className="brand-name">myhome</span>, and it exceeded all our expectations. The
+                  villa was luxurious, with a private pool and breathtaking
+                  views of the ocean. We spent our days lounging by the pool,
+                  exploring the vibrant culture of Bali, and indulging in
+                  delicious local cuisine. The host went above and beyond to
+                  ensure we had everything we needed, from arranging
+                  transportation to recommending the best places to visit. It
+                  was the perfect getaway with friends, and we're already
+                  planning our next trip back.{" "}
                   <FontAwesomeIcon icon={faQuoteRight} className="icon-rev" />
                 </p>
               </div>
