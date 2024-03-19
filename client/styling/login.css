@@ -75,6 +75,13 @@ body {
     padding: 3px;
     border-radius: 5px;
 }
+.logInForm label {
+  color: rgb(6, 68, 38);
+}
+.logInForm input {
+  color: rgb(6, 68, 38);
+  background-color: white;
+}
   
   .horizontal-line {
     flex-grow: 1;
