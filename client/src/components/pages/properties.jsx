@@ -88,7 +88,7 @@ export default function AllProperties() {
 
   return (
     <div className="listingsbody">
-      <h1 className="listingsh1">our properties</h1>
+      <h1 className="listingsh1">Our properties</h1>
       <div className="search-and-sorting">
         <div className="search-container">
           <div className="search">

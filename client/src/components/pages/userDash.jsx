@@ -96,19 +96,17 @@ const UserDash = () => {
                 <div>
                   <img
                     className="profile-pic"
-                    src="https://images.unsplash.com/photo-1647888774545-96f662a65e15?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="https://images.unsplash.com/photo-1486432155089-343c871b640f?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     alt={login.user.firstName}
                   />
                   <h2>
-                    Welcome back:
-                    <br />
-                    {login.user.firstName}
+                    Welcome back, {login.user.firstName}
                   </h2>
                   <div className="user-info">
-                    <p>
-                      email: {login.user.email} <br /> birth date:{" "}
-                      {new Date(login.user.dateOfBirth).toLocaleDateString()}
-                      <br /> Phone: {login.user.phone}
+                    <p>date of birth:{" "}
+                    {new Date(login.user.dateOfBirth).toLocaleDateString()}<br />
+                      email: {login.user.email}  
+                      <br /> phone: {login.user.phone}
                     </p>
                     <button>Manage profile</button>
                   </div>
@@ -168,7 +166,7 @@ const UserDash = () => {
                   </div>
                 ))}
               </div>
-              <div className="pagination">
+              <div className="dash-pagination">
                 <a href="#" onClick={prevPage}>
                   &laquo;
                 </a>
@@ -189,32 +187,7 @@ const UserDash = () => {
             </div>
           </div>
         </div>
-        <div className="box-3">
-          <div className="socials">
-            <div className="socials-title">
-              <h2>Socials</h2>
-            </div>
-            <div className="icon-image">
-              <FontAwesomeIcon icon={faArrowLeft} className="arrows" />
-
-              <img src={social} alt="social media post" />
-
-              <FontAwesomeIcon icon={faArrowRight} className="arrows" />
-            </div>
-            <p className="socials-article">
-              10 tips to make your home more eco-friendly
-            </p>
-          </div>
-
-          <div className="help-center">
-            <h2 className="help-title">Help center</h2>
-            <div className="help-buttons">
-              <button>FAQS</button>
-              <button>Guidelines</button>
-              <button onClick={handleContactUs}>Contact us</button>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </div>
   );
