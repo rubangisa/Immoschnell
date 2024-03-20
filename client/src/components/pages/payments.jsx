@@ -84,8 +84,10 @@ export default function Payments() {
   };
 
   const handlePay = () => {
-    updateBookingSuccess(booking.booking._id);
-    navigate("/my-booking");
+    updateBookingSuccess(booking.booking._id, dispatchBooking).then(response => {
+      navigate("/my-booking");
+    });
+  
   };
 
   return (
