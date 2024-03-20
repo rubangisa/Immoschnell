@@ -584,10 +584,15 @@ span.brand-name {
 
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 70px;
+    padding: 40px;
     justify-content: center;
   }
-
+  .homeIcons li {
+    max-width: 60px;
+  }
+  .homeIcons {
+    margin-top: 50px;
+  }
   .homePageFormSubCont {
     border: #064426 5px solid;
     border-radius: 10px;
